@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoevaluación de CV — Maru Helps You</title>
+<meta name="description" content="Descubre en 3 minutos qué tan visible es tu CV para los sistemas de IA y reclutadores.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-light:#2E4170;--gold:#C9A84C;--gold-light:#E8D08A;
+  --white:#FFFFFF;--off-white:#F9F7F4;--gray-light:#F2EFE9;
+  --gray-mid:#9B9690;--gray-text:#4A4845;
+  --green:#2E7D4F;--red:#8B2020;--orange:#C4621D;
+  --serif:'DM Serif Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--off-white);color:var(--gray-text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+.header{background:var(--navy);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.header-brand{font-family:var(--serif);font-size:1rem;color:var(--white);text-decoration:none}
+.header-brand span{color:var(--gold)}
+.header-back{font-size:0.78rem;color:rgba(255,255,255,0.55);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.header-back:hover{color:var(--gold)}
+.header-back svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.hero{background:var(--navy);padding:2.5rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-label{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.hero h1{font-family:var(--serif);font-size:clamp(1.75rem,4vw,2.5rem);color:var(--white);line-height:1.2;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);max-width:480px;margin:0 auto 1.5rem;line-height:1.7}
+.hero-stats{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.hero-stat-num{font-family:var(--serif);font-size:1.5rem;color:var(--gold)}
+.hero-stat-label{font-size:0.72rem;color:rgba(255,255,255,0.4)}
+.progress-bar{background:var(--navy);padding:0 1.5rem 1.5rem}
+.progress-track{max-width:600px;margin:0 auto}
+.progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem}
+.progress-label{font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.5)}
+.progress-pct{font-size:0.75rem;font-weight:600;color:var(--gold)}
+.progress-bg{height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--gold);border-radius:2px;transition:width 0.5s ease;width:0%}
+.main{max-width:640px;margin:0 auto;padding:2rem 1.5rem}
+.q-card{background:var(--white);border:1px solid #E8E4DC;border-radius:4px;padding:1.75rem;margin-bottom:1rem;animation:fadeIn 0.3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.q-category{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem}
+.q-category::before{content:'';display:inline-block;width:16px;height:1px;background:var(--gold)}
+.q-num{font-size:0.75rem;color:var(--gray-mid);margin-bottom:0.35rem}
+.q-text{font-family:var(--serif);font-size:1.05rem;color:var(--navy);line-height:1.45;margin-bottom:0.5rem}
+.q-hint{font-size:0.8rem;color:var(--gray-mid);line-height:1.55;margin-bottom:1.25rem;padding:0.65rem 0.85rem;background:var(--off-white);border-radius:2px;border-left:2px solid var(--gold)}
+.options{display:flex;flex-direction:column;gap:0.6rem}
+.option{display:flex;align-items:flex-start;gap:0.75rem;padding:0.85rem 1rem;border:1px solid #E8E4DC;border-radius:2px;cursor:pointer;transition:all 0.15s;background:var(--white)}
+.option:hover{border-color:var(--gold);background:var(--off-white)}
+.option.selected{border-color:var(--navy);background:var(--gray-light)}
+.option-radio{width:18px;height:18px;border-radius:50%;border:2px solid #E8E4DC;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.option.selected .option-radio{border-color:var(--navy);background:var(--navy)}
+.option.selected .option-radio::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--white)}
+.option-text{font-size:0.875rem;color:var(--gray-text);line-height:1.5}
+.q-nav{display:flex;gap:0.75rem;margin-top:1.25rem;justify-content:space-between;align-items:center}
+.btn-next{background:var(--navy);color:var(--white);border:none;padding:0.8rem 1.75rem;font-family:var(--sans);font-size:0.875rem;font-weight:600;border-radius:2px;cursor:pointer;transition:background 0.2s}
+.btn-next:hover{background:var(--navy-light)}
+.btn-next:disabled{opacity:0.35;cursor:not-allowed}
+.btn-back{background:none;border:1px solid #E8E4DC;color:var(--gray-mid);padding:0.8rem 1.25rem;font-family:var(--sans);font-size:0.875rem;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.btn-back:hover{border-color:var(--navy);color:var(--navy)}
+
+/* SKIP NOTICE */
+.skip-notice{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:2px;padding:0.85rem 1rem;font-size:0.82rem;color:var(--gray-text);line-height:1.55;margin-bottom:0.75rem}
+.skip-notice strong{color:var(--navy)}
+
+/* RESULTS */
+.results{display:none;animation:fadeIn 0.4s ease}
+.results.show{display:block}
+.score-card{background:var(--navy);border-radius:4px;padding:2rem;text-align:center;margin-bottom:1.5rem}
+.score-label{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem}
+.score-circle{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 1rem}
+.score-num{font-family:var(--serif);font-size:2.5rem;color:var(--white);line-height:1}
+.score-total{font-size:0.75rem;color:rgba(255,255,255,0.4)}
+.score-title{font-family:var(--serif);font-size:1.4rem;margin-bottom:0.4rem}
+.score-desc{font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.6;max-width:380px;margin:0 auto}
+.breakdown{margin-bottom:1.5rem}
+.breakdown-title{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-mid);margin-bottom:1rem}
+.cat-row{margin-bottom:0.85rem}
+.cat-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem}
+.cat-name{font-size:0.85rem;font-weight:500;color:var(--navy)}
+.cat-score{font-size:0.8rem;font-weight:600}
+.cat-bar-bg{height:6px;background:#E8E4DC;border-radius:3px;overflow:hidden}
+.cat-bar-fill{height:100%;border-radius:3px;width:0%;transition:width 1s ease}
+.recs{margin-bottom:1.5rem}
+.recs-title{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-mid);margin-bottom:1rem}
+.rec-item{background:var(--white);border:1px solid #E8E4DC;border-radius:2px;padding:1rem 1.1rem;margin-bottom:0.75rem;display:flex;gap:0.85rem;align-items:flex-start}
+.rec-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;font-weight:700}
+.rec-icon.high{background:rgba(139,32,32,0.1);color:var(--red)}
+.rec-icon.med{background:rgba(196,98,29,0.1);color:var(--orange)}
+.rec-icon.low{background:rgba(46,125,79,0.1);color:var(--green)}
+.rec-text h4{font-size:0.875rem;font-weight:600;color:var(--navy);margin-bottom:0.2rem}
+.rec-text p{font-size:0.8rem;color:var(--gray-mid);line-height:1.55}
+.cta-card{background:var(--navy);border-radius:4px;padding:1.75rem;text-align:center;margin-bottom:2rem}
+.cta-card h3{font-family:var(--serif);font-size:1.3rem;color:var(--white);margin-bottom:0.5rem}
+.cta-card p{font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:1.25rem;max-width:380px;margin-left:auto;margin-right:auto}
+.cta-buttons{display:flex;flex-direction:column;gap:0.75rem;max-width:280px;margin:0 auto}
+.btn-gold{background:var(--gold);color:var(--navy);padding:0.9rem 1.5rem;border-radius:2px;font-weight:600;font-size:0.9rem;text-decoration:none;text-align:center;transition:background 0.2s;display:block}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline{border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.75);padding:0.9rem 1.5rem;border-radius:2px;font-weight:500;font-size:0.875rem;text-decoration:none;text-align:center;transition:all 0.2s;display:block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-restart{background:none;border:none;font-family:var(--sans);font-size:0.8rem;color:rgba(255,255,255,0.4);cursor:pointer;text-decoration:underline;margin:0.75rem auto 0;display:block}
+.btn-restart:hover{color:rgba(255,255,255,0.7)}
+.capture-card{background:var(--white);border:1px solid #E8E4DC;border-radius:4px;padding:1.75rem;margin-bottom:1.5rem}
+.capture-card h3{font-family:var(--serif);font-size:1.1rem;color:var(--navy);margin-bottom:0.35rem}
+.capture-card p{font-size:0.85rem;color:var(--gray-mid);line-height:1.6;margin-bottom:1.1rem}
+.capture-form{display:flex;flex-direction:column;gap:0.7rem}
+.capture-form input{font-family:var(--sans);font-size:0.875rem;color:var(--navy);background:var(--off-white);border:1px solid #E0DBD2;border-radius:2px;padding:0.7rem 0.9rem;outline:none;transition:border-color 0.2s}
+.capture-form input:focus{border-color:var(--gold)}
+.capture-consent{display:flex;align-items:flex-start;gap:0.5rem}
+.capture-consent input[type=checkbox]{width:14px;height:14px;flex-shrink:0;margin-top:3px;accent-color:var(--navy)}
+.capture-consent label{font-size:0.72rem;color:var(--gray-mid);line-height:1.5}
+.capture-submit{background:var(--navy);color:var(--white);border:none;padding:0.8rem;font-family:var(--sans);font-size:0.875rem;font-weight:600;border-radius:2px;cursor:pointer;transition:background 0.2s;width:100%}
+.capture-submit:hover{background:var(--navy-light)}
+.skip-results{font-size:0.75rem;color:var(--gray-mid);text-align:center;margin-top:0.5rem;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:var(--sans);display:block;margin:0.5rem auto 0}
+.skip-results:hover{color:var(--navy)}
+.footer{text-align:center;padding:2rem 1.5rem;background:var(--navy)}
+.footer-brand{font-family:var(--serif);font-size:0.9rem;color:rgba(255,255,255,0.35);margin-bottom:0.3rem}
+.footer-brand span{color:var(--gold)}
+.footer-copy{font-size:0.68rem;color:rgba(255,255,255,0.18)}
+@media(max-width:480px){.q-card{padding:1.25rem}.cta-card{padding:1.25rem}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html" class="header-brand">Maru <span>Helps You</span></a>
+  <a href="index.html" class="header-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al inicio
+  </a>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Autoevaluación gratuita</div>
+  <h1>¿Tu CV es <em>visible</em><br>para los reclutadores?</h1>
+  <p class="hero-sub">Responde unas preguntas y descubre en minutos qué tan preparado está tu perfil profesional. Sin tecnicismos — sin conocimiento previo requerido.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">categorías</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">minutos</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">gratuita</div></div>
+  </div>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-track">
+    <div class="progress-info">
+      <span class="progress-label" id="progressLabel">Iniciando...</span>
+      <span class="progress-pct" id="progressPct">0%</span>
+    </div>
+    <div class="progress-bg"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</div>
+
+<div class="main">
+  <div id="questionsContainer"></div>
+  <div class="results" id="results"></div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">Maru <span>Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; maruhelpyou@gmail.com</div>
+</div>
+
+<script>
+// skip: if this answer index is selected, skip the listed question indices
+const questions = [
+  // ── CATEGORÍA 1: KEYWORDS ─────────────────────────────────────────────
+  {
+    id: 'k1',
+    category: 'Palabras clave y visibilidad',
+    text: '¿Sabes qué son las palabras clave (keywords) en un CV?',
+    hint: 'Las palabras clave son los términos específicos que los sistemas automáticos y los reclutadores buscan en tu CV. Por ejemplo: "gestión de proyectos", "ventas B2B", "análisis de datos".',
+    options: [
+      {text: 'Sí, las conozco y las uso en mi CV', score: 4},
+      {text: 'He escuchado el término pero no sé cómo usarlas', score: 1},
+      {text: 'No, no sabía que existían', score: 0},
+    ]
+  },
+  {
+    id: 'k2',
+    category: 'Palabras clave y visibilidad',
+    text: '¿Adaptas las palabras de tu CV según la vacante a la que aplicas?',
+    hint: 'Cada oferta de trabajo usa términos diferentes. Usar exactamente las mismas palabras que la oferta aumenta mucho tus posibilidades de ser seleccionado.',
+    options: [
+      {text: 'Sí, reviso la oferta y ajusto mi CV cada vez', score: 4},
+      {text: 'A veces, pero no de forma sistemática', score: 2},
+      {text: 'No, uso el mismo CV para todas las aplicaciones', score: 0},
+    ]
+  },
+  {
+    id: 'k3',
+    category: 'Palabras clave y visibilidad',
+    text: '¿Tu CV menciona herramientas o programas específicos que sabes usar?',
+    hint: 'Ej: Excel, SAP, Salesforce, Power BI, Notion, etc. Escribir "manejo de computadoras" no es suficiente — los reclutadores buscan herramientas concretas.',
+    options: [
+      {text: 'Sí, menciono las herramientas con el nivel que tengo', score: 4},
+      {text: 'Las menciono pero sin especificar nivel', score: 2},
+      {text: 'Solo pongo algo genérico como "manejo de herramientas"', score: 1},
+      {text: 'No menciono herramientas específicas', score: 0},
+    ]
+  },
+
+  // ── CATEGORÍA 2: FORMATO ──────────────────────────────────────────────
+  {
+    id: 'f1',
+    category: 'Formato del CV',
+    text: '¿Cómo describirías el diseño visual de tu CV?',
+    hint: 'Los sistemas automáticos de filtrado (ATS) que usan las empresas solo pueden leer texto plano. Un CV con gráficos, íconos o columnas complejas puede ser descartado automáticamente aunque tu experiencia sea perfecta.',
+    options: [
+      {text: 'Simple: texto limpio, sin gráficos ni columnas múltiples', score: 4},
+      {text: 'Tiene dos columnas pero es principalmente texto', score: 2},
+      {text: 'Tiene barras de habilidades, íconos o diseño muy visual', score: 0},
+      {text: 'No estoy seguro de cómo está diseñado', score: 1},
+    ]
+  },
+  {
+    id: 'f2',
+    category: 'Formato del CV',
+    text: '¿En qué formato envías tu CV?',
+    hint: 'Un CV guardado como imagen o escaneado es completamente invisible para los sistemas automáticos — aunque se vea bien en pantalla.',
+    options: [
+      {text: 'PDF con texto que se puede seleccionar', score: 4},
+      {text: 'Word (.doc o .docx)', score: 3},
+      {text: 'PDF escaneado o como fotografía', score: 0},
+      {text: 'Imagen (JPG, PNG)', score: 0},
+      {text: 'No sé en qué formato lo tengo', score: 1},
+    ]
+  },
+  {
+    id: 'f3',
+    category: 'Formato del CV',
+    text: '¿Cuántas páginas tiene tu CV?',
+    hint: 'Para la mayoría de profesionales, 1 o 2 páginas es suficiente. Más páginas dificultan que el reclutador encuentre lo más importante.',
+    options: [
+      {text: '1 o 2 páginas', score: 4},
+      {text: '3 páginas', score: 2},
+      {text: '4 páginas o más', score: 0},
+    ]
+  },
+
+  // ── CATEGORÍA 3: CONTENIDO ────────────────────────────────────────────
+  {
+    id: 'c1',
+    category: 'Contenido y logros',
+    text: '¿Tu CV describe lo que lograste en cada trabajo, o solo lo que hacías?',
+    hint: 'Hay una diferencia importante: "Responsable del área de ventas" vs "Aumenté las ventas un 35% en 6 meses". Los logros concretos dicen mucho más que las responsabilidades.',
+    options: [
+      {text: 'Describo logros con números y resultados concretos', score: 4},
+      {text: 'Algunos tienen resultados, otros son más descriptivos', score: 2},
+      {text: 'Describo principalmente mis responsabilidades', score: 1},
+      {text: 'No sabía que había diferencia', score: 0},
+    ]
+  },
+  {
+    id: 'c2',
+    category: 'Contenido y logros',
+    text: '¿Tu CV tiene un resumen o perfil profesional al inicio?',
+    hint: 'Es un párrafo corto (3-4 líneas) al inicio del CV que dice quién eres, qué haces y qué valor aportas. Es lo primero que lee el reclutador.',
+    options: [
+      {text: 'Sí, tengo un resumen claro y específico', score: 4},
+      {text: 'Tengo algo escrito pero es muy genérico', score: 2},
+      {text: 'No tengo resumen al inicio', score: 0},
+    ]
+  },
+  {
+    id: 'c3',
+    category: 'Contenido y logros',
+    text: '¿Actualizas tu CV cuando aplicas a una vacante nueva?',
+    hint: 'Un CV adaptado a cada vacante tiene hasta 3 veces más posibilidades de ser seleccionado que un CV genérico enviado a todas las empresas.',
+    options: [
+      {text: 'Sí, lo ajusto para cada vacante importante', score: 4},
+      {text: 'Lo actualizo cada cierto tiempo, no por vacante', score: 2},
+      {text: 'Uso exactamente el mismo CV para todo', score: 0},
+    ]
+  },
+
+  // ── CATEGORÍA 4: LINKEDIN ─────────────────────────────────────────────
+  {
+    id: 'li0',
+    category: 'LinkedIn',
+    text: '¿Tienes perfil en LinkedIn?',
+    hint: 'LinkedIn es la red profesional más usada por reclutadores en Panamá y LATAM. Muchas empresas buscan candidatos directamente ahí antes de publicar una vacante.',
+    skipIfIndex: 3, // skip li1, li2, li3 if "No tengo LinkedIn"
+    options: [
+      {text: 'Sí, tengo perfil en LinkedIn', score: 0, skipIndices: []},
+      {text: 'No tengo LinkedIn', score: 0, skipIndices: [9, 10, 11]}, // indices of li1,li2,li3
+      {text: 'Tengo pero está completamente abandonado', score: 0, skipIndices: []},
+    ]
+  },
+  {
+    id: 'li1',
+    category: 'LinkedIn',
+    text: '¿Tu perfil de LinkedIn tiene foto profesional, título claro, resumen y experiencia completa?',
+    hint: 'Un perfil incompleto aparece mucho menos en las búsquedas de reclutadores. Cada sección que falta reduce tu visibilidad.',
+    options: [
+      {text: 'Sí, todas las secciones están completas y actualizadas', score: 4},
+      {text: 'Está parcialmente completo', score: 2},
+      {text: 'Solo tengo datos básicos como nombre y empresa', score: 1},
+    ]
+  },
+  {
+    id: 'li2',
+    category: 'LinkedIn',
+    text: '¿El título de tu perfil de LinkedIn va más allá de solo tu cargo actual?',
+    hint: 'Ej: "Farmacéutica | Investigación Clínica | Gestión de Proyectos" es mucho más poderoso que solo "Farmacéutica". Las palabras clave en el título te hacen aparecer en búsquedas.',
+    options: [
+      {text: 'Sí, incluye especialidades, palabras clave y mi valor diferencial', score: 4},
+      {text: 'Solo dice mi cargo actual', score: 1},
+      {text: 'No he pensado en optimizar el título', score: 0},
+    ]
+  },
+  {
+    id: 'li3',
+    category: 'LinkedIn',
+    text: '¿La sección "Acerca de" de tu LinkedIn cuenta tu historia profesional?',
+    hint: 'No es un resumen de CV. Es tu narrativa: quién eres, qué te diferencia y qué buscas. Los reclutadores la leen para conocerte como persona.',
+    options: [
+      {text: 'Sí, cuenta mi historia con claridad y propósito', score: 4},
+      {text: 'Tengo algo escrito pero es muy genérico o vacío', score: 1},
+      {text: 'Está en blanco', score: 0},
+    ]
+  },
+
+  // ── CATEGORÍA 5: ESTRATEGIA ───────────────────────────────────────────
+  {
+    id: 's1',
+    category: 'Estrategia de búsqueda',
+    text: '¿Sabes claramente qué te diferencia de otros candidatos con experiencia similar?',
+    hint: 'Si un reclutador te pregunta "¿por qué tú y no otro?", necesitas tener una respuesta clara. Si no lo sabes tú, tu CV tampoco lo comunica.',
+    options: [
+      {text: 'Sí, lo puedo explicar en menos de 30 segundos', score: 4},
+      {text: 'Más o menos, pero no con mucha claridad', score: 2},
+      {text: 'No sé bien qué me diferencia', score: 0},
+    ]
+  },
+  {
+    id: 's2',
+    category: 'Estrategia de búsqueda',
+    text: 'Cuando aplicas a vacantes, ¿con qué frecuencia recibes respuesta o llamada?',
+    hint: 'Esta es la prueba real. Si aplicas a muchas vacantes y no recibes respuesta, algo en tu perfil no está funcionando — independientemente de tu experiencia.',
+    options: [
+      {text: 'Con frecuencia — tengo buena tasa de respuesta', score: 4},
+      {text: 'Ocasionalmente — quizás 1 de cada 10 aplicaciones', score: 2},
+      {text: 'Rara vez — aplico mucho y recibo poco', score: 1},
+      {text: 'Nunca o casi nunca recibo respuesta', score: 0},
+    ]
+  },
+];
+
+// Build active question list (handles skipping)
+let activeQuestions = [...questions]; // will be rebuilt dynamically
+let answers = {}; // {questionId: optionIndex}
+let currentActive = 0; // index into activeQueue
+let activeQueue = []; // array of question objects to show
+let skippedCategories = [];
+
+function buildQueue() {
+  activeQueue = [];
+  skippedCategories = [];
+  let skipIndices = new Set();
+
+  questions.forEach((q, globalIdx) => {
+    if (skipIndices.has(globalIdx)) {
+      // still record answer as skipped
+      return;
+    }
+    activeQueue.push({...q, globalIdx});
+
+    // Check if current answer triggers skips
+    if (answers[q.id] !== undefined) {
+      const opt = q.options[answers[q.id]];
+      if (opt && opt.skipIndices && opt.skipIndices.length > 0) {
+        opt.skipIndices.forEach(si => skipIndices.add(si));
+        if (q.category === 'LinkedIn') skippedCategories.push('LinkedIn');
+      }
+    }
+  });
+}
+
+function init() {
+  buildQueue();
+  renderCurrent();
+}
+
+function renderCurrent() {
+  buildQueue(); // rebuild in case answers changed
+  const container = document.getElementById('questionsContainer');
+  container.innerHTML = '';
+
+  if (currentActive >= activeQueue.length) {
+    showCapture();
+    return;
+  }
+
+  buildQueue(); // always rebuild before rendering
+  const q = activeQueue[currentActive];
+  const isLast = currentActive >= activeQueue.length - 1;
+  const selectedIdx = answers[q.id] !== undefined ? answers[q.id] : null;
+
+  // Check if next question will be skipped (for linkedin)
+  let skipNotice = '';
+  if (q.id === 'li0' && selectedIdx !== null) {
+    const opt = q.options[selectedIdx];
+    if (opt && opt.skipIndices && opt.skipIndices.length > 0) {
+      skipNotice = `<div class="skip-notice"><strong>Nota:</strong> Como no tienes LinkedIn activo, omitiremos las preguntas sobre esa sección. Te daremos recomendaciones específicas para empezar uno desde cero.</div>`;
+    }
+  }
+
+  const div = document.createElement('div');
+  div.className = 'q-card';
+  div.innerHTML = `
+    ${skipNotice}
+    <div class="q-category">${q.category}</div>
+    <div class="q-num">Pregunta ${currentActive + 1} de ${activeQueue.length}</div>
+    <div class="q-text">${q.text}</div>
+    <div class="q-hint">${q.hint}</div>
+    <div class="options">
+      ${q.options.map((o, oi) => `
+        <div class="option ${selectedIdx === oi ? 'selected' : ''}" onclick="selectOption(${oi})">
+          <div class="option-radio"></div>
+          <div class="option-text">${o.text}</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="goBack()" ${currentActive === 0 ? 'style="visibility:hidden"' : ''}>Anterior</button>
+      <button class="btn-next" id="btnNext" onclick="goNext()" ${selectedIdx === null ? 'disabled' : ''}>
+        ${isLast ? 'Ver mi resultado' : 'Siguiente'}
+      </button>
+    </div>
+  `;
+  container.appendChild(div);
+  updateProgress();
+}
+
+function selectOption(oi) {
+  const q = activeQueue[currentActive];
+  answers[q.id] = oi;
+  document.querySelectorAll('.option').forEach((el, i) => {
+    el.classList.toggle('selected', i === oi);
+  });
+
+  // Rebuild queue immediately so isLast is recalculated
+  buildQueue();
+
+  const isNowLast = currentActive >= activeQueue.length - 1;
+  const btnNext = document.getElementById('btnNext');
+  btnNext.disabled = false;
+  btnNext.textContent = isNowLast ? 'Ver mi resultado' : 'Siguiente';
+
+  // Show skip notice if linkedin skipped
+  if (q.id === 'li0') {
+    const opt = q.options[oi];
+    if (opt && opt.skipIndices && opt.skipIndices.length > 0) {
+      const existing = document.querySelector('.skip-notice');
+      if (!existing) {
+        const notice = document.createElement('div');
+        notice.className = 'skip-notice';
+        notice.innerHTML = '<strong>Nota:</strong> Como no tienes LinkedIn activo, omitiremos esas preguntas y te daremos recomendaciones para empezar.';
+        document.querySelector('.q-card').prepend(notice);
+      }
+    } else {
+      const existing = document.querySelector('.skip-notice');
+      if (existing) existing.remove();
+    }
+  }
+}
+
+function goNext() {
+  const q = activeQueue[currentActive];
+  if (answers[q.id] === undefined) return;
+
+  // Rebuild with latest answers
+  buildQueue();
+
+  if (currentActive < activeQueue.length - 1) {
+    currentActive++;
+    renderCurrent();
+  } else {
+    showCapture();
+  }
+}
+
+function goBack() {
+  if (currentActive > 0) { currentActive--; renderCurrent(); }
+}
+
+function updateProgress() {
+  const total = activeQueue.length;
+  const pct = Math.round((currentActive / total) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('progressLabel').textContent = `Pregunta ${currentActive + 1} de ${total}`;
+}
+
+function showCapture() {
+  document.getElementById('questionsContainer').style.display = 'none';
+  document.querySelector('.progress-bar').style.display = 'none';
+  const results = document.getElementById('results');
+  results.classList.add('show');
+  results.innerHTML = `
+    <div class="capture-card">
+      <h3>Tu resultado está listo</h3>
+      <p>Déjanos tu nombre y correo para ver tu análisis detallado con recomendaciones personalizadas. Sin spam — solo tu resultado.</p>
+      <form class="capture-form" onsubmit="handleCapture(event)">
+        <input type="hidden" name="_subject" value="Autoevaluación CV completada — Maru Helps You">
+        <input type="hidden" name="formulario" value="autoevaluacion-cv">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="tu@email.com" required>
+        <div class="capture-consent">
+          <input type="checkbox" id="evalConsent" required>
+          <label for="evalConsent">Acepto que Maru Helps You almacene mis datos conforme a la <a href="index.html#privacidad" style="color:var(--navy)">Política de Privacidad</a> y la Ley 81 de 2019 de Panamá.</label>
+        </div>
+        <button type="submit" class="capture-submit">Ver mi resultado</button>
+      </form>
+      <button class="skip-results" onclick="showResults()">Continuar sin dejar mis datos</button>
+    </div>
+  `;
+}
+
+function handleCapture(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.capture-submit');
+  btn.textContent = 'Calculando...'; btn.disabled = true;
+  const data = new FormData(e.target);
+  fetch('https://formspree.io/f/mbdvqzoo', {
+    method: 'POST', body: data, headers: {'Accept': 'application/json'}
+  }).then(() => showResults()).catch(() => showResults());
+}
+
+function showResults() {
+  buildQueue();
+
+  // Calculate scores
+  const catScores = {};
+  const catMax = {};
+
+  questions.forEach((q, gi) => {
+    const cat = q.category;
+    if (!catScores[cat]) { catScores[cat] = 0; catMax[cat] = 0; }
+    const maxScore = Math.max(...q.options.map(o => o.score));
+    catMax[cat] += maxScore;
+    if (answers[q.id] !== undefined) {
+      catScores[cat] += q.options[answers[q.id]].score;
+    }
+  });
+
+  // Check if LinkedIn was skipped
+  const linkedinSkipped = activeQueue.findIndex(q => q.id === 'li1') === -1;
+
+  // Total (exclude linkedin from total if skipped, for fairness)
+  let totalScore = 0; let totalMax = 0;
+  Object.entries(catScores).forEach(([cat, s]) => {
+    if (linkedinSkipped && cat === 'LinkedIn') return;
+    totalScore += s; totalMax += catMax[cat];
+  });
+  const pct = totalMax > 0 ? Math.round((totalScore / totalMax) * 100) : 0;
+
+  let tier, tierColor, tierDesc;
+  if (pct >= 80) {
+    tier = 'Perfil sólido'; tierColor = '#2E7D4F';
+    tierDesc = 'Tu CV está bien posicionado. Con ajustes estratégicos puedes maximizar tu visibilidad y diferenciarte en procesos competitivos.';
+  } else if (pct >= 60) {
+    tier = 'En desarrollo'; tierColor = '#C4621D';
+    tierDesc = 'Tienes una base sólida pero hay oportunidades claras de mejora. Algunos cambios específicos pueden duplicar tu tasa de respuesta.';
+  } else if (pct >= 40) {
+    tier = 'Necesita trabajo'; tierColor = '#8B7A20';
+    tierDesc = 'Tu CV tiene brechas importantes que pueden estar costándote oportunidades reales. Una revisión estratégica puede cambiar los resultados.';
+  } else {
+    tier = 'Alta urgencia'; tierColor = '#8B2020';
+    tierDesc = 'Tu perfil actual puede estar siendo descartado antes de que un humano lo vea. Es el momento de hacer cambios fundamentales.';
+  }
+
+  // Build category display (exclude linkedin if skipped)
+  const catDisplay = Object.entries(catScores).filter(([cat]) => {
+    return !(linkedinSkipped && cat === 'LinkedIn');
+  }).map(([cat, s]) => {
+    const p = catMax[cat] > 0 ? Math.round((s / catMax[cat]) * 100) : 0;
+    const color = p >= 75 ? '#2E7D4F' : p >= 50 ? '#C4621D' : '#8B2020';
+    return {cat, p, color};
+  });
+
+  // Recommendations
+  const recs = [];
+  catDisplay.forEach(({cat, p}) => {
+    if (cat === 'Palabras clave y visibilidad' && p < 70) {
+      recs.push({level: p < 40 ? 'high' : 'med', icon: p < 40 ? '!' : '~',
+        title: 'Incorpora palabras clave en tu CV',
+        desc: 'Lee cada oferta de trabajo y extrae los términos que se repiten. Incorpóralos de forma natural en tu título, resumen y experiencia. Esto mejora drásticamente tus posibilidades de ser encontrado.'});
+    }
+    if (cat === 'Formato del CV' && p < 70) {
+      recs.push({level: p < 40 ? 'high' : 'med', icon: p < 40 ? '!' : '~',
+        title: 'Simplifica el formato de tu CV',
+        desc: 'Usa una sola columna, elimina gráficos y barras visuales, y guarda siempre como PDF con texto seleccionable. Los sistemas automáticos no pueden leer diseños complejos.'});
+    }
+    if (cat === 'Contenido y logros' && p < 70) {
+      recs.push({level: p < 40 ? 'high' : 'med', icon: p < 40 ? '!' : '~',
+        title: 'Convierte responsabilidades en logros',
+        desc: 'Para cada experiencia, pregúntate: ¿qué mejoré? ¿cuánto? ¿en qué tiempo? Agrega números, porcentajes o resultados concretos. Un logro cuantificado vale 5 veces más que una descripción genérica.'});
+    }
+    if (cat === 'LinkedIn' && p < 70) {
+      recs.push({level: p < 40 ? 'high' : 'med', icon: p < 40 ? '!' : '~',
+        title: 'Optimiza tu perfil de LinkedIn',
+        desc: 'Completa todas las secciones, agrega palabras clave en tu título y escribe tu historia en la sección "Acerca de". Los reclutadores buscan candidatos directamente en LinkedIn antes de publicar vacantes.'});
+    }
+    if (cat === 'Estrategia de búsqueda' && p < 70) {
+      recs.push({level: p < 40 ? 'high' : 'med', icon: p < 40 ? '!' : '~',
+        title: 'Define tu propuesta de valor única',
+        desc: 'Antes de aplicar a la próxima vacante, escribe en una oración qué te hace diferente a otros candidatos con experiencia similar. Esa frase debe estar en tu resumen, en tu LinkedIn y en tu carta de presentación.'});
+    }
+  });
+
+  if (linkedinSkipped) {
+    recs.push({level: 'high', icon: '!',
+      title: 'Crea tu perfil de LinkedIn — es urgente',
+      desc: 'El 87% de los reclutadores en LATAM usan LinkedIn para buscar candidatos. No tener perfil te deja fuera de muchas oportunidades antes de que publiquen la vacante. El primer paso es crear el perfil con foto, título y experiencia básica.'});
+  }
+
+  // WhatsApp message
+  const waMsg = encodeURIComponent(`Hola Mily, completé la autoevaluación de CV y obtuve ${pct}% (${tier}). Me gustaría saber más sobre cómo mejorar mi perfil.`);
+
+  const results = document.getElementById('results');
+  results.innerHTML = `
+    <div class="score-card">
+      <div class="score-label">Tu resultado</div>
+      <div class="score-circle" style="border-color:${tierColor}50">
+        <div class="score-num" style="color:${tierColor}">${pct}</div>
+        <div class="score-total">/ 100</div>
+      </div>
+      <div class="score-title" style="color:${tierColor}">${tier}</div>
+      <p class="score-desc">${tierDesc}</p>
+    </div>
+
+    <div class="breakdown">
+      <div class="breakdown-title">Resultado por área</div>
+      ${catDisplay.map(({cat, p, color}) => `
+        <div class="cat-row">
+          <div class="cat-header">
+            <span class="cat-name">${cat}</span>
+            <span class="cat-score" style="color:${color}">${p}%</span>
+          </div>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:${p}%;background:${color}"></div></div>
+        </div>
+      `).join('')}
+      ${linkedinSkipped ? `
+        <div class="cat-row">
+          <div class="cat-header">
+            <span class="cat-name">LinkedIn</span>
+            <span class="cat-score" style="color:#8B2020">Sin perfil</span>
+          </div>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:5%;background:#8B2020"></div></div>
+        </div>` : ''}
+    </div>
+
+    ${recs.length > 0 ? `
+    <div class="recs">
+      <div class="recs-title">Lo que debes hacer primero</div>
+      ${recs.map(r => `
+        <div class="rec-item">
+          <div class="rec-icon ${r.level}">${r.icon}</div>
+          <div class="rec-text"><h4>${r.title}</h4><p>${r.desc}</p></div>
+        </div>
+      `).join('')}
+    </div>` : ''}
+
+    <div class="cta-card">
+      <h3>${pct < 60 ? '¿Quieres que lo revisemos juntos?' : 'Da el siguiente paso'}</h3>
+      <p>${pct < 60
+        ? 'Con un diagnóstico personalizado identificamos exactamente qué cambiar y cómo hacerlo. Recibes un CV y LinkedIn optimizados, listos para usar.'
+        : 'Tu base es buena. Una revisión estratégica puede llevarte al siguiente nivel y maximizar tus resultados en procesos competitivos.'
+      }</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/50766339109?text=${waMsg}" target="_blank" rel="noopener" class="btn-gold">Quiero que revises mi perfil</a>
+        <a href="index.html#contacto" class="btn-outline">Enviar consulta por correo</a>
+      </div>
+      <button class="btn-restart" onclick="restart()">Repetir la evaluación</button>
+    </div>
+  `;
+
+  setTimeout(() => {
+    document.querySelectorAll('.cat-bar-fill').forEach(b => {
+      b.style.transition = 'width 1s ease';
+    });
+  }, 100);
+}
+
+function restart() {
+  answers = {};
+  currentActive = 0;
+  activeQueue = [];
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('questionsContainer').style.display = 'block';
+  document.querySelector('.progress-bar').style.display = 'block';
+  init();
+}
+
+init();
+</script>
+</body>
+</html>

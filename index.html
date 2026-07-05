@@ -2,10 +2,682 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=autoevaluacion.html">
-<title>Maru Helps You</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maru Helps You — Milantia Sierra</title>
+<meta name="description" content="Convierto experiencia en oportunidades. Con estrategia, comunicación e inteligencia artificial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-light:#2E4170;--gold:#C9A84C;--gold-light:#E8D08A;
+  --white:#FFFFFF;--off-white:#F9F7F4;--gray-light:#F2EFE9;
+  --gray-mid:#9B9690;--gray-text:#4A4845;
+  --serif:'DM Serif Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--gray-text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(27,42,74,0.97);backdrop-filter:blur(8px);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{height:40px;width:auto;object-fit:contain;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:0.4rem 1rem;border-radius:4px;font-weight:600!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--white)}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:0.5rem 0;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.85rem}
+  .nav-hamburger{display:flex}
+}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:80px 1.5rem 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 300px;gap:3.5rem;align-items:center}
+@media(max-width:700px){.hero-inner{grid-template-columns:1fr}.hero-photo{display:none!important}}
+.hero-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem}
+.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.1rem);color:var(--white);line-height:1.15;margin-bottom:0.4rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-tagline{font-family:var(--serif);font-size:1rem;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:1.1rem}
+.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:1.75rem;max-width:440px}
+.hero-actions{display:flex;gap:0.85rem;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy);padding:0.8rem 1.6rem;border-radius:4px;font-weight:600;font-size:0.88rem;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s,transform 0.1s;display:inline-block;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.8);padding:0.8rem 1.6rem;border-radius:4px;font-weight:500;font-size:0.88rem;text-decoration:none;transition:border-color 0.2s,color 0.2s;display:inline-block}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-photo{position:relative;align-self:stretch}
+.hero-photo img{width:100%;height:420px;object-fit:cover;object-position:center top;border-radius:2px;display:block}
+.hero-photo::after{content:'';position:absolute;inset:0;border:1px solid rgba(201,168,76,0.3);border-radius:2px;pointer-events:none}
+.hero-badge{position:absolute;bottom:-12px;left:-12px;background:var(--white);border-radius:4px;padding:0.65rem 0.9rem;box-shadow:0 4px 20px rgba(0,0,0,0.14);display:flex;align-items:center;gap:0.55rem}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:#2E7D4F;flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.2)}}
+.badge-text{font-size:0.72rem;font-weight:600;color:var(--navy)}
+.badge-sub{font-size:0.62rem;color:var(--gray-mid)}
+
+/* SOCIAL BAR */
+.social-bar{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:1rem 1.5rem;display:flex;justify-content:center;gap:1.75rem;flex-wrap:wrap}
+.social-link{display:flex;align-items:center;gap:0.45rem;color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.04em;transition:color 0.2s}
+.social-link:hover{color:var(--gold)}
+.social-link svg{width:14px;height:14px;fill:currentColor}
+
+/* SECTIONS */
+section{padding:4.5rem 1.5rem}
+.section-inner{max-width:900px;margin:0 auto}
+.section-label{font-size:0.68rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.55rem;display:flex;align-items:center;gap:0.55rem}
+.section-label::before{content:'';display:inline-block;width:20px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--serif);font-size:clamp(1.65rem,4vw,2.3rem);color:var(--navy);line-height:1.2;margin-bottom:0.7rem}
+.section-desc{font-size:0.975rem;color:var(--gray-mid);line-height:1.75;max-width:540px}
+
+/* SERVICIOS ACORDEÓN */
+.servicios{background:var(--off-white)}
+.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.5rem}
+.servicio-card{background:var(--white);border:1px solid #E8E4DC;border-radius:2px;overflow:hidden;transition:border-color 0.2s}
+.servicio-card:hover{border-color:rgba(201,168,76,0.4)}
+.servicio-header{padding:1.6rem;position:relative}
+.servicio-header::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.servicio-card.open .servicio-header::after{transform:scaleX(1)}
+.servicio-name{font-family:var(--serif);font-size:1.12rem;color:var(--navy);margin-bottom:0.25rem}
+.servicio-tagline{font-size:0.78rem;color:var(--gold);font-weight:600;margin-bottom:0.5rem;letter-spacing:0.02em}
+.servicio-summary{font-size:0.84rem;color:var(--gray-mid);line-height:1.6;margin-bottom:0.85rem}
+.servicio-toggle{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;font-weight:600;color:var(--navy);border:none;background:none;cursor:pointer;padding:0;font-family:var(--sans);transition:color 0.2s}
+.servicio-toggle:hover{color:var(--gold)}
+.toggle-icon{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;transition:transform 0.3s;flex-shrink:0}
+.servicio-card.open .toggle-icon{transform:rotate(180deg)}
+.servicio-body{display:none;padding:0 1.6rem 1.6rem;border-top:1px solid #F0EDE7}
+.servicio-card.open .servicio-body{display:block}
+.servicio-body-inner{padding-top:1.1rem}
+.servicio-items{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1.25rem}
+.servicio-items li{font-size:0.84rem;color:var(--gray-text);display:flex;align-items:flex-start;gap:0.5rem;line-height:1.55}
+.servicio-items li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+.servicio-items li strong{color:var(--navy);display:block;margin-bottom:2px}
+.servicio-price{padding-top:0.9rem;border-top:1px solid #F0EDE7;font-size:0.82rem;color:var(--gray-mid);margin-bottom:1rem}
+.servicio-price strong{font-size:1.05rem;color:var(--navy);font-weight:600}
+
+/* SOBRE MÍ */
+.about{background:var(--white)}
+.about-inner{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start;margin-top:2.5rem}
+@media(max-width:800px){.about-inner{grid-template-columns:1fr}}
+.about-text p{font-size:0.975rem;color:var(--gray-text);line-height:1.85;margin-bottom:1.1rem}
+.about-highlight{font-family:var(--serif);font-size:1.05rem;color:var(--navy);line-height:1.65;border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.5rem 0;font-style:italic}
+.about-photo{position:relative}
+.about-photo img{width:100%;border-radius:2px;object-fit:cover;display:block}
+.about-photo::after{content:'';position:absolute;inset:0;border:1px solid rgba(201,168,76,0.25);border-radius:2px;pointer-events:none}
+
+/* TESTIMONIOS */
+.testimonios{background:var(--off-white)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:2.5rem}
+.testi-card{background:var(--white);border:1px solid #E8E4DC;border-radius:2px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.testi-quote{font-size:0.875rem;color:var(--gray-text);line-height:1.7;flex:1;font-style:italic}
+.testi-quote::before{content:'\201C';font-family:var(--serif);font-size:2rem;color:var(--gold);line-height:0;vertical-align:-0.5rem;margin-right:0.2rem}
+.testi-author{display:flex;align-items:center;gap:0.65rem}
+.testi-avatar{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;color:var(--gold);flex-shrink:0}
+.testi-name{font-size:0.85rem;font-weight:600;color:var(--navy)}
+.testi-role{font-size:0.75rem;color:var(--gray-mid)}
+.testi-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:2px;display:inline-block;margin-top:0.25rem}
+.tag-kit{background:rgba(27,42,74,0.08);color:var(--navy)}
+.tag-ebook{background:rgba(201,168,76,0.15);color:#8B6914}
+
+/* METODOLOGÍA */
+.metodologia{background:var(--navy)}
+.metodologia .section-title{color:var(--white)}
+.metodologia .section-desc{color:rgba(255,255,255,0.5)}
+.metodo-box{background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.18);border-radius:2px;padding:1.2rem 1.4rem;margin:2rem 0}
+.metodo-box p{font-size:0.875rem;color:rgba(255,255,255,0.72);line-height:1.75}
+.metodo-box strong{color:var(--gold)}
+.proceso-label{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem}
+.proceso-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.75rem}
+.paso-num{font-family:var(--serif);font-size:2.2rem;color:rgba(201,168,76,0.14);line-height:1;margin-bottom:0.5rem}
+.paso-title{font-size:0.875rem;font-weight:600;color:var(--white);margin-bottom:0.3rem}
+.paso-desc{font-size:0.8rem;color:rgba(255,255,255,0.42);line-height:1.65}
+
+/* RECURSOS */
+.recursos{background:var(--off-white)}
+.recursos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;margin-top:2.25rem}
+.recurso-card{background:var(--white);border:1px solid #E8E4DC;border-radius:2px;padding:1.4rem;display:flex;flex-direction:column}
+.recurso-tag{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.18rem 0.55rem;border-radius:2px;display:inline-block;width:fit-content;margin-bottom:0.7rem}
+.tag-free{background:rgba(46,125,79,0.1);color:#2E7D4F}
+.tag-premium{background:rgba(201,168,76,0.12);color:#8B6914}
+.recurso-title{font-weight:600;font-size:0.875rem;color:var(--navy);margin-bottom:0.35rem;line-height:1.4}
+.recurso-desc{font-size:0.78rem;color:var(--gray-mid);line-height:1.6;flex:1;margin-bottom:0.9rem}
+.recurso-price{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:0.45rem}
+.recurso-cta{font-size:0.78rem;font-weight:600;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:0.3rem;transition:color 0.2s;background:none;border:none;cursor:pointer;font-family:var(--sans);padding:0}
+.recurso-cta:hover{color:var(--gold)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:300;align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:4px;padding:2rem;width:100%;max-width:420px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;color:var(--gray-mid);font-size:1.25rem;line-height:1;padding:0.25rem}
+.modal-close:hover{color:var(--navy)}
+.modal-title{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-bottom:0.4rem}
+.modal-sub{font-size:0.85rem;color:var(--gray-mid);line-height:1.6;margin-bottom:1.25rem}
+.modal-form{display:flex;flex-direction:column;gap:0.85rem}
+.modal-form .form-field{display:flex;flex-direction:column;gap:0.25rem}
+.modal-form label{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--gray-mid)}
+.modal-form input{font-family:var(--sans);font-size:0.9rem;color:var(--navy);background:var(--off-white);border:1px solid #E0DBD2;border-radius:2px;padding:0.7rem 0.9rem;outline:none;transition:border-color 0.2s}
+.modal-form input:focus{border-color:var(--gold)}
+.modal-consent{display:flex;align-items:flex-start;gap:0.6rem;margin-top:0.25rem}
+.modal-consent input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:var(--navy)}
+.modal-consent label{font-size:0.75rem;color:var(--gray-mid);line-height:1.5;cursor:pointer}
+.modal-consent a{color:var(--navy);text-decoration:underline}
+.modal-submit{background:var(--navy);color:var(--white);border:none;padding:0.85rem;font-family:var(--sans);font-size:0.875rem;font-weight:600;border-radius:2px;cursor:pointer;transition:background 0.2s;width:100%}
+.modal-submit:hover{background:var(--navy-light)}
+.modal-success{text-align:center;padding:1rem 0}
+.modal-success h3{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-bottom:0.5rem}
+.modal-success p{font-size:0.875rem;color:var(--gray-mid);line-height:1.6}
+
+/* PRIVACY MODAL */
+.privacy-content{font-size:0.82rem;color:var(--gray-text);line-height:1.7}
+.privacy-content h4{font-size:0.875rem;font-weight:600;color:var(--navy);margin:1rem 0 0.35rem}
+.privacy-content p{margin-bottom:0.5rem}
+
+/* CONTACTO */
+.contacto{background:var(--white)}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.5rem}
+@media(max-width:700px){.contacto-grid{grid-template-columns:1fr;gap:2rem}}
+.contacto-left h3{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-bottom:0.7rem}
+.contacto-left p{font-size:0.9rem;color:var(--gray-mid);line-height:1.75;margin-bottom:1rem}
+.contacto-points{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+.contacto-points li{font-size:0.85rem;color:var(--gray-text);display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5}
+.contacto-points li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+.contact-form{display:flex;flex-direction:column;gap:0.9rem}
+.form-field{display:flex;flex-direction:column;gap:0.28rem}
+.form-field label{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--gray-mid)}
+.form-field input,.form-field select,.form-field textarea{font-family:var(--sans);font-size:0.88rem;color:var(--navy);background:var(--off-white);border:1px solid #E0DBD2;border-radius:2px;padding:0.7rem 0.9rem;outline:none;transition:border-color 0.2s;resize:none}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)}
+.form-consent{display:flex;align-items:flex-start;gap:0.6rem}
+.form-consent input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:var(--navy)}
+.form-consent label{font-size:0.75rem;color:var(--gray-mid);line-height:1.5;cursor:pointer}
+.form-consent a{color:var(--navy);text-decoration:underline}
+.form-submit{background:var(--navy);color:var(--white);border:none;padding:0.875rem 2rem;font-family:var(--sans);font-size:0.875rem;font-weight:600;border-radius:2px;cursor:pointer;transition:background 0.2s;letter-spacing:0.03em}
+.form-submit:hover{background:var(--navy-light)}
+.form-note{font-size:0.72rem;color:var(--gray-mid);line-height:1.5}
+
+/* CONTACTO BAR */
+.contacto-bar{background:var(--navy);padding:2.25rem 1.5rem}
+.contacto-bar .section-inner{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.cbar-item{display:flex;align-items:center;gap:0.65rem}
+.cbar-icon{width:34px;height:34px;border-radius:2px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cbar-icon svg{width:15px;height:15px;fill:var(--gold)}
+.cbar-label{font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-bottom:1px}
+.cbar-value{font-size:0.84rem;color:rgba(255,255,255,0.78);font-weight:500;text-decoration:none}
+.cbar-value:hover{color:var(--gold)}
+
+/* FOOTER */
+footer{background:#111820;padding:1.75rem;text-align:center}
+.footer-logo{height:38px;width:auto;margin-bottom:0.5rem;filter:brightness(0) invert(1);opacity:0.6}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.18)}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:0.5rem}
+.footer-links a{font-size:0.7rem;color:rgba(255,255,255,0.3);text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+
+/* NOTIF */
+.notif{position:fixed;bottom:1.25rem;left:1.25rem;z-index:200;background:var(--white);border-radius:6px;box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:0.8rem 1rem;display:flex;align-items:center;gap:0.7rem;max-width:270px;transform:translateY(16px);opacity:0;transition:transform 0.4s ease,opacity 0.4s ease;pointer-events:none}
+.notif.show{transform:translateY(0);opacity:1}
+.notif-av{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem;font-weight:700}
+.notif-txt{font-size:0.76rem;color:var(--gray-text);line-height:1.4}
+.notif-txt strong{color:var(--navy)}
+.notif-time{font-size:0.66rem;color:var(--gray-mid);margin-top:2px}
+</style>
 </head>
 <body>
-<script>window.location.href='autoevaluacion.html';</script>
+
+<!-- NOTIF -->
+<div class="notif" id="notif">
+  <div class="notif-av" id="nav-av"></div>
+  <div><div class="notif-txt" id="ntxt"></div><div class="notif-time" id="ntime"></div></div>
+</div>
+
+<!-- MODAL RECURSO GRATUITO -->
+<div class="modal-overlay" id="freeModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('freeModal')">&times;</button>
+    <div id="freeModalContent">
+      <div class="modal-title" id="freeModalTitle">Descarga gratuita</div>
+      <p class="modal-sub">Déjanos tu nombre y correo para recibir el recurso de inmediato.</p>
+      <form class="modal-form" onsubmit="handleFreeForm(event)">
+        <div class="form-field"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
+        <div class="form-field"><label>Correo electrónico</label><input type="email" name="email" placeholder="tu@email.com" required></div>
+        <input type="hidden" name="_subject" value="Descarga recurso gratuito — Maru Helps You">
+        <input type="hidden" name="formulario" value="recurso-gratuito">
+        <input type="hidden" name="recurso" id="recursoHidden" value="">
+        <div class="modal-consent">
+          <input type="checkbox" id="freeConsent" required>
+          <label for="freeConsent">Acepto que Maru Helps You almacene mis datos conforme a la <a href="#" onclick="openPrivacy(event)">Política de Privacidad</a> y la Ley 81 de 2019 de Panamá.</label>
+        </div>
+        <button type="submit" class="modal-submit">Recibir recurso gratuito</button>
+      </form>
+    </div>
+    <div id="freeModalSuccess" style="display:none" class="modal-success">
+      <h3>¡Listo!</h3>
+      <p>Te enviamos el recurso a tu correo en los próximos minutos.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PRIVACIDAD -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+    <div class="modal-title">Política de Privacidad</div>
+    <p class="modal-sub">Maru Helps You — Milantia Sierra</p>
+    <div class="privacy-content">
+      <h4>Responsable del tratamiento</h4><p>Milantia Sierra, operando bajo el nombre comercial Maru Helps You. Contacto: maruhelpyou@gmail.com</p>
+      <h4>Datos que recopilamos</h4><p>Nombre y correo electrónico, proporcionados voluntariamente a través de los formularios de este sitio.</p>
+      <h4>Finalidad del tratamiento</h4><p>Enviar los recursos solicitados, responder consultas y, con tu consentimiento, enviar comunicaciones sobre servicios y contenidos de Maru Helps You.</p>
+      <h4>Base legal</h4><p>Tu consentimiento expreso, conforme a la Ley 81 de 26 de marzo de 2019 de la República de Panamá sobre Protección de Datos Personales.</p>
+      <h4>Tus derechos</h4><p>Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos. Escríbenos a maruhelpyou@gmail.com para ejercer cualquier derecho.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" style="font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;color:var(--white);text-decoration:none;letter-spacing:0.01em">Maru <span style="color:#C9A84C">Helps You</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#contacto" class="nav-cta">Consulta</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Maru Helps You</p>
+      <h1>Convierto experiencia<br>en <em>oportunidades.</em></h1>
+      <p class="hero-tagline">Con estrategia, comunicación e inteligencia artificial.</p>
+      <p class="hero-sub">Ayudo a profesionales y pequeños negocios a transformar lo que saben en activos que generan resultados reales — sin contratar una agencia.</p>
+      <div class="hero-actions">
+        <a href="#servicios" class="btn-primary">Ver cómo puedo ayudarte</a>
+        <a href="#contacto" class="btn-ghost">Enviar consulta</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="foto-mily-hero.jpg" alt="Milantia Sierra — Maru Helps You">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        <div><div class="badge-text">Disponible ahora</div><div class="badge-sub">Panamá · LATAM remoto</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <a href="https://instagram.com/maruhelpsyouai" target="_blank" rel="noopener" class="social-link">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @maruhelpsyouai
+  </a>
+  <a href="https://linkedin.com/company/maru-helps-you" target="_blank" rel="noopener" class="social-link">
+    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    LinkedIn
+  </a>
+  <a href="https://www.tiktok.com/@maru.helps.you.ai" target="_blank" rel="noopener" class="social-link">
+    <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+    TikTok
+  </a>
+  <a href="https://wa.me/50766339109" target="_blank" rel="noopener" class="social-link">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="section-inner">
+    <p class="section-label">Servicios</p>
+    <h2 class="section-title">Elige tu camino</h2>
+    <p class="section-desc">Tres líneas de trabajo diseñadas para convertir lo que ya sabes en algo que genera oportunidades reales.</p>
+    <div class="servicios-grid">
+      <div class="servicio-card" id="card1">
+        <div class="servicio-header">
+          <div class="servicio-name">Impulsa tu carrera</div>
+          <div class="servicio-tagline">Para profesionales que quieren posicionarse mejor</div>
+          <div class="servicio-summary">Tienes experiencia valiosa pero no sabes cómo comunicarla. Te ayudo a construir un perfil que abre puertas.</div>
+          <button class="servicio-toggle" onclick="toggleCard('card1')">Ver más <svg class="toggle-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+        <div class="servicio-body"><div class="servicio-body-inner">
+          <ul class="servicio-items">
+            <li>Diagnóstico de tu CV y LinkedIn — qué está fallando y por qué</li>
+            <li>CV reescrito y optimizado para sistemas ATS de reclutamiento</li>
+            <li>LinkedIn estratégico: headline, About, experiencia y keywords</li>
+            <li>Narrativa profesional clara para entrevistas y networking</li>
+          </ul>
+          <div class="servicio-price">Desde <strong>$197</strong> · Paquete completo desde $267</div>
+          <a href="#contacto" class="btn-primary" style="font-size:0.85rem;padding:0.7rem 1.4rem;margin-top:0.25rem;display:inline-block">Consultar disponibilidad</a>
+        </div></div>
+      </div>
+      <div class="servicio-card" id="card2">
+        <div class="servicio-header">
+          <div class="servicio-name">Haz crecer tu negocio</div>
+          <div class="servicio-tagline">Para negocios que necesitan presencia digital que vende</div>
+          <div class="servicio-summary">No necesitas una agencia grande. Necesitas claridad en tu oferta y los activos correctos para comunicarla.</div>
+          <button class="servicio-toggle" onclick="toggleCard('card2')">Ver más <svg class="toggle-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+        <div class="servicio-body"><div class="servicio-body-inner">
+          <ul class="servicio-items">
+            <li><strong>Auditoría Express — $147</strong>Revisión de tu presencia digital: redes, website y oferta. Reporte con tus 3 problemas críticos y 5 acciones concretas para mejorar esta semana.</li>
+            <li><strong>Landing page — desde $147</strong>Página estratégica con copy, estructura y llamada a la acción. Lista en 48–72 horas. Para consultores, clínicas, hospedajes, coaches y servicios locales.</li>
+            <li><strong>Guía digital personalizada — desde $247</strong>Recurso descargable: guía de bienvenida, FAQ para clientes, propuesta comercial. Reduce consultas repetitivas y eleva tu imagen.</li>
+            <li><strong>Consultoría mensual con IA — $397/mes</strong>4 sesiones más acompañamiento entre sesiones. Cada mes defines qué necesitas: estrategia, activos, procesos o comunicación.</li>
+          </ul>
+          <a href="#contacto" class="btn-primary" style="font-size:0.85rem;padding:0.7rem 1.4rem;margin-top:0.25rem;display:inline-block">Consultar disponibilidad</a>
+        </div></div>
+      </div>
+      <div class="servicio-card" id="card3">
+        <div class="servicio-header">
+          <div class="servicio-name">Aprende a tu ritmo</div>
+          <div class="servicio-tagline">Recursos para implementar IA por tu cuenta</div>
+          <div class="servicio-summary">Metodología probada, lista para usar. Si prefieres aprender antes de contratar, empieza aquí.</div>
+          <button class="servicio-toggle" onclick="toggleCard('card3')">Ver más <svg class="toggle-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+        <div class="servicio-body"><div class="servicio-body-inner">
+          <ul class="servicio-items">
+            <li>Workbook "De 3 horas a 30 minutos" — 50 prompts listos para copiar y pegar en tu trabajo diario</li>
+            <li>Kit LinkedIn con IA — plantillas, prompts, checklist e incluye sesión 1:1 de 15 minutos</li>
+          </ul>
+          <div class="servicio-price">Desde <strong>$27</strong> · Acceso inmediato</div>
+          <a href="#recursos" class="btn-primary" style="font-size:0.85rem;padding:0.7rem 1.4rem;margin-top:0.25rem;display:inline-block">Ver recursos</a>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="about" id="sobre-mi">
+  <div class="section-inner">
+    <p class="section-label">Sobre mí</p>
+    <h2 class="section-title">Ciencia, viajes y un giro<br>que lo cambió todo.</h2>
+    <div class="about-inner">
+      <div class="about-text">
+        <p>Soy Mily, farmacéutica de profesión, nacida en Panamá y criada en el interior del país — rodeada de montañas y ríos que me enseñaron desde pequeña a soñar con lo grande. Desde niña me fascinaba entender cómo funcionan las cosas, y esa curiosidad me llevó a construir una carrera de más de veinte años en la industria farmacéutica y la investigación clínica.</p>
+        <div class="about-highlight">"Trabajé en ventas farmacéuticas, como monitora clínica y en el desarrollo de vacunas. Aprendí a estructurar información compleja, a documentar procesos y a tomar decisiones con criterio científico. Esas habilidades hoy son mi mayor ventaja."</div>
+        <p>Cuando llegó la inteligencia artificial, no la vi como una amenaza — la vi como una herramienta. Me certifiqué, experimenté, construí mi propia metodología y empecé a aplicarla en proyectos reales: desde Amazon FBA hasta contenido digital y consultoría de marca personal.</p>
+        <p>Hoy estoy construyendo mi independencia financiera combinando todo lo que soy: el rigor de la ciencia, la curiosidad del viajero y las herramientas de la era digital. Y ayudo a otros a hacer lo mismo — a convertir su experiencia en oportunidades concretas, usando IA con criterio, no con miedo.</p>
+      </div>
+      <div class="about-photo">
+        <img src="foto-mily.jpg" alt="Milantia Sierra">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS CAPTURAS -->
+<section class="testimonios" id="testimonios">
+  <div class="section-inner">
+    <p class="section-label">Lo que dicen</p>
+    <h2 class="section-title">Resultados reales,<br>personas reales.</h2>
+    <p class="section-desc">Mensajes directos de quienes ya usaron el Kit LinkedIn y CV con IA.</p>
+    <div class="testi-grid">
+      <div class="testi-card" style="padding:0;overflow:hidden">
+        <img src="testi-raul.jpg" alt="Testimonio Raul Moreno" style="width:100%;display:block;border-radius:2px 2px 0 0">
+        <div style="padding:0.75rem 1rem 1rem">
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#1B2A4A;color:#C9A84C">R</div>
+            <div><div class="testi-name">Raul Moreno</div><div class="testi-role">Profesional en búsqueda activa</div><span class="testi-tag tag-kit">Kit LinkedIn y CV</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" style="padding:0;overflow:hidden">
+        <img src="testi-melissa.jpg" alt="Testimonio Melissa Rujano" style="width:100%;display:block;border-radius:2px 2px 0 0">
+        <div style="padding:0.75rem 1rem 1rem">
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#2E4170;color:#E8D08A">M</div>
+            <div><div class="testi-name">Melissa Rujano</div><div class="testi-role">Profesional</div><span class="testi-tag tag-kit">Kit LinkedIn y CV</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" style="padding:0;overflow:hidden">
+        <img src="testi-julieta.jpg" alt="Testimonio Julieta Guerra" style="width:100%;display:block;border-radius:2px 2px 0 0">
+        <div style="padding:0.75rem 1rem 1rem">
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#C9A84C;color:#1B2A4A">J</div>
+            <div><div class="testi-name">Julieta Guerra</div><div class="testi-role">Profesional</div><span class="testi-tag tag-kit">Kit LinkedIn y CV</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS TEXTO -->
+<section style="background:var(--white);padding:4.5rem 1.5rem">
+  <div class="section-inner">
+    <p class="section-label">También dicen</p>
+    <h2 class="section-title">Impacto en negocios<br>y emprendedores.</h2>
+    <p class="section-desc">Resultados del ebook de prompting aplicado a distintos sectores.</p>
+    <div class="testi-grid" style="margin-top:2rem">
+      <div class="testi-card">
+        <p class="testi-quote">Este ebook fue una herramienta valiosa para mejorar mi trabajo. Me brindó estrategias prácticas que pude aplicar de inmediato, mejoró mi comunicación y me ayudó a ofrecer un servicio más profesional.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#F2EFE9;color:#1B2A4A;font-size:0.75rem">WR</div>
+          <div><div class="testi-name">Wendy Rivera</div><div class="testi-role">Agente de bienes raíces</div><span class="testi-tag tag-ebook">Ebook</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-quote">Como emprendedor y dueño de mi empresa, este ebook me aportó muchísimo valor. Ideas claras, concretas y fáciles de poner en marcha. Lo recomiendo a cualquier empresario que quiera crecer.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#F2EFE9;color:#1B2A4A">P</div>
+          <div><div class="testi-name">Primary Fence</div><div class="testi-role">Empresario · Panamá</div><span class="testi-tag tag-ebook">Ebook</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-quote">Ha sido una herramienta muy acertada para mi emprendimiento. Me ayudó a impulsar las ventas, crear nuevas ideas y generar contenido valioso para interactuar con mis clientes.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#F2EFE9;color:#1B2A4A">F</div>
+          <div><div class="testi-name">Floristería The Perfect Gift</div><div class="testi-role">Emprendimiento · @tpg.panama</div><span class="testi-tag tag-ebook">Ebook</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section class="metodologia">
+  <div class="section-inner">
+    <p class="section-label">Metodología</p>
+    <h2 class="section-title" style="color:var(--white)">Secuencia de Precisión Verbal</h2>
+    <p class="section-desc">Sistema propio de prompting estructurado que convierte conocimiento complejo en comunicación clara, rápida y accionable.</p>
+    <div class="metodo-box">
+      <p>La mayoría usa la IA como una caja de búsqueda. La <strong>Secuencia de Precisión Verbal</strong> es un sistema de instrucciones estructuradas que extrae lo mejor de los modelos de lenguaje — con contexto, criterio y dirección estratégica — para producir resultados que realmente se usan. No es un prompt. Es un método.</p>
+    </div>
+    <div class="proceso-label">Cómo trabajo con cada cliente</div>
+    <div class="proceso-steps">
+      <div><div class="paso-num">01</div><div class="paso-title">Diagnóstico</div><div class="paso-desc">Identifico qué tienes, qué falta y dónde está el mayor impacto para tu caso.</div></div>
+      <div><div class="paso-num">02</div><div class="paso-title">Estructura</div><div class="paso-desc">Organizo tu experiencia en una narrativa coherente y estratégica antes de producir nada.</div></div>
+      <div><div class="paso-num">03</div><div class="paso-title">Ejecución</div><div class="paso-desc">Uso la Secuencia de Precisión Verbal para producir entregables de alta calidad en el menor tiempo.</div></div>
+      <div><div class="paso-num">04</div><div class="paso-title">Entrega</div><div class="paso-desc">Recibes algo concreto y listo para usar. No recomendaciones — un activo que genera resultados.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECURSOS -->
+<section class="recursos" id="recursos">
+  <div class="section-inner">
+    <p class="section-label">Recursos</p>
+    <h2 class="section-title">Empieza donde estés</h2>
+    <p class="section-desc">Desde guías gratuitas hasta metodología completa. El punto de entrada que se adapta a donde estás ahora.</p>
+    <div class="recursos-grid">
+      <div class="recurso-card" style="border-color:var(--navy);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy)"></div>
+        <span class="recurso-tag" style="background:rgba(27,42,74,0.1);color:var(--navy)">Nuevo · Gratis</span>
+        <div class="recurso-title">Autoevaluación de CV con IA</div>
+        <div class="recurso-desc">15 preguntas · Resultado inmediato · Recomendaciones personalizadas según tu perfil.</div>
+        <a href="cv-evaluacion.html" class="recurso-cta" style="color:var(--navy);font-weight:700">Evaluar mi CV ahora &rarr;</a>
+      </div>
+      <div class="recurso-card">
+        <span class="recurso-tag tag-free">Gratis</span>
+        <div class="recurso-title">3 secretos para que tu CV deje de ser invisible</div>
+        <div class="recurso-desc">Lo que los reclutadores no te van a decir — y la IA ya está usando. Keywords, formato ATS y LinkedIn.</div>
+        <button class="recurso-cta" onclick="openFreeModal('CV','Descarga los 3 secretos para tu CV')">Descargar gratis &rarr;</button>
+      </div>
+      <div class="recurso-card">
+        <span class="recurso-tag tag-free">Gratis</span>
+        <div class="recurso-title">7 elementos de una landing page que vende</div>
+        <div class="recurso-desc">Para negocios que quieren mejorar su presencia digital. Incluye diferencia entre landing, one-page y website.</div>
+        <button class="recurso-cta" onclick="openFreeModal('Landing','Descarga los 7 elementos de landing page')">Descargar gratis &rarr;</button>
+      </div>
+      <div class="recurso-card">
+        <span class="recurso-tag tag-premium">Premium</span>
+        <div class="recurso-title">Workbook: De 3 horas a 30 minutos</div>
+        <div class="recurso-desc">50 prompts listos para copiar y pegar. Reduce el tiempo de tus tareas diarias usando IA con criterio.</div>
+        <div class="recurso-price">$27</div>
+        <a href="#contacto" class="recurso-cta">Obtener el workbook &rarr;</a>
+      </div>
+      <div class="recurso-card">
+        <span class="recurso-tag tag-premium">Premium</span>
+        <div class="recurso-title">Kit LinkedIn con IA</div>
+        <div class="recurso-desc">Plantillas, prompts y checklist completo. Incluye sesión 1:1 de 15 minutos. Resultados comprobados.</div>
+        <div class="recurso-price">$47</div>
+        <a href="#contacto" class="recurso-cta">Obtener el kit &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="section-inner">
+    <p class="section-label">Contacto</p>
+    <h2 class="section-title">Tu experiencia vale más<br>de lo que comunicas.</h2>
+    <div class="contacto-grid">
+      <div class="contacto-left">
+        <h3>Cuéntame qué necesitas.</h3>
+        <p>Reviso cada mensaje personalmente y respondo en menos de 24 horas. Si tu caso requiere una llamada, lo coordinamos después.</p>
+        <ul class="contacto-points">
+          <li>Sin compromiso — solo cuéntame qué está pasando</li>
+          <li>Respuesta personalizada en menos de 24 horas</li>
+          <li>Si aplica, recibirás una propuesta con alcance y precio</li>
+          <li>Atención en Panamá y LATAM remoto</li>
+        </ul>
+      </div>
+      <form class="contact-form" onsubmit="handleContactForm(event)">
+        <div class="form-field"><label>Tu nombre</label><input type="text" name="nombre" placeholder="Nombre completo" required></div>
+        <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="tu@email.com" required></div>
+        <div class="form-field">
+          <label>Me interesa</label>
+          <select name="servicio" required>
+            <option value="">Selecciona una opción</option>
+            <option>Impulsa tu carrera — CV y LinkedIn</option>
+            <option>Haz crecer tu negocio — Auditoría Express</option>
+            <option>Haz crecer tu negocio — Landing page</option>
+            <option>Haz crecer tu negocio — Consultoría mensual</option>
+            <option>Recursos — Workbook o Kit LinkedIn</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-field"><label>Cuéntame brevemente</label><textarea rows="3" name="mensaje" placeholder="¿Qué está pasando en tu negocio o carrera que quieres mejorar?" required></textarea></div>
+        <div class="form-consent">
+          <input type="checkbox" id="contactConsent" required>
+          <label for="contactConsent">Acepto que Maru Helps You almacene mis datos conforme a la <a href="#" onclick="openPrivacy(event)">Política de Privacidad</a> y la Ley 81 de 2019 de Panamá.</label>
+        </div>
+        <input type="hidden" name="_subject" value="Nueva consulta — Maru Helps You">
+        <button type="submit" class="form-submit">Enviar consulta</button>
+        <p class="form-note">Tu información va directamente a mi correo. Sin spam — respondo yo personalmente.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO BAR -->
+<div class="contacto-bar">
+  <div class="section-inner">
+    <div class="cbar-item">
+      <div class="cbar-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+      <div><div class="cbar-label">Email</div><a href="mailto:maruhelpyou@gmail.com" class="cbar-value">maruhelpyou@gmail.com</a></div>
+    </div>
+    <div class="cbar-item">
+      <div class="cbar-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+      <div><div class="cbar-label">Instagram</div><a href="https://instagram.com/maruhelpsyouai" target="_blank" rel="noopener" class="cbar-value">@maruhelpsyouai</a></div>
+    </div>
+    <div class="cbar-item">
+      <div class="cbar-icon"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+      <div><div class="cbar-label">LinkedIn</div><a href="https://linkedin.com/company/maru-helps-you" target="_blank" rel="noopener" class="cbar-value">Milantia Sierra</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;color:rgba(255,255,255,0.5);margin-bottom:0.5rem">Maru <span style="color:#C9A84C">Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; Panamá</div>
+  <div class="footer-links">
+    <a href="#" onclick="openPrivacy(event)">Política de Privacidad</a>
+    <a href="mailto:maruhelpyou@gmail.com">maruhelpyou@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+function toggleCard(id){
+  const card=document.getElementById(id);
+  const isOpen=card.classList.contains('open');
+  document.querySelectorAll('.servicio-card').forEach(c=>{c.classList.remove('open');const t=c.querySelector('.servicio-toggle');if(t)t.childNodes[0].textContent='Ver más ';});
+  if(!isOpen){card.classList.add('open');const t=card.querySelector('.servicio-toggle');if(t)t.childNodes[0].textContent='Ver menos ';}
+}
+
+function openFreeModal(type,title){
+  document.getElementById('recursoHidden').value=type;
+  document.getElementById('freeModalTitle').textContent=title;
+  document.getElementById('freeModalContent').style.display='block';
+  document.getElementById('freeModalSuccess').style.display='none';
+  document.getElementById('freeModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',function(e){if(e.target===this)closeModal(this.id)}));
+function handleFreeForm(e){
+  e.preventDefault();const btn=e.target.querySelector('.modal-submit');btn.textContent='Enviando...';btn.disabled=true;
+  const data=new FormData(e.target);
+  fetch('https://formspree.io/f/mbdvqzoo',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  .then(r=>{if(r.ok){document.getElementById('freeModalContent').style.display='none';document.getElementById('freeModalSuccess').style.display='block';}else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}})
+  .catch(()=>{btn.textContent='Error — intenta de nuevo';btn.disabled=false;});
+}
+function openPrivacy(e){e.preventDefault();document.getElementById('privacyModal').classList.add('open');document.body.style.overflow='hidden';}
+function handleContactForm(e){
+  e.preventDefault();const btn=e.target.querySelector('.form-submit');btn.textContent='Enviando...';btn.disabled=true;
+  const data=new FormData(e.target);
+  fetch('https://formspree.io/f/mbdvqzoo',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  .then(r=>{if(r.ok){btn.textContent='Mensaje enviado';btn.style.background='#2E7D4F';e.target.reset();}else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}})
+  .catch(()=>{btn.textContent='Error — intenta de nuevo';btn.disabled=false;});
+}
+
+const notifs=[
+  {av:'R',c:'#1B2A4A',tc:'#fff',txt:'<strong>Raul M.</strong> consiguió 2 entrevistas tras optimizar su CV',t:'Hace 2 horas'},
+  {av:'A',c:'#E8D08A',tc:'#1B2A4A',txt:'<strong>Ana C.</strong> descargó el recurso gratuito de CV',t:'Hace 35 minutos'},
+  {av:'5',c:'#2E7D4F',tc:'#fff',txt:'<strong>5 personas</strong> están viendo este sitio ahora mismo',t:'En este momento'},
+  {av:'L',c:'#2E4170',tc:'#fff',txt:'<strong>Laura V.</strong> solicitó información sobre el Kit LinkedIn',t:'Hace 1 hora'},
+  {av:'M',c:'#C9A84C',tc:'#1B2A4A',txt:'<strong>Manuel O.</strong> completó la evaluación de CV',t:'Hace 3 horas'},
+  {av:'P',c:'#9B9690',tc:'#fff',txt:'<strong>Patricia R.</strong> agendó su sesión 1:1',t:'Hace 4 horas'},
+];
+const notifEl=document.getElementById('notif');
+const navAvEl=document.getElementById('nav-av');
+const ntxtEl=document.getElementById('ntxt');
+const ntimeEl=document.getElementById('ntime');
+function showNotif(){
+  const n=notifs[ni%notifs.length];
+  navAvEl.textContent=n.av;
+  navAvEl.style.cssText=`width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.82rem;font-weight:700;background:${n.c};color:${n.tc}`;
+  ntxtEl.innerHTML=n.txt;ntimeEl.textContent=n.t;
+  notifEl.classList.add('show');
+  setTimeout(()=>{notifEl.classList.remove('show');ni++;setTimeout(showNotif,4500);},4500);
+}
+setTimeout(showNotif,3000);
+</script>
 </body>
 </html>

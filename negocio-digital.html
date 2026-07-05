@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Está tu servicio visible? — Maru Helps You</title>
+<meta name="description" content="Descubre en minutos si tu negocio o servicio está aprovechando el mundo digital. Diagnóstico gratuito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-light:#2E4170;--gold:#C9A84C;--gold-light:#E8D08A;
+  --white:#FFFFFF;--off-white:#F9F7F4;--gray-light:#F2EFE9;
+  --gray-mid:#9B9690;--gray-text:#4A4845;
+  --green:#2E7D4F;--red:#8B2020;--orange:#C4621D;
+  --serif:'DM Serif Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--off-white);color:var(--gray-text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+
+.header{background:var(--navy);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.header-brand{font-family:var(--serif);font-size:1rem;color:var(--white);text-decoration:none}
+.header-brand span{color:var(--gold)}
+.header-back{font-size:0.78rem;color:rgba(255,255,255,0.55);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.header-back:hover{color:var(--gold)}
+.header-back svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+
+.hero{background:var(--navy);padding:2.5rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-label{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.hero h1{font-family:var(--serif);font-size:clamp(1.75rem,4vw,2.5rem);color:var(--white);line-height:1.2;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);max-width:520px;margin:0 auto 1.5rem;line-height:1.7}
+.hero-for{display:flex;justify-content:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.5rem}
+.for-tag{font-size:0.75rem;font-weight:500;padding:0.3rem 0.75rem;border-radius:20px;border:1px solid rgba(201,168,76,0.3);color:rgba(255,255,255,0.65)}
+.hero-stats{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.25rem}
+.hero-stat-num{font-family:var(--serif);font-size:1.5rem;color:var(--gold)}
+.hero-stat-label{font-size:0.72rem;color:rgba(255,255,255,0.4)}
+
+.progress-bar{background:var(--navy);padding:0 1.5rem 1.5rem}
+.progress-track{max-width:620px;margin:0 auto}
+.progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem}
+.progress-label{font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.5)}
+.progress-pct{font-size:0.75rem;font-weight:600;color:var(--gold)}
+.progress-bg{height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--gold);border-radius:2px;transition:width 0.5s ease;width:0%}
+.phase-dots{display:flex;justify-content:center;gap:0.5rem;margin-top:0.75rem}
+.phase-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15);transition:all 0.3s}
+.phase-dot.active{background:var(--gold);transform:scale(1.2)}
+.phase-dot.done{background:rgba(201,168,76,0.4)}
+
+.main{max-width:640px;margin:0 auto;padding:2rem 1.5rem}
+
+.phase-header{background:var(--white);border:1px solid #E8E4DC;border-radius:4px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem}
+.phase-icon{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.phase-name{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.1rem}
+.phase-desc{font-size:0.85rem;color:var(--gray-text);font-weight:500}
+
+.q-card{background:var(--white);border:1px solid #E8E4DC;border-radius:4px;padding:1.75rem;margin-bottom:1rem;animation:fadeIn 0.3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.q-num{font-size:0.72rem;color:var(--gray-mid);margin-bottom:0.35rem}
+.q-text{font-family:var(--serif);font-size:1.05rem;color:var(--navy);line-height:1.45;margin-bottom:0.5rem}
+.q-hint{font-size:0.8rem;color:var(--gray-mid);line-height:1.55;margin-bottom:1.25rem;padding:0.65rem 0.85rem;background:var(--off-white);border-radius:2px;border-left:2px solid var(--gold)}
+
+.options{display:flex;flex-direction:column;gap:0.6rem}
+.option{display:flex;align-items:flex-start;gap:0.75rem;padding:0.85rem 1rem;border:1px solid #E8E4DC;border-radius:2px;cursor:pointer;transition:all 0.15s;background:var(--white)}
+.option:hover{border-color:var(--gold);background:var(--off-white)}
+.option.selected{border-color:var(--navy);background:var(--gray-light)}
+.option-radio{width:18px;height:18px;border-radius:50%;border:2px solid #E8E4DC;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.option.selected .option-radio{border-color:var(--navy);background:var(--navy)}
+.option.selected .option-radio::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--white)}
+.option-content{flex:1}
+.option-text{font-size:0.875rem;color:var(--gray-text);line-height:1.5;font-weight:500}
+.option-detail{font-size:0.78rem;color:var(--gray-mid);line-height:1.4;margin-top:0.2rem}
+
+.q-nav{display:flex;gap:0.75rem;margin-top:1.25rem;justify-content:space-between;align-items:center}
+.btn-next{background:var(--navy);color:var(--white);border:none;padding:0.8rem 1.75rem;font-family:var(--sans);font-size:0.875rem;font-weight:600;border-radius:2px;cursor:pointer;transition:background 0.2s}
+.btn-next:hover{background:var(--navy-light)}
+.btn-next:disabled{opacity:0.35;cursor:not-allowed}
+.btn-back{background:none;border:1px solid #E8E4DC;color:var(--gray-mid);padding:0.8rem 1.25rem;font-family:var(--sans);font-size:0.875rem;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.btn-back:hover{border-color:var(--navy);color:var(--navy)}
+
+/* RESULTS */
+.results{display:none;animation:fadeIn 0.4s ease}
+.results.show{display:block}
+.score-card{background:var(--navy);border-radius:4px;padding:2rem;text-align:center;margin-bottom:1.5rem}
+.score-label{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem}
+.score-circle{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 1rem}
+.score-num{font-family:var(--serif);font-size:2.5rem;color:var(--white);line-height:1}
+.score-total{font-size:0.75rem;color:rgba(255,255,255,0.4)}
+.score-title{font-family:var(--serif);font-size:1.4rem;margin-bottom:0.4rem}
+.score-desc{font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.6;max-width:400px;margin:0 auto}
+
+.result-type{background:var(--white);border:1px solid #E8E4DC;border-radius:4px;padding:1.5rem;margin-bottom:1.25rem}
+.result-type-label{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.result-type-title{font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin-bottom:0.5rem}
+.result-type-desc{font-size:0.875rem;color:var(--gray-text);line-height:1.65}
+
+.breakdown{margin-bottom:1.5rem}
+.breakdown-title{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-mid);margin-bottom:1rem}
+.cat-row{margin-bottom:0.85rem}
+.cat-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem}
+.cat-name{font-size:0.85rem;font-weight:500;color:var(--navy)}
+.cat-pct{font-size:0.8rem;font-weight:600}
+.cat-bar-bg{height:6px;background:#E8E4DC;border-radius:3px;overflow:hidden}
+.cat-bar-fill{height:100%;border-radius:3px;width:0%;transition:width 1s ease}
+
+.recs{margin-bottom:1.5rem}
+.recs-title{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-mid);margin-bottom:1rem}
+.rec-item{background:var(--white);border:1px solid #E8E4DC;border-radius:2px;padding:1rem 1.1rem;margin-bottom:0.75rem;display:flex;gap:0.85rem;align-items:flex-start}
+.rec-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;font-weight:700}
+.rec-icon.high{background:rgba(139,32,32,0.1);color:var(--red)}
+.rec-icon.med{background:rgba(196,98,29,0.1);color:var(--orange)}
+.rec-icon.low{background:rgba(46,125,79,0.1);color:var(--green)}
+.rec-text h4{font-size:0.875rem;font-weight:600;color:var(--navy);margin-bottom:0.2rem}
+.rec-text p{font-size:0.8rem;color:var(--gray-mid);line-height:1.55}
+
+.cta-card{background:var(--navy);border-radius:4px;padding:1.75rem;text-align:center;margin-bottom:2rem}
+.cta-card h3{font-family:var(--serif);font-size:1.3rem;color:var(--white);margin-bottom:0.5rem}
+.cta-card p{font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:1.25rem;max-width:380px;margin-left:auto;margin-right:auto}
+.cta-buttons{display:flex;flex-direction:column;gap:0.75rem;max-width:280px;margin:0 auto}
+.btn-gold{background:var(--gold);color:var(--navy);padding:0.9rem 1.5rem;border-radius:2px;font-weight:600;font-size:0.9rem;text-decoration:none;text-align:center;transition:background 0.2s;display:block}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline{border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.75);padding:0.9rem 1.5rem;border-radius:2px;font-weight:500;font-size:0.875rem;text-decoration:none;text-align:center;transition:all 0.2s;display:block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-restart{background:none;border:none;font-family:var(--sans);font-size:0.8rem;color:rgba(255,255,255,0.4);cursor:pointer;text-decoration:underline;margin:0.75rem auto 0;display:block}
+.btn-restart:hover{color:rgba(255,255,255,0.7)}
+
+.capture-card{background:var(--white);border:1px solid #E8E4DC;border-radius:4px;padding:1.75rem;margin-bottom:1.5rem}
+.capture-card h3{font-family:var(--serif);font-size:1.1rem;color:var(--navy);margin-bottom:0.35rem}
+.capture-card p{font-size:0.85rem;color:var(--gray-mid);line-height:1.6;margin-bottom:1.1rem}
+.capture-form{display:flex;flex-direction:column;gap:0.7rem}
+.capture-form input{font-family:var(--sans);font-size:0.875rem;color:var(--navy);background:var(--off-white);border:1px solid #E0DBD2;border-radius:2px;padding:0.7rem 0.9rem;outline:none;transition:border-color 0.2s}
+.capture-form input:focus{border-color:var(--gold)}
+.capture-consent{display:flex;align-items:flex-start;gap:0.5rem}
+.capture-consent input[type=checkbox]{width:14px;height:14px;flex-shrink:0;margin-top:3px;accent-color:var(--navy)}
+.capture-consent label{font-size:0.72rem;color:var(--gray-mid);line-height:1.5}
+.capture-submit{background:var(--navy);color:var(--white);border:none;padding:0.8rem;font-family:var(--sans);font-size:0.875rem;font-weight:600;border-radius:2px;cursor:pointer;transition:background 0.2s;width:100%}
+.capture-submit:hover{background:var(--navy-light)}
+.skip-link{font-size:0.75rem;color:var(--gray-mid);text-align:center;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:var(--sans);display:block;margin:0.5rem auto 0}
+.skip-link:hover{color:var(--navy)}
+
+.footer{text-align:center;padding:2rem 1.5rem;background:var(--navy)}
+.footer-brand{font-family:var(--serif);font-size:0.9rem;color:rgba(255,255,255,0.35);margin-bottom:0.3rem}
+.footer-brand span{color:var(--gold)}
+.footer-copy{font-size:0.68rem;color:rgba(255,255,255,0.18)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html" class="header-brand">Maru <span>Helps You</span></a>
+  <a href="index.html" class="header-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al inicio
+  </a>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Diagnóstico gratuito</div>
+  <h1>¿Están encontrando<br>lo que <em>ofreces</em>?</h1>
+  <p class="hero-sub">Para pequeños negocios, servicios independientes y profesionales que quieren dar el salto al mundo digital — sin tecnicismos.</p>
+  <div class="hero-for">
+    <span class="for-tag">Contadores</span>
+    <span class="for-tag">Profesores</span>
+    <span class="for-tag">Coaches</span>
+    <span class="for-tag">Tiendas pequeñas</span>
+    <span class="for-tag">Consultores</span>
+    <span class="for-tag">Freelancers</span>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">preguntas</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">áreas clave</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">minutos</div></div>
+  </div>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-track">
+    <div class="progress-info">
+      <span class="progress-label" id="progressLabel">Iniciando...</span>
+      <span class="progress-pct" id="progressPct">0%</span>
+    </div>
+    <div class="progress-bg"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="phase-dots">
+      <div class="phase-dot active" id="dot0"></div>
+      <div class="phase-dot" id="dot1"></div>
+      <div class="phase-dot" id="dot2"></div>
+      <div class="phase-dot" id="dot3"></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div id="questionsContainer"></div>
+  <div class="results" id="results"></div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">Maru <span>Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; maruhelpyou@gmail.com</div>
+</div>
+
+<script>
+const phases = [
+  { icon: '🏢', name: 'Tu actividad', desc: 'Cuéntanos un poco sobre lo que haces' },
+  { icon: '🔍', name: 'Visibilidad', desc: '¿Te pueden encontrar quienes te necesitan?' },
+  { icon: '💬', name: 'Claridad y confianza', desc: '¿Entienden qué ofreces y cómo contratarte?' },
+  { icon: '⚡', name: 'Tiempo y herramientas', desc: '¿Estás aprovechando lo digital para ahorrar tiempo?' },
+];
+
+const questions = [
+  // FASE 0 — Tu actividad
+  {
+    phase: 0,
+    text: '¿Cómo describes mejor lo que haces?',
+    hint: 'No hay respuesta correcta — esto nos ayuda a personalizar tu diagnóstico.',
+    options: [
+      { text: 'Ofrezco un servicio profesional', detail: 'Contador, abogado, coach, consultor, médico, diseñador...', score: 0 },
+      { text: 'Tengo un negocio con productos físicos', detail: 'Tienda, taller, producción artesanal, alimentos...', score: 0 },
+      { text: 'Enseño o capacito personas', detail: 'Profesor, instructor, tutor, formador...', score: 0 },
+      { text: 'Estoy empezando y aún no tengo clientes', detail: 'Tengo la idea o el conocimiento, pero recién estoy arrancando', score: 0 },
+    ]
+  },
+  {
+    phase: 0,
+    text: '¿Cuánto tiempo llevas ofreciendo esto?',
+    hint: 'Esto nos da contexto sobre en qué etapa digital te encuentras.',
+    options: [
+      { text: 'Acabo de empezar — menos de 6 meses', score: 1 },
+      { text: 'Entre 6 meses y 2 años', score: 2 },
+      { text: 'Más de 2 años', score: 3 },
+    ]
+  },
+  {
+    phase: 0,
+    text: '¿Cómo consigues tus clientes o estudiantes hoy?',
+    hint: 'Queremos entender tu punto de partida.',
+    options: [
+      { text: 'Por recomendación o boca a boca', detail: 'La gente me refiere — pero dependo de eso', score: 1 },
+      { text: 'Por WhatsApp — me escriben directamente', detail: 'Tengo mi número o catálogo de WhatsApp Business', score: 2 },
+      { text: 'Por redes sociales que mantengo activas', detail: 'Instagram, Facebook, TikTok u otra', score: 3 },
+      { text: 'Tengo un sitio web o perfil donde llegan', detail: 'La gente me busca y me encuentra', score: 4 },
+      { text: 'Todavía no tengo clientes regulares', score: 0 },
+    ]
+  },
+
+  // FASE 1 — Visibilidad
+  {
+    phase: 1,
+    text: '¿Tienes algún lugar en internet donde explicar qué ofreces?',
+    hint: 'Puede ser una red social, un perfil en Google, un sitio web o cualquier espacio digital donde alguien pueda conocerte.',
+    options: [
+      { text: 'Sí, tengo un sitio web o landing page', detail: 'Con información completa de mis servicios', score: 4 },
+      { text: 'Tengo redes sociales activas', detail: 'Instagram, Facebook, TikTok u otra con info de lo que hago', score: 3 },
+      { text: 'Solo tengo WhatsApp o WhatsApp Business', detail: 'La gente me escribe pero no hay más información disponible', score: 2 },
+      { text: 'Tengo algo pero está desactualizado', detail: 'Existe pero no refleja bien lo que ofrezco hoy', score: 1 },
+      { text: 'No tengo nada en internet aún', score: 0 },
+    ]
+  },
+  {
+    phase: 1,
+    text: 'Si alguien busca tu servicio o producto en Google o Instagram, ¿apareces?',
+    hint: 'Piensa como lo haría alguien que no te conoce y busca lo que tú ofreces.',
+    options: [
+      { text: 'Sí, aparezco entre los primeros resultados', score: 4 },
+      { text: 'Aparezco, pero hay que buscar bastante', score: 2 },
+      { text: 'No creo que aparezca', score: 0 },
+      { text: 'Nunca lo he revisado', score: 1 },
+    ]
+  },
+  {
+    phase: 1,
+    text: '¿Sabías que puedes aparecer en Google de forma gratuita con un perfil empresarial?',
+    hint: 'Google Business Profile es una herramienta gratuita que muestra tu negocio en Google Maps y búsquedas locales — con tu foto, contacto, horario y reseñas. Muchos negocios no saben que existe.',
+    options: [
+      { text: 'Sí, ya tengo mi perfil activo en Google', detail: 'Mi negocio aparece cuando alguien lo busca en Google', score: 4 },
+      { text: 'Lo sabía pero aún no lo he configurado', detail: 'Está pendiente en mi lista', score: 1 },
+      { text: 'No lo sabía — es la primera vez que escucho esto', detail: 'No tenía idea de que era gratis', score: 0 },
+    ]
+  },
+  {
+    phase: 1,
+    text: '¿Alguien que no te conoce puede entender qué ofreces en menos de 30 segundos?',
+    hint: 'Si alguien llega a tu perfil o sitio por primera vez, ¿queda claro qué vendes, para quién es y cómo contratarte?',
+    options: [
+      { text: 'Sí, está muy claro desde el primer vistazo', score: 4 },
+      { text: 'Más o menos — hay que leer bastante para entenderlo', score: 2 },
+      { text: 'Probablemente no — no está bien explicado', score: 0 },
+      { text: 'No tengo ningún perfil donde verlo', score: 0 },
+    ]
+  },
+
+  // FASE 2 — Claridad y confianza
+  {
+    phase: 2,
+    text: '¿Tienes tus servicios o productos con descripción y precio disponibles en algún lugar digital?',
+    hint: 'No tiene que ser un sitio web complejo — puede ser un catálogo de Instagram, un PDF compartible o una lista en tu perfil.',
+    options: [
+      { text: 'Sí, todo está claro y actualizado en mi sitio o redes', score: 4 },
+      { text: 'Tengo un catálogo de WhatsApp Business con mis productos o servicios', score: 3 },
+      { text: 'Tengo algo pero está incompleto o desactualizado', score: 2 },
+      { text: 'La gente tiene que preguntarme para saber qué ofrezco', score: 1 },
+      { text: 'No tengo nada de eso publicado', score: 0 },
+    ]
+  },
+  {
+    phase: 2,
+    text: '¿Tienes fotos, ejemplos o resultados de tu trabajo que un cliente nuevo pueda ver?',
+    hint: 'La prueba visual genera confianza antes de que te contacten. Puede ser un portafolio, capturas de trabajos, fotos de productos...',
+    options: [
+      { text: 'Sí, tengo bastante evidencia de mi trabajo', score: 4 },
+      { text: 'Tengo algunas fotos o ejemplos', score: 2 },
+      { text: 'Muy poco — casi nada publicado', score: 1 },
+      { text: 'No tengo nada publicado', score: 0 },
+    ]
+  },
+  {
+    phase: 2,
+    text: '¿Tienes testimonios o reseñas visibles para alguien que te encuentra por primera vez?',
+    hint: 'Los testimonios son el boca a boca digital. Son lo que convence a quien nunca ha trabajado contigo.',
+    options: [
+      { text: 'Sí, tengo varios testimonios publicados', score: 4 },
+      { text: 'Tengo uno o dos pero no están muy visibles', score: 2 },
+      { text: 'Tengo pero no los he publicado', score: 1 },
+      { text: 'No tengo testimonios aún', score: 0 },
+    ]
+  },
+
+  // FASE 3 — Tiempo y herramientas
+  {
+    phase: 3,
+    text: '¿Qué tan fácil es contactarte desde donde te encuentran en internet?',
+    hint: 'El contacto debe ser inmediato — un botón de WhatsApp, un formulario o un enlace directo. Si tienen que buscar cómo escribirte, muchos se van.',
+    options: [
+      { text: 'Muy fácil — tengo botón de WhatsApp o enlace directo visible', score: 4 },
+      { text: 'Sí, pero solo por redes — no hay WhatsApp directo', score: 3 },
+      { text: 'Se puede pero hay que buscarlo un poco', score: 2 },
+      { text: 'No está claro cómo contactarme', score: 0 },
+      { text: 'No tengo presencia donde alguien pueda contactarme', score: 0 },
+    ]
+  },
+  {
+    phase: 3,
+    text: '¿Cuánto tiempo pierdes por semana respondiendo las mismas preguntas?',
+    hint: 'Preguntas repetidas como "¿cuánto cuesta?", "¿dónde estás ubicado?", "¿qué incluye?" se pueden resolver con herramientas simples.',
+    options: [
+      { text: 'Muy poco — tengo recursos que responden eso solo', score: 4 },
+      { text: 'Menos de 2 horas a la semana', score: 3 },
+      { text: 'Entre 2 y 5 horas semanales', score: 1 },
+      { text: 'Más de 5 horas — es una pérdida de tiempo real', score: 0 },
+    ]
+  },
+  {
+    phase: 3,
+    text: '¿Usas alguna herramienta digital para ahorrar tiempo en tu negocio o servicio?',
+    hint: 'Puede ser algo tan simple como un catálogo de WhatsApp, un link de Calendly para agendar, una respuesta automática, un PDF de preguntas frecuentes...',
+    options: [
+      { text: 'Sí, uso varias herramientas digitales', detail: 'Automatizaciones, Calendly, formularios, catálogos...', score: 4 },
+      { text: 'Tengo el catálogo o respuesta automática de WhatsApp Business', detail: 'Eso ya es un buen primer paso', score: 3 },
+      { text: 'Uso alguna cosa pero podría hacer más', score: 2 },
+      { text: 'Casi nada — todo lo hago manualmente', score: 1 },
+      { text: 'No uso ninguna herramienta digital', score: 0 },
+    ]
+  },
+];
+
+let answers = {};
+let current = 0;
+
+function getPhaseQuestions(phase) {
+  return questions.filter(q => q.phase === phase);
+}
+
+function getCurrentPhase() {
+  let count = 0;
+  for (let i = 0; i < 4; i++) {
+    const pqs = getPhaseQuestions(i);
+    if (current < count + pqs.length) return i;
+    count += pqs.length;
+  }
+  return 3;
+}
+
+function init() { renderQuestion(); }
+
+function renderQuestion() {
+  const container = document.getElementById('questionsContainer');
+  container.innerHTML = '';
+
+  if (current >= questions.length) { showCapture(); return; }
+
+  const q = questions[current];
+  const phase = q.phase;
+  const selectedIdx = answers[current] !== undefined ? answers[current] : null;
+  const isLast = current === questions.length - 1;
+
+  // Phase header
+  const ph = phases[phase];
+  const phDiv = document.createElement('div');
+  phDiv.className = 'phase-header';
+  phDiv.innerHTML = `
+    <div class="phase-icon">${ph.icon}</div>
+    <div>
+      <div class="phase-name">Área ${phase + 1} de 4 — ${ph.name}</div>
+      <div class="phase-desc">${ph.desc}</div>
+    </div>`;
+  container.appendChild(phDiv);
+
+  const card = document.createElement('div');
+  card.className = 'q-card';
+  card.innerHTML = `
+    <div class="q-num">Pregunta ${current + 1} de ${questions.length}</div>
+    <div class="q-text">${q.text}</div>
+    ${q.hint ? `<div class="q-hint">${q.hint}</div>` : ''}
+    <div class="options">
+      ${q.options.map((o, oi) => `
+        <div class="option ${selectedIdx === oi ? 'selected' : ''}" onclick="selectOption(${oi})">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-text">${o.text}</div>
+            ${o.detail ? `<div class="option-detail">${o.detail}</div>` : ''}
+          </div>
+        </div>`).join('')}
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="goBack()" ${current === 0 ? 'style="visibility:hidden"' : ''}>Anterior</button>
+      <button class="btn-next" id="btnNext" onclick="goNext()" ${selectedIdx === null ? 'disabled' : ''}>
+        ${isLast ? 'Ver mi diagnóstico' : 'Siguiente'}
+      </button>
+    </div>`;
+  container.appendChild(card);
+  updateProgress();
+}
+
+function selectOption(oi) {
+  answers[current] = oi;
+  document.querySelectorAll('.option').forEach((el, i) => el.classList.toggle('selected', i === oi));
+  const isLast = current === questions.length - 1;
+  const btn = document.getElementById('btnNext');
+  btn.disabled = false;
+  btn.textContent = isLast ? 'Ver mi diagnóstico' : 'Siguiente';
+}
+
+function goNext() {
+  if (answers[current] === undefined) return;
+  current++;
+  renderQuestion();
+}
+
+function goBack() {
+  if (current > 0) { current--; renderQuestion(); }
+}
+
+function updateProgress() {
+  const pct = Math.round((current / questions.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('progressLabel').textContent = `Pregunta ${current + 1} de ${questions.length}`;
+
+  // Update phase dots
+  const currentPhase = getCurrentPhase();
+  for (let i = 0; i < 4; i++) {
+    const dot = document.getElementById('dot' + i);
+    dot.className = 'phase-dot' + (i < currentPhase ? ' done' : i === currentPhase ? ' active' : '');
+  }
+}
+
+function showCapture() {
+  document.getElementById('questionsContainer').style.display = 'none';
+  document.querySelector('.progress-bar').style.display = 'none';
+  const results = document.getElementById('results');
+  results.classList.add('show');
+  results.innerHTML = `
+    <div class="capture-card">
+      <h3>Tu diagnóstico está listo</h3>
+      <p>Déjanos tu nombre y correo para ver tu resultado detallado con recomendaciones específicas para tu tipo de actividad.</p>
+      <form class="capture-form" onsubmit="handleCapture(event)">
+        <input type="hidden" name="_subject" value="Diagnóstico presencia digital — Maru Helps You">
+        <input type="hidden" name="formulario" value="diagnostico-negocio">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="tu@email.com" required>
+        <div class="capture-consent">
+          <input type="checkbox" id="capConsent" required>
+          <label for="capConsent">Acepto que Maru Helps You almacene mis datos conforme a la Política de Privacidad y la Ley 81 de 2019 de Panamá.</label>
+        </div>
+        <button type="submit" class="capture-submit">Ver mi diagnóstico</button>
+      </form>
+      <button class="skip-link" onclick="showResults()">Ver resultado sin dejar mis datos</button>
+    </div>`;
+}
+
+function handleCapture(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.capture-submit');
+  btn.textContent = 'Calculando...'; btn.disabled = true;
+  const data = new FormData(e.target);
+  fetch('https://formspree.io/f/mbdvqzoo', {
+    method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+  }).then(() => showResults()).catch(() => showResults());
+}
+
+function showResults() {
+  // Calculate scores per phase
+  const phaseScores = { 0: 0, 1: 0, 2: 0, 3: 0 };
+  const phaseMax = { 0: 0, 1: 0, 2: 0, 3: 0 };
+
+  questions.forEach((q, i) => {
+    const maxScore = Math.max(...q.options.map(o => o.score));
+    phaseMax[q.phase] += maxScore;
+    if (answers[i] !== undefined) phaseScores[q.phase] += q.options[answers[i]].score;
+  });
+
+  const phasePcts = {};
+  Object.keys(phaseScores).forEach(p => {
+    phasePcts[p] = phaseMax[p] > 0 ? Math.round((phaseScores[p] / phaseMax[p]) * 100) : 0;
+  });
+
+  const totalScore = Object.values(phaseScores).reduce((a, b) => a + b, 0);
+  const totalMax = Object.values(phaseMax).reduce((a, b) => a + b, 0);
+  const pct = Math.round((totalScore / totalMax) * 100);
+
+  // Tier
+  let tier, tierColor, tierDesc, nextStep, ctaTitle, ctaDesc;
+  if (pct >= 75) {
+    tier = 'Presencia sólida'; tierColor = '#2E7D4F';
+    tierDesc = 'Tienes una base digital bien construida. Con ajustes estratégicos puedes maximizar tu visibilidad y convertir más visitas en clientes.';
+    nextStep = 'Optimizar lo que ya tienes';
+    ctaTitle = '¿Quieres llevar tu presencia al siguiente nivel?';
+    ctaDesc = 'Con una auditoría express identificamos qué ajustar para que tu presencia digital trabaje más por ti.';
+  } else if (pct >= 50) {
+    tier = 'En desarrollo'; tierColor = '#C4621D';
+    tierDesc = 'Tienes presencia pero hay brechas importantes que pueden estar costándote clientes sin que lo sepas.';
+    nextStep = 'Un one-page website puede cerrar esas brechas';
+    ctaTitle = '¿Quieres cerrar esas brechas?';
+    ctaDesc = 'Un one-page website o una auditoría de tu presencia actual puede hacer una diferencia significativa en los próximos 30 días.';
+  } else if (pct >= 25) {
+    tier = 'Presencia mínima'; tierColor = '#8B7A20';
+    tierDesc = 'Existes en digital, pero de forma muy limitada. Probablemente estás perdiendo clientes que buscan lo que ofreces sin encontrarte.';
+    nextStep = 'Una landing page es tu primer paso';
+    ctaTitle = 'Es momento de existir digitalmente.';
+    ctaDesc = 'Una landing page bien hecha puede estar lista en 48 horas y empezar a trabajar por ti desde el primer día.';
+  } else {
+    tier = 'Sin presencia digital'; tierColor = '#8B2020';
+    tierDesc = 'Tu negocio o servicio no es visible para quienes buscan lo que ofreces. Cada día sin presencia digital es una oportunidad que se pierde.';
+    nextStep = 'Empieza con lo básico — hoy';
+    ctaTitle = 'El primer paso es el más importante.';
+    ctaDesc = 'Te ayudo a crear tu primera presencia digital — simple, clara y lista para conseguir clientes — sin complicaciones técnicas.';
+  }
+
+  // Activity type for personalized message
+  const actType = answers[0] !== undefined ? questions[0].options[answers[0]].text : '';
+
+  // Recommendations
+  const recs = [];
+  // Google Business específico
+  const gbAnswer = answers[5]; // pregunta índice 5 = Google Business
+  if (gbAnswer !== undefined && questions[5].options[gbAnswer].score === 0) {
+    recs.push({ level: 'high', icon: '!', title: 'Créa tu perfil en Google — es gratis y urgente', desc: 'Google Business Profile te permite aparecer en búsquedas locales y Google Maps sin costo. Es el primer paso para que quienes buscan lo que ofreces puedan encontrarte. Se configura en menos de 30 minutos.' });
+  } else if (gbAnswer !== undefined && questions[5].options[gbAnswer].score === 1) {
+    recs.push({ level: 'med', icon: '~', title: 'Activa tu perfil de Google — ya lo conoces', desc: 'Ya sabes que existe Google Business Profile. Configurarlo toma menos de 30 minutos y empieza a trabajar por ti desde el primer día que lo activas.' });
+  }
+  if (phasePcts[1] < 60) recs.push({ level: phasePcts[1] < 30 ? 'high' : 'med', icon: phasePcts[1] < 30 ? '!' : '~', title: 'Aumenta tu visibilidad en internet', desc: 'Quienes necesitan lo que ofreces están buscando en Google e Instagram. Sin presencia digital, no te encuentran — aunque seas el mejor en lo que haces.' });
+  if (phasePcts[2] < 60) recs.push({ level: phasePcts[2] < 30 ? 'high' : 'med', icon: phasePcts[2] < 30 ? '!' : '~', title: 'Haz tu oferta más clara y visible', desc: 'Un cliente que no entiende qué ofreces en 30 segundos, no compra. Necesitas una página o perfil donde tu servicio, precio y proceso estén claros desde el primer vistazo.' });
+  if (phasePcts[3] < 60) recs.push({ level: phasePcts[3] < 30 ? 'high' : 'med', icon: phasePcts[3] < 30 ? '!' : '~', title: 'Automatiza las preguntas repetidas', desc: 'Un PDF de preguntas frecuentes, un catálogo digital o un link de agendamiento puede ahorrarte horas por semana y mejorar la experiencia de tus clientes.' });
+  if (pct >= 75) recs.push({ level: 'low', icon: '✓', title: 'Tu base digital está bien construida', desc: 'Enfócate en testimonios y prueba social para seguir creciendo. La consistencia y el contenido de calidad son tu siguiente paso.' });
+
+  const phaseNames = ['Tu actividad', 'Visibilidad', 'Claridad y confianza', 'Herramientas digitales'];
+  const waMsg = encodeURIComponent(`Hola Mily, completé el diagnóstico de presencia digital y obtuve ${pct}% (${tier}). Me gustaría saber más sobre cómo mejorar mi presencia.`);
+
+  const results = document.getElementById('results');
+  results.innerHTML = `
+    <div class="score-card">
+      <div class="score-label">Tu diagnóstico digital</div>
+      <div class="score-circle" style="border-color:${tierColor}50">
+        <div class="score-num" style="color:${tierColor}">${pct}</div>
+        <div class="score-total">/ 100</div>
+      </div>
+      <div class="score-title" style="color:${tierColor}">${tier}</div>
+      <p class="score-desc">${tierDesc}</p>
+    </div>
+
+    <div class="result-type">
+      <div class="result-type-label">Tu próximo paso concreto</div>
+      <div class="result-type-title">${nextStep}</div>
+      <div class="result-type-desc">${ctaDesc}</div>
+    </div>
+
+    <div class="breakdown">
+      <div class="breakdown-title">Resultado por área</div>
+      ${[0,1,2,3].map(p => {
+        const color = phasePcts[p] >= 70 ? '#2E7D4F' : phasePcts[p] >= 45 ? '#C4621D' : '#8B2020';
+        return `<div class="cat-row">
+          <div class="cat-header">
+            <span class="cat-name">${phaseNames[p]}</span>
+            <span class="cat-pct" style="color:${color}">${phasePcts[p]}%</span>
+          </div>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:${phasePcts[p]}%;background:${color}"></div></div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    ${recs.length > 0 ? `
+    <div class="recs">
+      <div class="recs-title">Lo que debes hacer primero</div>
+      ${recs.map(r => `
+        <div class="rec-item">
+          <div class="rec-icon ${r.level}">${r.icon}</div>
+          <div class="rec-text"><h4>${r.title}</h4><p>${r.desc}</p></div>
+        </div>`).join('')}
+    </div>` : ''}
+
+    <div class="cta-card">
+      <h3>${ctaTitle}</h3>
+      <p>${ctaDesc}</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/50766339109?text=${waMsg}" target="_blank" rel="noopener" class="btn-gold">Hablemos sobre mi caso</a>
+        <a href="index.html#contacto" class="btn-outline">Enviar consulta por correo</a>
+      </div>
+      <button class="btn-restart" onclick="restart()">Repetir el diagnóstico</button>
+    </div>`;
+
+  setTimeout(() => {
+    document.querySelectorAll('.cat-bar-fill').forEach(b => b.style.transition = 'width 1s ease');
+  }, 100);
+}
+
+function restart() {
+  answers = {}; current = 0;
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('questionsContainer').style.display = 'block';
+  document.querySelector('.progress-bar').style.display = 'block';
+  init();
+}
+
+init();
+</script>
+</body>
+</html>

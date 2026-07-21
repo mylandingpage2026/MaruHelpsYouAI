@@ -148,6 +148,8 @@ section{padding:4.5rem 1.5rem}
 .recurso-price{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:0.45rem}
 .recurso-cta{font-size:0.78rem;font-weight:600;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:0.3rem;transition:color 0.2s;background:none;border:none;cursor:pointer;font-family:var(--sans);padding:0}
 .recurso-cta:hover{color:var(--gold)}
+.recurso-yappy{font-size:0.72rem;color:#666;text-decoration:none;display:block;margin-top:0.5rem;transition:color 0.2s}
+.recurso-yappy:hover{color:var(--navy)}
 
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:300;align-items:center;justify-content:center;padding:1.5rem}
@@ -550,7 +552,8 @@ footer{background:#111820;padding:1.75rem;text-align:center}
         <div class="recurso-title">Kit LinkedIn con IA</div>
         <div class="recurso-desc">Plantillas, prompts y checklist completo. Incluye sesión 1:1 de 15 minutos. Resultados comprobados.</div>
         <div class="recurso-price"><span style="text-decoration:line-through;color:#c0392b">$47</span> <strong style="color:#000;font-weight:800">$28.50</strong></div>
-        <a href="#contacto" class="recurso-cta">Obtener el kit &rarr;</a>
+        <a href="https://go.hotmart.com/U102419664Y?dp=1" target="_blank" rel="noopener" class="recurso-cta">Comprar ahora &rarr;</a>
+        <a href="https://wa.me/50766339109?text=Hola%20Maru%2C%20quiero%20pagar%20el%20Kit%20LinkedIn%20con%20Yappy" target="_blank" rel="noopener" class="recurso-yappy">🇵🇦 ¿En Panamá? Paga con Yappy</a>
       </div>
       <div class="recurso-card">
         <span class="recurso-tag tag-premium">Premium</span>
@@ -658,10 +661,19 @@ function closeModal(id){document.getElementById(id).classList.remove('open');doc
 document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',function(e){if(e.target===this)closeModal(this.id)}));
 function handleFreeForm(e){
   e.preventDefault();const btn=e.target.querySelector('.modal-submit');btn.textContent='Enviando...';btn.disabled=true;
-  const data=new FormData(e.target);
-  fetch('https://formspree.io/f/mbdvqzoo',{method:'POST',body:data,headers:{'Accept':'application/json'}})
-  .then(r=>{if(r.ok){document.getElementById('freeModalContent').style.display='none';document.getElementById('freeModalSuccess').style.display='block';}else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}})
-  .catch(()=>{btn.textContent='Error — intenta de nuevo';btn.disabled=false;});
+  const recurso=e.target.querySelector('[name="recurso"]').value;
+  const brevoUrl=recurso==='CV'
+    ?'https://3115a281.sibforms.com/serve/MUIFALPohtdo_B6j4uCApJRmA_8Cer-McJKrCDG-t9RIU8xWR1uWCLU0xe-z1PgAaC_yEdfVBwACY9Ip0UXSUynAkuYhJ9zpDvLDNOjNMHpCEskY3F55fXMaDlMjEsc07dIWTsHc3Q2TdfyYqqgMikgabhnWHqAX95v8dNKnIhKsQo5I-XlgJyJ16pEuE5O9TWGXS-1Ldl77k6E_6Q=='
+    :'https://3115a281.sibforms.com/serve/MUIFAJNZA46k0u1TSo4vqTZtPg3DDhwsf9784YOLgyLHuCXCVFRNMGR5TAMiXb_vk6EizzaUVoxOLoiWjOYKaFd2OgPpM2LLHkP7O_zNi0ouB45iQZCs0uuX5S-ucKC1d0CX709MCDZsBZ23cvqlz9pWJQ-Yoi9PRkzNJzzJ7ubsvhFxLIUVbrcFs4nBOuJxz4Fk1YdibnGOQPvrBQ==';
+  const brevoData=new FormData();
+  brevoData.append('EMAIL',e.target.querySelector('[name="email"]').value);
+  brevoData.append('FIRSTNAME',e.target.querySelector('[name="nombre"]').value);
+  brevoData.append('email_address_check','');
+  brevoData.append('locale','es');
+  brevoData.append('html_type','simple');
+  fetch(brevoUrl,{method:'POST',body:brevoData,mode:'no-cors'})
+  .then(()=>{document.getElementById('freeModalContent').style.display='none';document.getElementById('freeModalSuccess').style.display='block';})
+  .catch(()=>{document.getElementById('freeModalContent').style.display='none';document.getElementById('freeModalSuccess').style.display='block';});
 }
 function openPrivacy(e){e.preventDefault();document.getElementById('privacyModal').classList.add('open');document.body.style.overflow='hidden';}
 function handleContactForm(e){

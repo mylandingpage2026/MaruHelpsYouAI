@@ -527,9 +527,14 @@ function handleCapture(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.capture-submit');
   btn.textContent = 'Calculando...'; btn.disabled = true;
-  const data = new FormData(e.target);
-  fetch('https://formspree.io/f/mbdvqzoo', {
-    method: 'POST', body: data, headers: {'Accept': 'application/json'}
+  const brevoData = new FormData();
+  brevoData.append('EMAIL', e.target.querySelector('[name="email"]').value);
+  brevoData.append('FIRSTNAME', e.target.querySelector('[name="nombre"]').value);
+  brevoData.append('email_address_check', '');
+  brevoData.append('locale', 'es');
+  brevoData.append('html_type', 'simple');
+  fetch('https://3115a281.sibforms.com/serve/MUIFALPohtdo_B6j4uCApJRmA_8Cer-McJKrCDG-t9RIU8xWR1uWCLU0xe-z1PgAaC_yEdfVBwACY9Ip0UXSUynAkuYhJ9zpDvLDNOjNMHpCEskY3F55fXMaDlMjEsc07dIWTsHc3Q2TdfyYqqgMikgabhnWHqAX95v8dNKnIhKsQo5I-XlgJyJ16pEuE5O9TWGXS-1Ldl77k6E_6Q==', {
+    method: 'POST', body: brevoData, mode: 'no-cors'
   }).then(() => showResults()).catch(() => showResults());
 }
 

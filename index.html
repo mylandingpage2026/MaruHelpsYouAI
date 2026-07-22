@@ -7,7 +7,7 @@
 <meta name="description" content="Convierto experiencia en oportunidades. Con estrategia, comunicación e inteligencia artificial.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -36,29 +36,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(27,42,74,0.9
 }
 
 /* HERO */
-.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:80px 1.5rem 60px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:900px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 300px;gap:3.5rem;align-items:center}
-@media(max-width:700px){.hero-inner{grid-template-columns:1fr}.hero-photo{display:none!important}}
-.hero-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem}
-.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
-.hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.1rem);color:var(--white);line-height:1.15;margin-bottom:0.4rem}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero-tagline{font-family:var(--serif);font-size:1rem;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:1.1rem}
-.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:1.75rem;max-width:440px}
-.hero-actions{display:flex;gap:0.85rem;flex-wrap:wrap}
+.hero{min-height:100vh;min-height:100svh;background:#002b5b;display:flex;align-items:center;padding:84px 1.5rem 2.25rem;position:relative;overflow:hidden}
+.hero-inner{max-width:1040px;margin:0 auto;width:100%;display:flex;flex-direction:column;align-items:center}
+.hero-content{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
+.hero-brand{font-family:'Playfair Display',Georgia,serif;font-size:0.82rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#f9a825;margin-bottom:1.1rem}
+.hero-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.85rem,7vw,2.9rem);font-weight:700;color:#fdfcfb;line-height:1.22;margin-bottom:0.85rem}
+.hero-subtitle{font-family:'Inter',system-ui,sans-serif;font-size:0.98rem;color:rgba(253,252,251,0.72);line-height:1.6;max-width:420px;margin:0 0 1.9rem}
+.hero-cta-group{display:flex;flex-direction:column;gap:0.8rem;width:100%;max-width:400px;margin-bottom:1.1rem}
+.hero-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.2rem;padding:0.9rem 1.25rem;min-height:6.5rem;border-radius:6px;text-decoration:none;transition:transform 0.15s ease,background 0.2s ease,border-color 0.2s ease}
+.hero-cta:hover{transform:translateY(-1px)}
+.hero-cta-eyebrow{font-family:'Inter',system-ui,sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.hero-cta-label{font-family:'Inter',system-ui,sans-serif;font-size:1rem;font-weight:700}
+.hero-cta-primary,.hero-cta-secondary{background:#f9a825;color:#002b5b;box-shadow:0 4px 14px rgba(0,0,0,0.25)}
+.hero-cta-primary:hover,.hero-cta-secondary:hover{background:#ffb648}
+.hero-cta-primary .hero-cta-eyebrow,.hero-cta-secondary .hero-cta-eyebrow{color:#002b5b;opacity:0.85}
+.hero-cta:focus-visible{outline:3px solid #f9a825;outline-offset:3px}
+.hero-note{font-family:'Inter',system-ui,sans-serif;font-size:0.75rem;letter-spacing:0.03em;color:rgba(253,252,251,0.5)}
+.hero-photo{display:none}
+@media(min-width:701px){
+  .hero{padding:100px 2.5rem 3rem}
+  .hero-inner{display:grid;grid-template-columns:1fr 320px;gap:3.5rem;align-items:center}
+  .hero-content{align-items:flex-start;text-align:left}
+  .hero-cta-group{align-items:flex-start}
+  .hero-photo{display:block;position:relative;align-self:stretch}
+  .hero-photo img{width:100%;height:100%;min-height:380px;object-fit:cover;object-position:center top;border-radius:8px;display:block}
+  .hero-photo::after{content:'';position:absolute;inset:0;border:1px solid rgba(249,168,37,0.35);border-radius:8px;pointer-events:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-cta{transition:none}
+  .hero-cta:hover{transform:none}
+}
+
+/* BUTTONS — used across page below hero (Servicios: "Consultar disponibilidad", "Ver recursos") */
 .btn-primary{background:var(--gold);color:var(--navy);padding:0.8rem 1.6rem;border-radius:4px;font-weight:600;font-size:0.88rem;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s,transform 0.1s;display:inline-block;cursor:pointer;border:none;font-family:var(--sans)}
 .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
 .btn-ghost{border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.8);padding:0.8rem 1.6rem;border-radius:4px;font-weight:500;font-size:0.88rem;text-decoration:none;transition:border-color 0.2s,color 0.2s;display:inline-block}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-photo{position:relative;align-self:stretch}
-.hero-photo img{width:100%;height:420px;object-fit:cover;object-position:center top;border-radius:2px;display:block}
-.hero-photo::after{content:'';position:absolute;inset:0;border:1px solid rgba(201,168,76,0.3);border-radius:2px;pointer-events:none}
-.hero-badge{position:absolute;bottom:-12px;left:-12px;background:var(--white);border-radius:4px;padding:0.65rem 0.9rem;box-shadow:0 4px 20px rgba(0,0,0,0.14);display:flex;align-items:center;gap:0.55rem}
-.badge-dot{width:7px;height:7px;border-radius:50%;background:#2E7D4F;flex-shrink:0;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.2)}}
-.badge-text{font-size:0.72rem;font-weight:600;color:var(--navy)}
-.badge-sub{font-size:0.62rem;color:var(--gray-mid)}
 
 /* SOCIAL BAR */
 .social-bar{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:1rem 1.5rem;display:flex;justify-content:center;gap:1.75rem;flex-wrap:wrap}
@@ -296,22 +309,24 @@ footer{background:#111820;padding:1.75rem;text-align:center}
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div>
-      <p class="hero-eyebrow">Maru Helps You</p>
-      <h1>Convierto experiencia<br>en <em>oportunidades.</em></h1>
-      <p class="hero-tagline">Con estrategia, comunicación e inteligencia artificial.</p>
-      <p class="hero-sub">Ayudo a profesionales y pequeños negocios a transformar lo que saben en activos que generan resultados reales — sin contratar una agencia.</p>
-      <div class="hero-actions">
-        <a href="#servicios" class="btn-primary">Ver cómo puedo ayudarte</a>
-        <a href="#contacto" class="btn-ghost">Enviar consulta</a>
+    <div class="hero-content">
+      <p class="hero-brand">Maru Helps You</p>
+      <h1 class="hero-title">IA aplicada a tu carrera y tu negocio</h1>
+      <p class="hero-subtitle">Empieza con una evaluación gratis. En minutos sabes qué mejorar.</p>
+      <div class="hero-cta-group">
+        <a href="cv-evaluacion.html" class="hero-cta hero-cta-primary">
+          <span class="hero-cta-eyebrow">¿Buscas empleo?</span>
+          <span class="hero-cta-label">Evalúa tu CV gratis</span>
+        </a>
+        <a href="negocio-digital.html" class="hero-cta hero-cta-secondary">
+          <span class="hero-cta-eyebrow">¿Tienes un negocio?</span>
+          <span class="hero-cta-label">Evalúa tu presencia digital gratis</span>
+        </a>
       </div>
+      <p class="hero-note">Sin costo · Resultado al instante</p>
     </div>
     <div class="hero-photo">
       <img src="foto-mily-hero.jpg" alt="Milantia Sierra — Maru Helps You">
-      <div class="hero-badge">
-        <div class="badge-dot"></div>
-        <div><div class="badge-text">Disponible ahora</div><div class="badge-sub">Panamá · LATAM remoto</div></div>
-      </div>
     </div>
   </div>
 </section>

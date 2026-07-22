@@ -671,9 +671,10 @@ function handleFreeForm(e){
   brevoData.append('email_address_check','');
   brevoData.append('locale','es');
   brevoData.append('html_type','simple');
-  fetch(brevoUrl,{method:'POST',body:brevoData,mode:'no-cors'})
-  .then(()=>{document.getElementById('freeModalContent').style.display='none';document.getElementById('freeModalSuccess').style.display='block';})
-  .catch(()=>{document.getElementById('freeModalContent').style.display='none';document.getElementById('freeModalSuccess').style.display='block';});
+  let done=false;
+  const finish=()=>{if(done)return;done=true;document.getElementById('freeModalContent').style.display='none';document.getElementById('freeModalSuccess').style.display='block';};
+  setTimeout(finish,8000);
+  fetch(brevoUrl,{method:'POST',body:brevoData,mode:'no-cors'}).then(finish).catch(finish);
 }
 function openPrivacy(e){e.preventDefault();document.getElementById('privacyModal').classList.add('open');document.body.style.overflow='hidden';}
 function handleContactForm(e){

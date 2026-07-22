@@ -502,9 +502,12 @@ function handleCapture(e) {
   brevoData.append('email_address_check', '');
   brevoData.append('locale', 'es');
   brevoData.append('html_type', 'simple');
+  let done = false;
+  const finish = () => { if (done) return; done = true; showResults(); };
+  setTimeout(finish, 8000);
   fetch('https://3115a281.sibforms.com/serve/MUIFAJNZA46k0u1TSo4vqTZtPg3DDhwsf9784YOLgyLHuCXCVFRNMGR5TAMiXb_vk6EizzaUVoxOLoiWjOYKaFd2OgPpM2LLHkP7O_zNi0ouB45iQZCs0uuX5S-ucKC1d0CX709MCDZsBZ23cvqlz9pWJQ-Yoi9PRkzNJzzJ7ubsvhFxLIUVbrcFs4nBOuJxz4Fk1YdibnGOQPvrBQ==', {
     method: 'POST', body: brevoData, mode: 'no-cors'
-  }).then(() => showResults()).catch(() => showResults());
+  }).then(finish).catch(finish);
 }
 
 function showResults() {

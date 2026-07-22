@@ -533,9 +533,12 @@ function handleCapture(e) {
   brevoData.append('email_address_check', '');
   brevoData.append('locale', 'es');
   brevoData.append('html_type', 'simple');
+  let done = false;
+  const finish = () => { if (done) return; done = true; showResults(); };
+  setTimeout(finish, 8000);
   fetch('https://3115a281.sibforms.com/serve/MUIFALPohtdo_B6j4uCApJRmA_8Cer-McJKrCDG-t9RIU8xWR1uWCLU0xe-z1PgAaC_yEdfVBwACY9Ip0UXSUynAkuYhJ9zpDvLDNOjNMHpCEskY3F55fXMaDlMjEsc07dIWTsHc3Q2TdfyYqqgMikgabhnWHqAX95v8dNKnIhKsQo5I-XlgJyJ16pEuE5O9TWGXS-1Ldl77k6E_6Q==', {
     method: 'POST', body: brevoData, mode: 'no-cors'
-  }).then(() => showResults()).catch(() => showResults());
+  }).then(finish).catch(finish);
 }
 
 function showResults() {

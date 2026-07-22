@@ -663,8 +663,8 @@ function handleFreeForm(e){
   e.preventDefault();const btn=e.target.querySelector('.modal-submit');btn.textContent='Enviando...';btn.disabled=true;
   const recurso=e.target.querySelector('[name="recurso"]').value;
   const brevoUrl=recurso==='CV'
-    ?'https://3115a281.sibforms.com/serve/MUIFALPohtdo_B6j4uCApJRmA_8Cer-McJKrCDG-t9RIU8xWR1uWCLU0xe-z1PgAaC_yEdfVBwACY9Ip0UXSUynAkuYhJ9zpDvLDNOjNMHpCEskY3F55fXMaDlMjEsc07dIWTsHc3Q2TdfyYqqgMikgabhnWHqAX95v8dNKnIhKsQo5I-XlgJyJ16pEuE5O9TWGXS-1Ldl77k6E_6Q=='
-    :'https://3115a281.sibforms.com/serve/MUIFAJNZA46k0u1TSo4vqTZtPg3DDhwsf9784YOLgyLHuCXCVFRNMGR5TAMiXb_vk6EizzaUVoxOLoiWjOYKaFd2OgPpM2LLHkP7O_zNi0ouB45iQZCs0uuX5S-ucKC1d0CX709MCDZsBZ23cvqlz9pWJQ-Yoi9PRkzNJzzJ7ubsvhFxLIUVbrcFs4nBOuJxz4Fk1YdibnGOQPvrBQ==';
+    ?'https://3115a281.sibforms.com/serve/MUIFAE165hhx0d958BcWL0hnD_NWtFhPo-Z950-Vqw7RwxHLuqCFYEVbu-Ta_voUhaoL4WiufUl-qAHSSKtFfwl2ACF5gDsCsEnOmjVKdfLqjtZ6JE8k61_dh5Qg_qCW9ztyo8V5IdN-pLR_uUUIUh3U1OGMnei3dvlejWUd-LmL5WcsFYzp64Av7r9S3fLZKXQITWdLjO6I4NgJMQ=='
+    :'https://3115a281.sibforms.com/serve/MUIFAOUxY2Ou5lbF8zTl6lWeR5DMexq1-_ofFeY6QZKsOLEKbxqI-7UHvelfPLyoe8sX1PFVWam0IfyJ6jv45iYfBsQqL9V2fD-xgjYaT4ZETyMqE7hdPyLEr80VY4nM8InyO5Nylkv747kPTqN-jrRGqZCyDj3UdBvdasIO3I0kl2zs5tbr4RqN-l1txujaawoHZ1uL2AOhxmkmTw==';
   const brevoData=new FormData();
   brevoData.append('EMAIL',e.target.querySelector('[name="email"]').value);
   brevoData.append('FIRSTNAME',e.target.querySelector('[name="nombre"]').value);

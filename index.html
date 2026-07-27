@@ -186,11 +186,6 @@ section{padding:4.5rem 1.5rem}
 .modal-success h3{font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-bottom:0.5rem}
 .modal-success p{font-size:0.875rem;color:var(--gray-mid);line-height:1.6}
 
-/* PRIVACY MODAL */
-.privacy-content{font-size:0.82rem;color:var(--gray-text);line-height:1.7}
-.privacy-content h4{font-size:0.875rem;font-weight:600;color:var(--navy);margin:1rem 0 0.35rem}
-.privacy-content p{margin-bottom:0.5rem}
-
 /* CONTACTO */
 .contacto{background:var(--white)}
 .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.5rem}
@@ -263,7 +258,7 @@ footer{background:#111820;padding:1.75rem;text-align:center}
         <input type="hidden" name="recurso" id="recursoHidden" value="">
         <div class="modal-consent">
           <input type="checkbox" id="freeConsent" required>
-          <label for="freeConsent">Acepto que Maru Helps You almacene mis datos conforme a la <a href="#" onclick="openPrivacy(event)">Política de Privacidad</a> y la Ley 81 de 2019 de Panamá.</label>
+          <label for="freeConsent">Acepto que Maru Helps You almacene mis datos conforme a la <a href="politica-privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a> y la Ley 81 de 2019 de Panamá.</label>
         </div>
         <button type="submit" class="modal-submit">Recibir recurso gratuito</button>
       </form>
@@ -271,22 +266,6 @@ footer{background:#111820;padding:1.75rem;text-align:center}
     <div id="freeModalSuccess" style="display:none" class="modal-success">
       <h3>¡Listo!</h3>
       <p>Te enviamos el recurso a tu correo en los próximos minutos.</p>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL PRIVACIDAD -->
-<div class="modal-overlay" id="privacyModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
-    <div class="modal-title">Política de Privacidad</div>
-    <p class="modal-sub">Maru Helps You — Milantia Sierra</p>
-    <div class="privacy-content">
-      <h4>Responsable del tratamiento</h4><p>Milantia Sierra, operando bajo el nombre comercial Maru Helps You. Contacto: maruhelpyou@gmail.com</p>
-      <h4>Datos que recopilamos</h4><p>Nombre y correo electrónico, proporcionados voluntariamente a través de los formularios de este sitio.</p>
-      <h4>Finalidad del tratamiento</h4><p>Enviar los recursos solicitados, responder consultas y, con tu consentimiento, enviar comunicaciones sobre servicios y contenidos de Maru Helps You.</p>
-      <h4>Base legal</h4><p>Tu consentimiento expreso, conforme a la Ley 81 de 26 de marzo de 2019 de la República de Panamá sobre Protección de Datos Personales.</p>
-      <h4>Tus derechos</h4><p>Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos. Escríbenos a maruhelpyou@gmail.com para ejercer cualquier derecho.</p>
     </div>
   </div>
 </div>
@@ -614,7 +593,7 @@ footer{background:#111820;padding:1.75rem;text-align:center}
         <div class="form-field"><label>Cuéntame brevemente</label><textarea rows="3" name="mensaje" placeholder="¿Qué está pasando en tu negocio o carrera que quieres mejorar?" required></textarea></div>
         <div class="form-consent">
           <input type="checkbox" id="contactConsent" required>
-          <label for="contactConsent">Acepto que Maru Helps You almacene mis datos conforme a la <a href="#" onclick="openPrivacy(event)">Política de Privacidad</a> y la Ley 81 de 2019 de Panamá.</label>
+          <label for="contactConsent">Acepto que Maru Helps You almacene mis datos conforme a la <a href="politica-privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a> y la Ley 81 de 2019 de Panamá.</label>
         </div>
         <input type="hidden" name="_subject" value="Nueva consulta — Maru Helps You">
         <button type="submit" class="form-submit">Enviar consulta</button>
@@ -647,7 +626,7 @@ footer{background:#111820;padding:1.75rem;text-align:center}
   <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;color:rgba(255,255,255,0.5);margin-bottom:0.5rem">Maru <span style="color:#C9A84C">Helps You</span></div>
   <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; Panamá</div>
   <div class="footer-links">
-    <a href="#" onclick="openPrivacy(event)">Política de Privacidad</a>
+    <a href="politica-privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>
     <a href="mailto:maruhelpyou@gmail.com">maruhelpyou@gmail.com</a>
   </div>
 </footer>
@@ -690,7 +669,6 @@ function handleFreeForm(e){
   setTimeout(finish,8000);
   fetch(brevoUrl,{method:'POST',body:brevoData,mode:'no-cors'}).then(finish).catch(finish);
 }
-function openPrivacy(e){e.preventDefault();document.getElementById('privacyModal').classList.add('open');document.body.style.overflow='hidden';}
 function handleContactForm(e){
   e.preventDefault();const btn=e.target.querySelector('.form-submit');btn.textContent='Enviando...';btn.disabled=true;
   const data=new FormData(e.target);

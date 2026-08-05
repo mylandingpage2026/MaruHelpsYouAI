@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ: LinkedIn y perfil profesional — Maru Helps You AI</title>
+<meta name="description" content="Cómo optimizar tu perfil de LinkedIn para atraer reclutadores: titular, Acerca de, palabras clave, cambio de carrera y uso de IA. Respondido por Maru Helps You AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#002b5b;--orange:#f9a825;--cream:#fdfcfb;
+  --ink:#1a1f2b;--muted:#5a6472;--line:#e3e0d8;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,43,91,0.97);backdrop-filter:blur(8px);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--serif);font-size:1.1rem;color:#fff;text-decoration:none;letter-spacing:0.01em}
+.nav-brand span{color:var(--orange)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav-cta{background:var(--orange)!important;color:var(--navy)!important;padding:0.4rem 1rem;border-radius:4px;font-weight:600!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:0.5rem 0;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.85rem}
+  .nav-hamburger{display:flex}
+}
+
+/* PAGE HERO */
+.pagehero{background:var(--navy);color:#fff;padding:100px 1.5rem 44px;border-bottom:4px solid var(--orange)}
+.pagehero .wrap{max-width:760px;margin:0 auto}
+.eyebrow{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:0.85rem}
+.eyebrow a{color:var(--orange);text-decoration:none}
+.eyebrow a:hover{text-decoration:underline}
+.pagehero h1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.22;font-weight:700}
+
+/* MAIN */
+main{padding:44px 0 60px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:32px;font-size:1rem;color:var(--ink);line-height:1.7}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.5rem}
+.qa{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:1.1rem 1.35rem;font-family:var(--serif);font-weight:700;font-size:1.02rem;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';font-family:var(--sans);font-weight:400;font-size:1.4rem;color:var(--orange);flex-shrink:0;transition:transform 0.2s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa summary:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+.qa .answer{padding:0 1.35rem 1.25rem;font-size:0.96rem;color:var(--muted);line-height:1.7}
+.qa .answer p{margin-bottom:0.6rem}
+
+.back-link{display:inline-block;font-size:0.85rem;font-weight:600;color:var(--navy);text-decoration:none;margin-top:0.5rem}
+.back-link:hover{color:var(--orange)}
+
+@media(prefers-reduced-motion:reduce){
+  .qa summary::after{transition:none}
+}
+
+/* FOOTER */
+footer{background:var(--navy);padding:1.75rem;text-align:center}
+.footer-brand{font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:0.5rem}
+.footer-brand span{color:var(--orange)}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.3)}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:0.5rem}
+.footer-links a{font-size:0.7rem;color:rgba(255,255,255,0.45);text-decoration:none}
+.footer-links a:hover{color:var(--orange)}
+@media(max-width:560px){
+  .pagehero{padding:84px 1.5rem 32px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo optimizar mi perfil de LinkedIn para atraer reclutadores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El perfil debe explicar con claridad quién eres, qué experiencia aportas y para qué oportunidades estás preparado. Prioriza titular, Acerca de, experiencia, aptitudes, ubicación, contacto, fotografía, portada y preferencias de empleo. Incorpora palabras clave reales y evita copiar el CV de forma literal. En Maru Helps You AI optimizamos el perfil completo para que seas encontrable y convincente ante reclutadores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué debe incluir el titular de LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Debe combinar especialidad, sector, competencias y área de impacto. Evita usar solo el cargo actual o frases como \"buscando oportunidades\". Prioriza términos que los reclutadores realmente utilizarían y que correspondan con tu experiencia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo escribir la sección Acerca de?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Presenta quién eres, áreas de experiencia, sectores, competencias, logros relevantes, objetivo profesional y una invitación a contactar. Es más efectivo aportar evidencia que acumular adjetivos generales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Debo copiar mi currículum completo en LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Ambos deben ser coherentes, pero LinkedIn puede ampliar proyectos, certificaciones, publicaciones y contexto profesional. Las fechas, cargos y empresas deben coincidir para evitar dudas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué palabras clave utilizar en LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usa cargos, habilidades, herramientas, sectores y funciones vinculados con tus oportunidades objetivo. Obtenlos de vacantes, perfiles similares y terminología de la industria. Incorpóralos de forma natural en titular, Acerca de, experiencia y aptitudes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber qué palabras buscan los reclutadores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Analiza entre cinco y diez vacantes similares y observa cargos, habilidades repetidas, herramientas, certificaciones y funciones principales. Confirma que cada término tenga respaldo en tu experiencia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo mejorar la sección de experiencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Explica el propósito del puesto, funciones principales, alcance, proyectos, herramientas y logros. Evita copiar descripciones de cargos. Prioriza lo que apoya tu posicionamiento actual."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo presentar un cambio de carrera en LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conecta la experiencia anterior con el nuevo objetivo mediante habilidades transferibles, formación reciente, proyectos y problemas que ya sabes resolver. Presenta el cambio como una evolución coherente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo destacar habilidades transferibles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No basta con agregarlas a Aptitudes. Demuéstralas en experiencias concretas indicando el contexto, el equipo, el proyecto o el resultado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo mejorar el perfil si llevo tiempo sin empleo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Muestra proyectos, consultoría, voluntariado, cursos o desarrollo profesional realizado durante ese período. Actualiza titular y Acerca de, reactiva contactos y mantente visible sin justificar excesivamente cada mes sin empleo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Debo activar Open to Work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede ser útil de forma pública o solo para reclutadores. Configura cargos, ubicaciones, modalidad y tipo de empleo. Activarla sin optimizar el perfil no garantiza visibilidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo aparecer en búsquedas de reclutadores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Completa el perfil, utiliza términos relacionados con tus cargos objetivo, actualiza experiencia y aptitudes, configura ubicación y preferencias y mantente activo en el sector. La meta no es solo aparecer, sino convencer cuando visiten tu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo contactar a un reclutador por LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Envía un mensaje breve, específico y personalizado. Explica el motivo, la relación entre tu experiencia y el área, y menciona una vacante o interés concreto. No adjuntes el CV sin contexto salvo que te lo pidan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué escribir al enviar una solicitud de conexión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Explica por qué deseas conectar: una publicación, evento, sector, vacante o interés compartido. El objetivo inicial es establecer una relación profesional, no pedir empleo de inmediato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo usar LinkedIn para buscar empleo sin limitarme a postular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sigue empresas, identifica reclutadores, participa en conversaciones, reactiva contactos, solicita recomendaciones, investiga perfiles similares y publica contenido útil. La búsqueda efectiva combina postulaciones, networking y posicionamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué contenido publicar para mejorar el perfil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publica aprendizajes, análisis del sector, procesos, proyectos, certificaciones o recursos útiles. No necesitas publicar a diario; la consistencia y la relevancia son más importantes que la cantidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo construir una marca personal profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mantén coherencia entre titular, Acerca de, experiencia, aptitudes, contenido, mensajes y CV. Elige pocos temas principales con los que quieras ser asociado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito una fotografía profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Debe ser reciente, clara, bien iluminada y sin filtros excesivos. La vestimenta y el fondo deben ser coherentes con el sector. Una buena fotografía mejora la primera impresión, pero no sustituye un perfil bien escrito."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué debe mostrar la portada de LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede reforzar especialidad, propuesta de valor, sectores o servicios. Usa poco texto, alta legibilidad y un diseño coherente con el perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber si necesito una auditoría de LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede ser necesaria si el titular es genérico, Acerca de está vacío, no aparecen logros, faltan palabras clave, el perfil no coincide con el CV o no queda claro qué oportunidades buscas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre auditoría y optimización de LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La auditoría identifica problemas y prioridades. La optimización realiza los cambios y puede incluir reescritura de titular, Acerca de, experiencia, aptitudes y recomendaciones de visibilidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar IA para mejorar LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, para generar ideas, analizar vacantes, identificar palabras clave y mejorar la redacción. Debes proporcionar CV, perfil actual, cargos objetivo, sector, país, logros y tono. Revisa que el resultado mantenga tu voz y experiencia real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde contratar un servicio para optimizar LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Busca un servicio que analice posicionamiento, cargos objetivo, titular, Acerca de, experiencia, palabras clave, aptitudes y coherencia con el CV. Maru Helps You AI combina IA, metodología estructurada y revisión profesional."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Maru <span>Helps You</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#recursos">Recursos</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Consulta</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="pagehero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="faq.html">FAQ</a> · Maru Helps You AI</p>
+    <h1>FAQ: LinkedIn y perfil profesional</h1>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <p class="intro">Un perfil de LinkedIn optimizado explica con claridad quién eres, qué experiencia aportas y qué oportunidades buscas. Aquí respondemos cómo mejorar titular, Acerca de y experiencia con palabras clave reales, cómo destacar habilidades transferibles, presentar un cambio de carrera, aparecer en búsquedas de reclutadores y usar la IA para optimizar tu perfil con criterio.</p>
+
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo optimizar mi perfil de LinkedIn para atraer reclutadores?</summary>
+      <div class="answer"><p>El perfil debe explicar con claridad quién eres, qué experiencia aportas y para qué oportunidades estás preparado. Prioriza titular, Acerca de, experiencia, aptitudes, ubicación, contacto, fotografía, portada y preferencias de empleo. Incorpora palabras clave reales y evita copiar el CV de forma literal. En Maru Helps You AI optimizamos el perfil completo para que seas encontrable y convincente ante reclutadores.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué debe incluir el titular de LinkedIn?</summary>
+      <div class="answer"><p>Debe combinar especialidad, sector, competencias y área de impacto. Evita usar solo el cargo actual o frases como "buscando oportunidades". Prioriza términos que los reclutadores realmente utilizarían y que correspondan con tu experiencia.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo escribir la sección Acerca de?</summary>
+      <div class="answer"><p>Presenta quién eres, áreas de experiencia, sectores, competencias, logros relevantes, objetivo profesional y una invitación a contactar. Es más efectivo aportar evidencia que acumular adjetivos generales.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Debo copiar mi currículum completo en LinkedIn?</summary>
+      <div class="answer"><p>No. Ambos deben ser coherentes, pero LinkedIn puede ampliar proyectos, certificaciones, publicaciones y contexto profesional. Las fechas, cargos y empresas deben coincidir para evitar dudas.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué palabras clave utilizar en LinkedIn?</summary>
+      <div class="answer"><p>Usa cargos, habilidades, herramientas, sectores y funciones vinculados con tus oportunidades objetivo. Obtenlos de vacantes, perfiles similares y terminología de la industria. Incorpóralos de forma natural en titular, Acerca de, experiencia y aptitudes.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo saber qué palabras buscan los reclutadores?</summary>
+      <div class="answer"><p>Analiza entre cinco y diez vacantes similares y observa cargos, habilidades repetidas, herramientas, certificaciones y funciones principales. Confirma que cada término tenga respaldo en tu experiencia.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo mejorar la sección de experiencia?</summary>
+      <div class="answer"><p>Explica el propósito del puesto, funciones principales, alcance, proyectos, herramientas y logros. Evita copiar descripciones de cargos. Prioriza lo que apoya tu posicionamiento actual.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo presentar un cambio de carrera en LinkedIn?</summary>
+      <div class="answer"><p>Conecta la experiencia anterior con el nuevo objetivo mediante habilidades transferibles, formación reciente, proyectos y problemas que ya sabes resolver. Presenta el cambio como una evolución coherente.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo destacar habilidades transferibles?</summary>
+      <div class="answer"><p>No basta con agregarlas a Aptitudes. Demuéstralas en experiencias concretas indicando el contexto, el equipo, el proyecto o el resultado.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo mejorar el perfil si llevo tiempo sin empleo?</summary>
+      <div class="answer"><p>Muestra proyectos, consultoría, voluntariado, cursos o desarrollo profesional realizado durante ese período. Actualiza titular y Acerca de, reactiva contactos y mantente visible sin justificar excesivamente cada mes sin empleo.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Debo activar Open to Work?</summary>
+      <div class="answer"><p>Puede ser útil de forma pública o solo para reclutadores. Configura cargos, ubicaciones, modalidad y tipo de empleo. Activarla sin optimizar el perfil no garantiza visibilidad.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo aparecer en búsquedas de reclutadores?</summary>
+      <div class="answer"><p>Completa el perfil, utiliza términos relacionados con tus cargos objetivo, actualiza experiencia y aptitudes, configura ubicación y preferencias y mantente activo en el sector. La meta no es solo aparecer, sino convencer cuando visiten tu perfil.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo contactar a un reclutador por LinkedIn?</summary>
+      <div class="answer"><p>Envía un mensaje breve, específico y personalizado. Explica el motivo, la relación entre tu experiencia y el área, y menciona una vacante o interés concreto. No adjuntes el CV sin contexto salvo que te lo pidan.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué escribir al enviar una solicitud de conexión?</summary>
+      <div class="answer"><p>Explica por qué deseas conectar: una publicación, evento, sector, vacante o interés compartido. El objetivo inicial es establecer una relación profesional, no pedir empleo de inmediato.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo usar LinkedIn para buscar empleo sin limitarme a postular?</summary>
+      <div class="answer"><p>Sigue empresas, identifica reclutadores, participa en conversaciones, reactiva contactos, solicita recomendaciones, investiga perfiles similares y publica contenido útil. La búsqueda efectiva combina postulaciones, networking y posicionamiento.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué contenido publicar para mejorar el perfil?</summary>
+      <div class="answer"><p>Publica aprendizajes, análisis del sector, procesos, proyectos, certificaciones o recursos útiles. No necesitas publicar a diario; la consistencia y la relevancia son más importantes que la cantidad.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo construir una marca personal profesional?</summary>
+      <div class="answer"><p>Mantén coherencia entre titular, Acerca de, experiencia, aptitudes, contenido, mensajes y CV. Elige pocos temas principales con los que quieras ser asociado.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Necesito una fotografía profesional?</summary>
+      <div class="answer"><p>Debe ser reciente, clara, bien iluminada y sin filtros excesivos. La vestimenta y el fondo deben ser coherentes con el sector. Una buena fotografía mejora la primera impresión, pero no sustituye un perfil bien escrito.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué debe mostrar la portada de LinkedIn?</summary>
+      <div class="answer"><p>Puede reforzar especialidad, propuesta de valor, sectores o servicios. Usa poco texto, alta legibilidad y un diseño coherente con el perfil.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo saber si necesito una auditoría de LinkedIn?</summary>
+      <div class="answer"><p>Puede ser necesaria si el titular es genérico, Acerca de está vacío, no aparecen logros, faltan palabras clave, el perfil no coincide con el CV o no queda claro qué oportunidades buscas.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cuál es la diferencia entre auditoría y optimización de LinkedIn?</summary>
+      <div class="answer"><p>La auditoría identifica problemas y prioridades. La optimización realiza los cambios y puede incluir reescritura de titular, Acerca de, experiencia, aptitudes y recomendaciones de visibilidad.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Puedo usar IA para mejorar LinkedIn?</summary>
+      <div class="answer"><p>Sí, para generar ideas, analizar vacantes, identificar palabras clave y mejorar la redacción. Debes proporcionar CV, perfil actual, cargos objetivo, sector, país, logros y tono. Revisa que el resultado mantenga tu voz y experiencia real.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Dónde contratar un servicio para optimizar LinkedIn?</summary>
+      <div class="answer"><p>Busca un servicio que analice posicionamiento, cargos objetivo, titular, Acerca de, experiencia, palabras clave, aptitudes y coherencia con el CV. Maru Helps You AI combina IA, metodología estructurada y revisión profesional.</p></div>
+    </details>
+
+  </div>
+
+  <a href="faq.html" class="back-link">← Volver a Preguntas Frecuentes</a>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maru <span>Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; Panamá</div>
+  <div class="footer-links">
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+    <a href="mailto:maruhelpyou@gmail.com">maruhelpyou@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>

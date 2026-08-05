@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ: auditoría profesional y cambio de carrera — Maru Helps You AI</title>
+<meta name="description" content="Qué es una auditoría de perfil profesional, cómo identificar habilidades transferibles, brechas de habilidades y cómo cambiar de carrera sin empezar desde cero. Respondido por Maru Helps You AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#002b5b;--orange:#f9a825;--cream:#fdfcfb;
+  --ink:#1a1f2b;--muted:#5a6472;--line:#e3e0d8;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,43,91,0.97);backdrop-filter:blur(8px);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--serif);font-size:1.1rem;color:#fff;text-decoration:none;letter-spacing:0.01em}
+.nav-brand span{color:var(--orange)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav-cta{background:var(--orange)!important;color:var(--navy)!important;padding:0.4rem 1rem;border-radius:4px;font-weight:600!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:0.5rem 0;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.85rem}
+  .nav-hamburger{display:flex}
+}
+
+/* PAGE HERO */
+.pagehero{background:var(--navy);color:#fff;padding:100px 1.5rem 44px;border-bottom:4px solid var(--orange)}
+.pagehero .wrap{max-width:760px;margin:0 auto}
+.eyebrow{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:0.85rem}
+.eyebrow a{color:var(--orange);text-decoration:none}
+.eyebrow a:hover{text-decoration:underline}
+.pagehero h1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.22;font-weight:700}
+
+/* MAIN */
+main{padding:44px 0 60px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:32px;font-size:1rem;color:var(--ink);line-height:1.7}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.5rem}
+.qa{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:1.1rem 1.35rem;font-family:var(--serif);font-weight:700;font-size:1.02rem;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';font-family:var(--sans);font-weight:400;font-size:1.4rem;color:var(--orange);flex-shrink:0;transition:transform 0.2s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa summary:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+.qa .answer{padding:0 1.35rem 1.25rem;font-size:0.96rem;color:var(--muted);line-height:1.7}
+.qa .answer p{margin-bottom:0.6rem}
+
+.back-link{display:inline-block;font-size:0.85rem;font-weight:600;color:var(--navy);text-decoration:none;margin-top:0.5rem}
+.back-link:hover{color:var(--orange)}
+
+@media(prefers-reduced-motion:reduce){
+  .qa summary::after{transition:none}
+}
+
+/* FOOTER */
+footer{background:var(--navy);padding:1.75rem;text-align:center}
+.footer-brand{font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:0.5rem}
+.footer-brand span{color:var(--orange)}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.3)}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:0.5rem}
+.footer-links a{font-size:0.7rem;color:rgba(255,255,255,0.45);text-decoration:none}
+.footer-links a:hover{color:var(--orange)}
+@media(max-width:560px){
+  .pagehero{padding:84px 1.5rem 32px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es una auditoría de perfil profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una revisión estructurada de cómo presentas experiencia, competencias, logros y objetivos en CV, LinkedIn y otros canales. Identifica falta de claridad, inconsistencias, palabras clave ausentes, logros poco visibles y problemas de enfoque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde conseguir una auditoría de perfil profesional en línea?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede realizarse con herramientas automáticas, consultores o servicios especializados. Verifica que incluya objetivo, CV, LinkedIn, coherencia, palabras clave, posicionamiento, logros y recomendaciones específicas. Maru Helps You AI ofrece evaluación inicial y servicios personalizados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber si mi perfil está bien posicionado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una persona externa debe entender rápidamente qué profesional eres, qué sabes hacer, qué resultados has logrado y para qué oportunidades estás preparado. Si el perfil intenta abarcar demasiadas áreas o presenta versiones distintas en CV y LinkedIn, necesita mayor enfoque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué se revisa en una auditoría de CV y LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Objetivo, titular, resumen, experiencia, logros, habilidades, palabras clave, formato, ATS, coherencia, posicionamiento, datos de contacto, fotografía, portada y presentación de cambios de carrera. El resultado debe terminar con prioridades claras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre auditoría automática y revisión profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La auditoría automática revisa formato, extensión y palabras clave. La revisión profesional interpreta la narrativa, el nivel de responsabilidad, la relevancia de la experiencia, las transiciones y las habilidades transferibles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué son las habilidades transferibles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Son competencias aplicables en distintos cargos o sectores, como comunicación, liderazgo, negociación, análisis, gestión de proyectos, resolución de problemas, capacitación u organización. Deben demostrarse con ejemplos reales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo identificar mis habilidades transferibles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Revisa qué problemas resolvías, con qué equipos trabajabas, qué decisiones tomabas, qué procesos coordinabas y qué resultados alcanzabas. Agrupa los patrones en competencias amplias y valídalas con ejemplos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo destacarlas en el currículum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Incorpóralas en el resumen, la experiencia y los logros. En lugar de escribir \"liderazgo\", explica qué equipo, proyecto o iniciativa lideraste y cuál fue el resultado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puede la IA ayudar a identificarlas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede analizar responsabilidades, proyectos, herramientas y resultados para detectar patrones. Cada sugerencia debe pasar dos pruebas: que exista evidencia real y que puedas explicarla en una entrevista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber si necesito cambiar de carrera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Considéralo si existe una diferencia sostenida entre tu trayectoria, tus objetivos, las oportunidades disponibles o tus prioridades personales. No siempre necesitas cambiar completamente: a veces basta con cambiar de industria, función o modalidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo presentar un cambio de carrera en el CV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Orienta el documento hacia el nuevo objetivo mediante un título adecuado, resumen de transición, habilidades transferibles, proyectos, formación reciente y experiencias reorganizadas por relevancia. No ocultes la trayectoria anterior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo explicar un cambio de carrera en LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utiliza Acerca de para conectar experiencia previa, motivación, habilidades que se mantienen, formación y tipo de oportunidad buscada. Participa en conversaciones del nuevo sector para reforzar el posicionamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo explicarlo en una entrevista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Resume la trayectoria anterior, explica la motivación, menciona habilidades transferibles, muestra la preparación realizada y conecta todo con el puesto actual. Debe sonar planificado, no improvisado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo cambiar de carrera sin empezar desde cero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Identifica roles cercanos, habilidades transferibles, proyectos pequeños, consultorías, formación específica, portafolio y contactos. Los puestos puente permiten utilizar experiencia previa mientras desarrollas nuevas competencias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es un puesto puente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una posición que conecta la trayectoria anterior con el nuevo objetivo. Por ejemplo, de ventas a gestión de cuentas, de docencia a capacitación corporativa o de administración a coordinación de proyectos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo identificar roles adecuados para mi perfil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Analiza experiencia, habilidades transferibles, intereses y demanda del mercado. Diferencia entre opciones inmediatas, puestos puente y objetivos de mediano plazo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es una brecha de habilidades?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es la diferencia entre las competencias actuales y las requeridas para un cargo objetivo. Puede relacionarse con herramientas, certificaciones, idiomas, experiencia sectorial, liderazgo o habilidades digitales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo identificar brechas en mi perfil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compara tu CV con varias vacantes y separa los requisitos en tres grupos: los que ya posees, los relacionados que puedes demostrar y los que debes desarrollar. Distingue una brecha real de una brecha de comunicación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué servicios de IA analizan brechas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Existen herramientas que comparan CV y vacantes y señalan habilidades ausentes. Son útiles como referencia, pero un término ausente no siempre significa falta de experiencia. Contrasta los resultados con vacantes reales y objetivos profesionales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber si mi perfil es competitivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del puesto, sector, ubicación y nivel. Influyen especialización, resultados, idiomas, herramientas, experiencia regional, disponibilidad, expectativa salarial, red y demanda del mercado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo mejorar la competitividad de mi perfil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Identifica primero el problema principal. Puede requerir reescribir el CV, optimizar LinkedIn, mejorar una habilidad, crear portafolio, obtener una certificación relevante, ampliar contactos o adaptar mejor las postulaciones. Evita intentar cambiar todo al mismo tiempo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde contratar asesoría para cambio de carrera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Busca un servicio que revise trayectoria, habilidades transferibles, cargos posibles, brechas, mercado, estrategia de transición, CV, LinkedIn y narrativa profesional. Maru Helps You AI ofrece evaluaciones y apoyo para reorganizar la experiencia y mejorar la presentación profesional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puede Maru Helps You AI ayudar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede incluir evaluación inicial, revisión de CV, optimización ATS, palabras clave, reescritura de experiencia y logros, optimización de LinkedIn, identificación de habilidades transferibles y recursos guiados para trabajar con IA."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Maru <span>Helps You</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#recursos">Recursos</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Consulta</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="pagehero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="faq.html">FAQ</a> · Maru Helps You AI</p>
+    <h1>FAQ: auditoría profesional y cambio de carrera</h1>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <p class="intro">Una auditoría de perfil profesional revisa cómo presentas tu experiencia, logros y objetivos en CV, LinkedIn y otros canales, para identificar falta de claridad y palabras clave ausentes. Aquí respondemos qué son las habilidades transferibles, cómo identificarlas, cómo presentar un cambio de carrera sin empezar desde cero, qué es un puesto puente y cómo detectar brechas frente al mercado.</p>
+
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Qué es una auditoría de perfil profesional?</summary>
+      <div class="answer"><p>Es una revisión estructurada de cómo presentas experiencia, competencias, logros y objetivos en CV, LinkedIn y otros canales. Identifica falta de claridad, inconsistencias, palabras clave ausentes, logros poco visibles y problemas de enfoque.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Dónde conseguir una auditoría de perfil profesional en línea?</summary>
+      <div class="answer"><p>Puede realizarse con herramientas automáticas, consultores o servicios especializados. Verifica que incluya objetivo, CV, LinkedIn, coherencia, palabras clave, posicionamiento, logros y recomendaciones específicas. Maru Helps You AI ofrece evaluación inicial y servicios personalizados.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo saber si mi perfil está bien posicionado?</summary>
+      <div class="answer"><p>Una persona externa debe entender rápidamente qué profesional eres, qué sabes hacer, qué resultados has logrado y para qué oportunidades estás preparado. Si el perfil intenta abarcar demasiadas áreas o presenta versiones distintas en CV y LinkedIn, necesita mayor enfoque.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué se revisa en una auditoría de CV y LinkedIn?</summary>
+      <div class="answer"><p>Objetivo, titular, resumen, experiencia, logros, habilidades, palabras clave, formato, ATS, coherencia, posicionamiento, datos de contacto, fotografía, portada y presentación de cambios de carrera. El resultado debe terminar con prioridades claras.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cuál es la diferencia entre auditoría automática y revisión profesional?</summary>
+      <div class="answer"><p>La auditoría automática revisa formato, extensión y palabras clave. La revisión profesional interpreta la narrativa, el nivel de responsabilidad, la relevancia de la experiencia, las transiciones y las habilidades transferibles.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué son las habilidades transferibles?</summary>
+      <div class="answer"><p>Son competencias aplicables en distintos cargos o sectores, como comunicación, liderazgo, negociación, análisis, gestión de proyectos, resolución de problemas, capacitación u organización. Deben demostrarse con ejemplos reales.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo identificar mis habilidades transferibles?</summary>
+      <div class="answer"><p>Revisa qué problemas resolvías, con qué equipos trabajabas, qué decisiones tomabas, qué procesos coordinabas y qué resultados alcanzabas. Agrupa los patrones en competencias amplias y valídalas con ejemplos.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo destacarlas en el currículum?</summary>
+      <div class="answer"><p>Incorpóralas en el resumen, la experiencia y los logros. En lugar de escribir "liderazgo", explica qué equipo, proyecto o iniciativa lideraste y cuál fue el resultado.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo puede la IA ayudar a identificarlas?</summary>
+      <div class="answer"><p>Puede analizar responsabilidades, proyectos, herramientas y resultados para detectar patrones. Cada sugerencia debe pasar dos pruebas: que exista evidencia real y que puedas explicarla en una entrevista.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo saber si necesito cambiar de carrera?</summary>
+      <div class="answer"><p>Considéralo si existe una diferencia sostenida entre tu trayectoria, tus objetivos, las oportunidades disponibles o tus prioridades personales. No siempre necesitas cambiar completamente: a veces basta con cambiar de industria, función o modalidad.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo presentar un cambio de carrera en el CV?</summary>
+      <div class="answer"><p>Orienta el documento hacia el nuevo objetivo mediante un título adecuado, resumen de transición, habilidades transferibles, proyectos, formación reciente y experiencias reorganizadas por relevancia. No ocultes la trayectoria anterior.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo explicar un cambio de carrera en LinkedIn?</summary>
+      <div class="answer"><p>Utiliza Acerca de para conectar experiencia previa, motivación, habilidades que se mantienen, formación y tipo de oportunidad buscada. Participa en conversaciones del nuevo sector para reforzar el posicionamiento.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo explicarlo en una entrevista?</summary>
+      <div class="answer"><p>Resume la trayectoria anterior, explica la motivación, menciona habilidades transferibles, muestra la preparación realizada y conecta todo con el puesto actual. Debe sonar planificado, no improvisado.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo cambiar de carrera sin empezar desde cero?</summary>
+      <div class="answer"><p>Identifica roles cercanos, habilidades transferibles, proyectos pequeños, consultorías, formación específica, portafolio y contactos. Los puestos puente permiten utilizar experiencia previa mientras desarrollas nuevas competencias.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué es un puesto puente?</summary>
+      <div class="answer"><p>Es una posición que conecta la trayectoria anterior con el nuevo objetivo. Por ejemplo, de ventas a gestión de cuentas, de docencia a capacitación corporativa o de administración a coordinación de proyectos.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo identificar roles adecuados para mi perfil?</summary>
+      <div class="answer"><p>Analiza experiencia, habilidades transferibles, intereses y demanda del mercado. Diferencia entre opciones inmediatas, puestos puente y objetivos de mediano plazo.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué es una brecha de habilidades?</summary>
+      <div class="answer"><p>Es la diferencia entre las competencias actuales y las requeridas para un cargo objetivo. Puede relacionarse con herramientas, certificaciones, idiomas, experiencia sectorial, liderazgo o habilidades digitales.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo identificar brechas en mi perfil?</summary>
+      <div class="answer"><p>Compara tu CV con varias vacantes y separa los requisitos en tres grupos: los que ya posees, los relacionados que puedes demostrar y los que debes desarrollar. Distingue una brecha real de una brecha de comunicación.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué servicios de IA analizan brechas?</summary>
+      <div class="answer"><p>Existen herramientas que comparan CV y vacantes y señalan habilidades ausentes. Son útiles como referencia, pero un término ausente no siempre significa falta de experiencia. Contrasta los resultados con vacantes reales y objetivos profesionales.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo saber si mi perfil es competitivo?</summary>
+      <div class="answer"><p>Depende del puesto, sector, ubicación y nivel. Influyen especialización, resultados, idiomas, herramientas, experiencia regional, disponibilidad, expectativa salarial, red y demanda del mercado.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo mejorar la competitividad de mi perfil?</summary>
+      <div class="answer"><p>Identifica primero el problema principal. Puede requerir reescribir el CV, optimizar LinkedIn, mejorar una habilidad, crear portafolio, obtener una certificación relevante, ampliar contactos o adaptar mejor las postulaciones. Evita intentar cambiar todo al mismo tiempo.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Dónde contratar asesoría para cambio de carrera?</summary>
+      <div class="answer"><p>Busca un servicio que revise trayectoria, habilidades transferibles, cargos posibles, brechas, mercado, estrategia de transición, CV, LinkedIn y narrativa profesional. Maru Helps You AI ofrece evaluaciones y apoyo para reorganizar la experiencia y mejorar la presentación profesional.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo puede Maru Helps You AI ayudar?</summary>
+      <div class="answer"><p>Puede incluir evaluación inicial, revisión de CV, optimización ATS, palabras clave, reescritura de experiencia y logros, optimización de LinkedIn, identificación de habilidades transferibles y recursos guiados para trabajar con IA.</p></div>
+    </details>
+
+  </div>
+
+  <a href="faq.html" class="back-link">← Volver a Preguntas Frecuentes</a>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maru <span>Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; Panamá</div>
+  <div class="footer-links">
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+    <a href="mailto:maruhelpyou@gmail.com">maruhelpyou@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>

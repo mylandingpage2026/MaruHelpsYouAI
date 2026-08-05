@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preguntas Frecuentes | Maru Helps You AI</title>
+<meta name="description" content="Preguntas frecuentes sobre CV, inteligencia artificial, sistemas ATS, LinkedIn y auditoría profesional — respondidas por Maru Helps You AI para profesionales en Panamá y LATAM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#002b5b;--orange:#f9a825;--cream:#fdfcfb;
+  --ink:#1a1f2b;--muted:#5a6472;--line:#e3e0d8;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,43,91,0.97);backdrop-filter:blur(8px);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--serif);font-size:1.1rem;color:#fff;text-decoration:none;letter-spacing:0.01em}
+.nav-brand span{color:var(--orange)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav-cta{background:var(--orange)!important;color:var(--navy)!important;padding:0.4rem 1rem;border-radius:4px;font-weight:600!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:0.5rem 0;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.85rem}
+  .nav-hamburger{display:flex}
+}
+
+/* PAGE HERO */
+.pagehero{background:var(--navy);color:#fff;padding:100px 1.5rem 44px;border-bottom:4px solid var(--orange)}
+.pagehero .wrap{max-width:760px;margin:0 auto}
+.eyebrow{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:0.85rem}
+.pagehero h1{font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,2.7rem);line-height:1.2;font-weight:700;margin-bottom:0.7rem}
+.pagehero p{color:rgba(255,255,255,0.72);font-size:0.98rem;max-width:620px;line-height:1.7}
+
+/* MAIN */
+main{padding:44px 0 60px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+h2{font-family:var(--serif);font-size:1.5rem;color:var(--navy);margin:40px 0 10px;border-left:3px solid var(--orange);padding-left:12px}
+h2:first-of-type{margin-top:0}
+.section-desc{color:var(--muted);margin-bottom:18px}
+.section-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 26px;margin-bottom:8px}
+.section-card.soon{background:#f3f1ea;color:var(--muted)}
+.section-card.soon h2{color:var(--muted);border-left-color:var(--line)}
+.badge-soon{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);background:var(--line);padding:0.25rem 0.6rem;border-radius:20px;margin-bottom:0.75rem}
+.featured-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);margin:18px 0 8px}
+ul.plain{padding-left:1.2rem;margin-bottom:18px}
+ul.plain li{margin-bottom:8px;color:var(--ink)}
+.section-links{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.section-links li{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--cream)}
+.section-links a{font-weight:600;color:var(--navy);text-decoration:none}
+.section-links a:hover{color:var(--orange)}
+.cta-final{background:var(--navy);color:#fff;border-radius:10px;padding:28px 26px;margin-top:40px;text-align:center}
+.cta-final p{font-size:1.02rem;margin-bottom:14px}
+.cta-final a.btn{display:inline-block;background:var(--orange);color:var(--navy);font-weight:700;padding:0.75rem 1.6rem;border-radius:6px;text-decoration:none}
+.cta-final a.btn:hover{background:#ffc457}
+
+/* FOOTER */
+footer{background:var(--navy);padding:1.75rem;text-align:center}
+.footer-brand{font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:0.5rem}
+.footer-brand span{color:var(--orange)}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.3)}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:0.5rem}
+.footer-links a{font-size:0.7rem;color:rgba(255,255,255,0.45);text-decoration:none}
+.footer-links a:hover{color:var(--orange)}
+@media(max-width:560px){
+  .pagehero{padding:84px 1.5rem 32px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Maru <span>Helps You</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#recursos">Recursos</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Consulta</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="pagehero">
+  <div class="wrap">
+    <p class="eyebrow">Maru Helps You AI</p>
+    <h1>Preguntas Frecuentes</h1>
+    <p>En Maru Helps You AI ayudamos a profesionales y pequeños negocios en Panamá y LATAM a convertir su experiencia en oportunidades, combinando estrategia, comunicación e inteligencia artificial. Estas preguntas frecuentes están organizadas en dos áreas: profesionales en búsqueda de empleo y emprendedores que quieren mejorar su presencia digital.</p>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="section-card">
+    <h2>Profesionales y búsqueda de empleo</h2>
+    <p class="section-desc">Optimización de CV, LinkedIn y perfil profesional con inteligencia artificial y compatibilidad con sistemas ATS.</p>
+
+    <p class="featured-label">Preguntas destacadas</p>
+    <ul class="plain">
+      <li>¿Cómo puede la inteligencia artificial mejorar mi currículum?</li>
+      <li>¿Qué es un currículum compatible con ATS?</li>
+      <li>¿Cómo optimizar mi perfil de LinkedIn para atraer reclutadores?</li>
+      <li>¿Qué es una auditoría de perfil profesional?</li>
+      <li>¿Dónde contratar un servicio profesional para mejorar mi CV con IA?</li>
+    </ul>
+
+    <p class="featured-label">Explora las secciones completas</p>
+    <ul class="section-links">
+      <li><strong>CV, inteligencia artificial y sistemas ATS</strong> → <a href="faq-cv-ia-ats.html">Ver preguntas</a></li>
+      <li><strong>LinkedIn y atracción de reclutadores</strong> → <a href="faq-linkedin.html">Ver preguntas</a></li>
+      <li><strong>Auditoría profesional, habilidades transferibles y cambio de carrera</strong> → <a href="faq-auditoria-carrera.html">Ver preguntas</a></li>
+    </ul>
+  </div>
+
+  <div class="section-card soon">
+    <span class="badge-soon">En preparación</span>
+    <h2>Emprendedores y pequeños negocios</h2>
+    <p class="section-desc">Presencia digital, visibilidad en Google, Instagram y sitio web para negocios que quieren dejar de depender solo del boca a boca.</p>
+    <p><em>Sección en preparación.</em></p>
+  </div>
+
+  <div class="cta-final">
+    <p>¿No sabes por dónde empezar? Haz tu evaluación gratuita de CV y recibe un diagnóstico en minutos.</p>
+    <a href="cv-evaluacion.html" class="btn">Evaluar mi CV ahora</a>
+  </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maru <span>Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; Panamá</div>
+  <div class="footer-links">
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+    <a href="mailto:maruhelpyou@gmail.com">maruhelpyou@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>

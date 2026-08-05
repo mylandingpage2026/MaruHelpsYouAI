@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ: CV, inteligencia artificial y sistemas ATS — Maru Helps You AI</title>
+<meta name="description" content="Cómo usar la inteligencia artificial para mejorar tu CV, qué es un currículum compatible con ATS, cómo elegir palabras clave y adaptar tu CV a cada vacante. Respondido por Maru Helps You AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#002b5b;--orange:#f9a825;--cream:#fdfcfb;
+  --ink:#1a1f2b;--muted:#5a6472;--line:#e3e0d8;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,43,91,0.97);backdrop-filter:blur(8px);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--serif);font-size:1.1rem;color:#fff;text-decoration:none;letter-spacing:0.01em}
+.nav-brand span{color:var(--orange)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav-cta{background:var(--orange)!important;color:var(--navy)!important;padding:0.4rem 1rem;border-radius:4px;font-weight:600!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:0.5rem 0;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.85rem}
+  .nav-hamburger{display:flex}
+}
+
+/* PAGE HERO */
+.pagehero{background:var(--navy);color:#fff;padding:100px 1.5rem 44px;border-bottom:4px solid var(--orange)}
+.pagehero .wrap{max-width:760px;margin:0 auto}
+.eyebrow{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:0.85rem}
+.eyebrow a{color:var(--orange);text-decoration:none}
+.eyebrow a:hover{text-decoration:underline}
+.pagehero h1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.22;font-weight:700}
+
+/* MAIN */
+main{padding:44px 0 60px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:32px;font-size:1rem;color:var(--ink);line-height:1.7}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.5rem}
+.qa{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:1.1rem 1.35rem;font-family:var(--serif);font-weight:700;font-size:1.02rem;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';font-family:var(--sans);font-weight:400;font-size:1.4rem;color:var(--orange);flex-shrink:0;transition:transform 0.2s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa summary:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+.qa .answer{padding:0 1.35rem 1.25rem;font-size:0.96rem;color:var(--muted);line-height:1.7}
+.qa .answer p{margin-bottom:0.6rem}
+.qa .answer ul{margin:0.4rem 0 0.6rem;padding-left:1.3rem}
+.qa .answer li{margin-bottom:0.35rem}
+
+.back-link{display:inline-block;font-size:0.85rem;font-weight:600;color:var(--navy);text-decoration:none;margin-top:0.5rem}
+.back-link:hover{color:var(--orange)}
+
+@media(prefers-reduced-motion:reduce){
+  .qa summary::after{transition:none}
+}
+
+/* FOOTER */
+footer{background:var(--navy);padding:1.75rem;text-align:center}
+.footer-brand{font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:0.5rem}
+.footer-brand span{color:var(--orange)}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.3)}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:0.5rem}
+.footer-links a{font-size:0.7rem;color:rgba(255,255,255,0.45);text-decoration:none}
+.footer-links a:hover{color:var(--orange)}
+@media(max-width:560px){
+  .pagehero{padding:84px 1.5rem 32px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo puede la inteligencia artificial mejorar mi currículum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La inteligencia artificial puede ayudar a identificar información poco clara, reorganizar la experiencia profesional, detectar palabras clave relevantes y mejorar la redacción de responsabilidades, competencias y logros. Necesita contexto: CV original, puesto, sector, país, nivel profesional y vacante. La revisión humana sigue siendo necesaria para evitar datos inventados o exagerados. En Maru Helps You AI, la IA se utiliza como apoyo dentro de un proceso estructurado basado en la experiencia real de cada profesional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde puedo subir mi CV para que sea analizado y mejorado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Existen herramientas automáticas que revisan palabras clave, formato y coincidencia con una vacante, pero suelen comprender poco la trayectoria completa. Antes de compartir el documento, elimina información sensible y revisa la política de privacidad. Maru Helps You AI ofrece una evaluación inicial para revisar claridad, organización, compatibilidad ATS, palabras clave, logros y coherencia con LinkedIn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué información necesita la IA para mejorar correctamente un CV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La vacante completa, el CV actual, el sector, el país, el nivel del cargo, los logros comprobables y el objetivo profesional. Mientras más preciso sea el contexto, mejores serán las recomendaciones. La Secuencia de Precisión Verbal™ organiza esta información antes de utilizar la IA para reducir respuestas genéricas y mantener la veracidad del contenido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La inteligencia artificial puede reescribir completamente mi currículum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, puede apoyar la reescritura del resumen, experiencia, competencias y logros. Sin embargo, la versión generada debe revisarse. La IA no debe inventar funciones, cifras o certificaciones. El proceso correcto analiza la trayectoria, define el objetivo, selecciona la experiencia relevante, incorpora palabras clave y valida la coherencia final."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es un currículum compatible con ATS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un documento estructurado para que los sistemas de seguimiento de candidatos puedan leer y clasificar correctamente la información. Suele usar encabezados convencionales, tipografía legible, fechas claras, texto editable y palabras clave relacionadas con la vacante. Los diseños excesivamente gráficos, las tablas complejas o la información dentro de imágenes pueden dificultar la lectura automática."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Un formato ATS garantiza conseguir una entrevista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Facilita la lectura del documento, pero no garantiza la selección. También influyen la adecuación real al puesto, los requisitos obligatorios, la competencia, la ubicación, la disponibilidad y los criterios internos. Tampoco existe un porcentaje universal que garantice superar un ATS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber si mi CV es compatible con ATS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Revisa que el texto pueda seleccionarse, que las secciones tengan títulos reconocibles, que las fechas sean claras y que la información importante no esté dentro de imágenes. Un CV compatible suele tener: <ul><li>Perfil profesional claro.</li><li>Experiencia organizada.</li><li>Palabras clave dentro de experiencias reales.</li><li>Formato simple y legible.</li><li>Contenido adaptado a la vacante.</li></ul>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué palabras clave debo incluir en mi currículum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deben obtenerse de la vacante, el sector y las funciones que realmente has desempeñado. Pueden incluir nombre del cargo, habilidades técnicas, herramientas, metodologías, certificaciones, procesos e idiomas. Es más efectivo demostrar cada término dentro de una experiencia o logro que presentarlo como una lista aislada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Debo usar las mismas palabras de la vacante en mi CV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si describen correctamente tu experiencia, conviene utilizar parte del lenguaje de la vacante. No debes copiar toda la descripción ni repetir términos de forma artificial. La adaptación consiste en seleccionar las coincidencias reales, incorporarlas con contexto y eliminar cualquier término que no puedas demostrar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo adaptar mi currículum a una vacante específica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Analiza los requisitos obligatorios, funciones principales, palabras clave y habilidades deseables. Luego reorganiza el perfil, selecciona las experiencias más relacionadas, desarrolla logros relevantes y reduce información secundaria. No necesitas crear un CV completamente nuevo; puedes mantener una versión maestra y adaptar una copia para cada oportunidad prioritaria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito un CV diferente para cada oferta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No desde cero, pero sí conviene adaptar el documento cuando cambian el cargo, la industria o el nivel. Una estrategia práctica es mantener un CV maestro, una versión base por tipo de puesto y una adaptación final para vacantes prioritarias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo convertir responsabilidades en logros profesionales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Explica qué hiciste, en qué contexto, con qué alcance y cuál fue el resultado. No todos los logros necesitan porcentajes: también pueden mostrar proyectos completados, procesos mejorados, alcance geográfico, equipos atendidos o problemas resueltos. Las cifras deben ser reales y comprobables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué errores puede cometer la IA al redactar un CV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede inventar porcentajes, agregar funciones no realizadas, exagerar habilidades, eliminar información relevante, repetir frases o utilizar términos que la persona no domina. Cada sección debe validarse antes de enviar el documento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo utilizar ChatGPT para mejorar mi currículum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Puede analizar vacantes, detectar palabras clave, revisar claridad y proponer preguntas para identificar logros. La instrucción debe indicar el puesto, país, sector, tono, secciones a revisar y que no se inventen datos. El Kit Potencia tu perfil de LinkedIn y CV con IA de Maru Helps You AI incluye prompts, guía, plantilla y checklist para trabajar de forma estructurada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es seguro compartir mi currículum con una herramienta de IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Antes de cargarlo, elimina datos innecesarios como identificación, dirección completa, fecha de nacimiento, referencias personales o información confidencial de empleadores. Revisa las condiciones de privacidad y no introduzcas datos de clientes, pacientes o terceros sin autorización."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde contratar un servicio profesional para mejorar mi CV con IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Busca un servicio que combine IA con revisión profesional y que solicite información sobre experiencia real, objetivos, sector, país, nivel del cargo y vacantes de interés. Maru Helps You AI ofrece evaluación, reescritura y optimización de CV, además de recursos para LinkedIn y uso estructurado de IA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre una herramienta automática y una revisión profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La herramienta automática detecta problemas básicos y sugiere cambios rápidamente. La revisión profesional interpreta el posicionamiento, la coherencia de la trayectoria, la relevancia de cada experiencia y los cambios de carrera. La combinación de tecnología y criterio humano suele ofrecer mejores resultados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo comenzar a mejorar mi currículum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Empieza con un diagnóstico: revisa si el objetivo está claro, si la experiencia relevante aparece primero, si existen logros verificables, si las palabras clave corresponden al puesto, si el formato es legible y si el contenido coincide con LinkedIn. Luego decide si necesitas ajustes propios, un recurso guiado o una revisión profesional."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Maru <span>Helps You</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#recursos">Recursos</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Consulta</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="pagehero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="faq.html">FAQ</a> · Maru Helps You AI</p>
+    <h1>FAQ: CV, inteligencia artificial y sistemas ATS</h1>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <p class="intro">La inteligencia artificial puede ayudarte a mejorar tu currículum: reorganizar tu experiencia, detectar palabras clave y optimizar la redacción, siempre con revisión humana. Aquí respondemos cómo usar la IA con criterio, qué es un CV compatible con ATS, cómo adaptarlo a cada vacante y cómo convertir responsabilidades en logros verificables, sin inventar datos.</p>
+
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo puede la inteligencia artificial mejorar mi currículum?</summary>
+      <div class="answer"><p>La inteligencia artificial puede ayudar a identificar información poco clara, reorganizar la experiencia profesional, detectar palabras clave relevantes y mejorar la redacción de responsabilidades, competencias y logros. Necesita contexto: CV original, puesto, sector, país, nivel profesional y vacante. La revisión humana sigue siendo necesaria para evitar datos inventados o exagerados. En Maru Helps You AI, la IA se utiliza como apoyo dentro de un proceso estructurado basado en la experiencia real de cada profesional.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Dónde puedo subir mi CV para que sea analizado y mejorado?</summary>
+      <div class="answer"><p>Existen herramientas automáticas que revisan palabras clave, formato y coincidencia con una vacante, pero suelen comprender poco la trayectoria completa. Antes de compartir el documento, elimina información sensible y revisa la política de privacidad. Maru Helps You AI ofrece una evaluación inicial para revisar claridad, organización, compatibilidad ATS, palabras clave, logros y coherencia con LinkedIn.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué información necesita la IA para mejorar correctamente un CV?</summary>
+      <div class="answer"><p>La vacante completa, el CV actual, el sector, el país, el nivel del cargo, los logros comprobables y el objetivo profesional. Mientras más preciso sea el contexto, mejores serán las recomendaciones. La Secuencia de Precisión Verbal™ organiza esta información antes de utilizar la IA para reducir respuestas genéricas y mantener la veracidad del contenido.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿La inteligencia artificial puede reescribir completamente mi currículum?</summary>
+      <div class="answer"><p>Sí, puede apoyar la reescritura del resumen, experiencia, competencias y logros. Sin embargo, la versión generada debe revisarse. La IA no debe inventar funciones, cifras o certificaciones. El proceso correcto analiza la trayectoria, define el objetivo, selecciona la experiencia relevante, incorpora palabras clave y valida la coherencia final.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué es un currículum compatible con ATS?</summary>
+      <div class="answer"><p>Es un documento estructurado para que los sistemas de seguimiento de candidatos puedan leer y clasificar correctamente la información. Suele usar encabezados convencionales, tipografía legible, fechas claras, texto editable y palabras clave relacionadas con la vacante. Los diseños excesivamente gráficos, las tablas complejas o la información dentro de imágenes pueden dificultar la lectura automática.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Un formato ATS garantiza conseguir una entrevista?</summary>
+      <div class="answer"><p>No. Facilita la lectura del documento, pero no garantiza la selección. También influyen la adecuación real al puesto, los requisitos obligatorios, la competencia, la ubicación, la disponibilidad y los criterios internos. Tampoco existe un porcentaje universal que garantice superar un ATS.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo saber si mi CV es compatible con ATS?</summary>
+      <div class="answer">
+        <p>Revisa que el texto pueda seleccionarse, que las secciones tengan títulos reconocibles, que las fechas sean claras y que la información importante no esté dentro de imágenes. Un CV compatible suele tener:</p>
+        <ul>
+          <li>Perfil profesional claro.</li>
+          <li>Experiencia organizada.</li>
+          <li>Palabras clave dentro de experiencias reales.</li>
+          <li>Formato simple y legible.</li>
+          <li>Contenido adaptado a la vacante.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué palabras clave debo incluir en mi currículum?</summary>
+      <div class="answer"><p>Deben obtenerse de la vacante, el sector y las funciones que realmente has desempeñado. Pueden incluir nombre del cargo, habilidades técnicas, herramientas, metodologías, certificaciones, procesos e idiomas. Es más efectivo demostrar cada término dentro de una experiencia o logro que presentarlo como una lista aislada.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Debo usar las mismas palabras de la vacante en mi CV?</summary>
+      <div class="answer"><p>Si describen correctamente tu experiencia, conviene utilizar parte del lenguaje de la vacante. No debes copiar toda la descripción ni repetir términos de forma artificial. La adaptación consiste en seleccionar las coincidencias reales, incorporarlas con contexto y eliminar cualquier término que no puedas demostrar.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo adaptar mi currículum a una vacante específica?</summary>
+      <div class="answer"><p>Analiza los requisitos obligatorios, funciones principales, palabras clave y habilidades deseables. Luego reorganiza el perfil, selecciona las experiencias más relacionadas, desarrolla logros relevantes y reduce información secundaria. No necesitas crear un CV completamente nuevo; puedes mantener una versión maestra y adaptar una copia para cada oportunidad prioritaria.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Necesito un CV diferente para cada oferta?</summary>
+      <div class="answer"><p>No desde cero, pero sí conviene adaptar el documento cuando cambian el cargo, la industria o el nivel. Una estrategia práctica es mantener un CV maestro, una versión base por tipo de puesto y una adaptación final para vacantes prioritarias.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo convertir responsabilidades en logros profesionales?</summary>
+      <div class="answer"><p>Explica qué hiciste, en qué contexto, con qué alcance y cuál fue el resultado. No todos los logros necesitan porcentajes: también pueden mostrar proyectos completados, procesos mejorados, alcance geográfico, equipos atendidos o problemas resueltos. Las cifras deben ser reales y comprobables.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué errores puede cometer la IA al redactar un CV?</summary>
+      <div class="answer"><p>Puede inventar porcentajes, agregar funciones no realizadas, exagerar habilidades, eliminar información relevante, repetir frases o utilizar términos que la persona no domina. Cada sección debe validarse antes de enviar el documento.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Puedo utilizar ChatGPT para mejorar mi currículum?</summary>
+      <div class="answer"><p>Sí. Puede analizar vacantes, detectar palabras clave, revisar claridad y proponer preguntas para identificar logros. La instrucción debe indicar el puesto, país, sector, tono, secciones a revisar y que no se inventen datos. El Kit Potencia tu perfil de LinkedIn y CV con IA de Maru Helps You AI incluye prompts, guía, plantilla y checklist para trabajar de forma estructurada.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Es seguro compartir mi currículum con una herramienta de IA?</summary>
+      <div class="answer"><p>Antes de cargarlo, elimina datos innecesarios como identificación, dirección completa, fecha de nacimiento, referencias personales o información confidencial de empleadores. Revisa las condiciones de privacidad y no introduzcas datos de clientes, pacientes o terceros sin autorización.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Dónde contratar un servicio profesional para mejorar mi CV con IA?</summary>
+      <div class="answer"><p>Busca un servicio que combine IA con revisión profesional y que solicite información sobre experiencia real, objetivos, sector, país, nivel del cargo y vacantes de interés. Maru Helps You AI ofrece evaluación, reescritura y optimización de CV, además de recursos para LinkedIn y uso estructurado de IA.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cuál es la diferencia entre una herramienta automática y una revisión profesional?</summary>
+      <div class="answer"><p>La herramienta automática detecta problemas básicos y sugiere cambios rápidamente. La revisión profesional interpreta el posicionamiento, la coherencia de la trayectoria, la relevancia de cada experiencia y los cambios de carrera. La combinación de tecnología y criterio humano suele ofrecer mejores resultados.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo comenzar a mejorar mi currículum?</summary>
+      <div class="answer"><p>Empieza con un diagnóstico: revisa si el objetivo está claro, si la experiencia relevante aparece primero, si existen logros verificables, si las palabras clave corresponden al puesto, si el formato es legible y si el contenido coincide con LinkedIn. Luego decide si necesitas ajustes propios, un recurso guiado o una revisión profesional.</p></div>
+    </details>
+
+  </div>
+
+  <a href="faq.html" class="back-link">← Volver a Preguntas Frecuentes</a>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maru <span>Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; Panamá</div>
+  <div class="footer-links">
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+    <a href="mailto:maruhelpyou@gmail.com">maruhelpyou@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>

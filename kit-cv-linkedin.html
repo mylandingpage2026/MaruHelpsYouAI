@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Potencia tu perfil de LinkedIn y CV con IA | Maru Helps You AI</title>
+<meta name="description" content="Tu experiencia no es el problema, es el formato. El Kit que transforma tu CV y tu LinkedIn para que pasen los filtros automáticos y lleguen a un reclutador humano.">
+<meta property="og:title" content="Potencia tu perfil de LinkedIn y CV con IA">
+<meta property="og:description" content="No es tu experiencia. Es el formato. Y el formato se arregla.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0d2b4a;
+  --navy-2:#123a63;
+  --orange:#f5a623;
+  --cream:#fdfdf8;
+  --cream-2:#f6f1e7;
+  --ink:#141a20;
+  --muted:#5d6772;
+  --line:#e7e2d6;
+  --navy-pastel:#e7edf4;
+  --navy-pastel-2:#d9e4f0;
+  --orange-pastel:#fdf1da;
+  --orange-pastel-2:#fbe8c4;
+  --mint:#e8f1ec;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.12;color:var(--navy);font-weight:700}
+em,.ital{font-style:italic;color:var(--orange)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.narrow{max-width:760px;margin:0 auto;padding:0 24px}
+.label{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+section{padding:76px 0}
+h2{font-size:clamp(1.7rem,4vw,2.7rem);letter-spacing:-.01em}
+.sub{font-size:1.12rem;color:var(--muted);margin-top:16px;max-width:660px}
+p.body{font-size:1.06rem;margin-top:16px}
+
+.sticky{position:sticky;top:0;z-index:50;background:rgba(253,253,248,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 0;transition:box-shadow .3s}
+.sticky.scrolled{box-shadow:0 2px 16px rgba(13,43,74,.08)}
+.sticky-in{max-width:1040px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sticky-brand{font-family:'Playfair Display';font-weight:700;color:var(--navy);font-size:1.05rem}
+.sticky-brand span{color:var(--orange)}
+.sticky-cta{background:var(--orange);color:var(--navy);text-decoration:none;font-weight:700;font-size:.9rem;padding:10px 20px;border-radius:8px;white-space:nowrap;transition:transform .12s,box-shadow .12s}
+.sticky-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(245,166,35,.35)}
+@media(max-width:560px){.sticky-brand{font-size:.92rem}.sticky-cta{padding:9px 16px;font-size:.84rem}}
+
+.hero{background:var(--cream);padding:70px 0 84px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.05rem,5vw,3.4rem);font-weight:800;letter-spacing:-.015em}
+.hero .promise{font-size:clamp(1.05rem,2vw,1.24rem);color:var(--navy-2);margin-top:18px;font-weight:600;font-style:italic}
+.hero p.lead{font-size:1.06rem;color:var(--muted);margin-top:22px}
+.hero p.lead strong{color:var(--ink)}
+.hero-cta{margin-top:30px}
+.btn-primary{display:inline-block;background:var(--orange);color:var(--navy);text-decoration:none;font-weight:700;font-size:1.08rem;padding:16px 34px;border-radius:10px;border:none;cursor:pointer;transition:transform .14s,box-shadow .14s;font-family:'Inter'}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(245,166,35,.4)}
+.cta-note{font-size:.86rem;color:var(--muted);margin-top:12px}
+.hero-img-wrap{position:relative}
+.hero-img{width:100%;border-radius:16px;display:block;box-shadow:0 20px 60px rgba(13,43,74,.16)}
+.hero-badge{position:absolute;top:-14px;right:-10px;background:var(--navy);color:var(--cream);font-size:.78rem;font-weight:700;padding:10px 16px;border-radius:50px;box-shadow:0 8px 24px rgba(13,43,74,.3);transform:rotate(3deg)}
+.hero-badge span{color:var(--orange)}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero-img-wrap{order:-1;max-width:440px;margin:0 auto}}
+
+.problem{background:var(--navy);color:var(--cream)}
+.problem h2{color:var(--cream)}
+.problem h2 em{color:var(--orange)}
+.problem .label{color:var(--orange)}
+.problem p{color:#c6d3e2;font-size:1.08rem;margin-top:16px;max-width:720px}
+.problem p strong{color:#fff}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.comp-card{border-radius:14px;padding:28px 26px}
+.comp-card.bad{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.comp-card.good{background:var(--orange-pastel);color:var(--ink)}
+.comp-h{font-family:'Inter';font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.comp-card.bad .comp-h{color:#f0a89a}
+.comp-card.good .comp-h{color:#b06f00}
+.comp-card ul{list-style:none}
+.comp-card li{font-size:.98rem;padding:9px 0 9px 26px;position:relative}
+.comp-card.bad li{color:#c6d3e2;border-bottom:1px solid rgba(255,255,255,.07)}
+.comp-card.good li{color:var(--ink);border-bottom:1px solid rgba(13,43,74,.08)}
+.comp-card li:last-child{border-bottom:none}
+.comp-card li::before{position:absolute;left:0;top:9px;font-weight:700}
+.comp-card.bad li::before{content:"\2715";color:#e0745e}
+.comp-card.good li::before{content:"\2713";color:#2e8b57}
+
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.dual-card{border:1px solid var(--line);border-radius:16px;padding:34px 30px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.dual-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,43,74,.1)}
+.dual-card.cv{background:var(--navy-pastel)}
+.dual-card.li{background:var(--orange-pastel)}
+.dual-icon{font-size:1.8rem;margin-bottom:14px}
+.dual-h{font-family:'Playfair Display';font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.dual-card p{font-size:1.01rem;color:var(--muted)}
+.li-compare{margin-top:40px}
+.li-intro{text-align:center;font-size:1.06rem;color:var(--muted);margin-bottom:26px}
+.li-intro strong{color:var(--navy)}
+.li-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:820px;margin:0 auto}
+.li-fig{margin:0;display:flex;flex-direction:column}
+.li-fig img{width:100%;border:1px solid var(--line);border-radius:9px;display:block;box-shadow:0 6px 20px rgba(13,43,74,.1);margin-top:0}
+
+.case-sec{background:var(--cream-2)}
+.case{background:var(--cream);border-radius:16px;padding:40px;margin-top:36px;box-shadow:0 8px 30px rgba(13,43,74,.06)}
+.cvcompare{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cvfig{margin:0;display:flex;flex-direction:column}
+.cvcap{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;padding:9px 12px;border-radius:7px;text-align:center}
+.cvcap.before{color:#8a5a2a;background:var(--orange-pastel-2)}
+.cvcap.after{color:#fff;background:var(--orange)}
+.cvfig img{width:100%;border:1px solid var(--line);border-radius:9px;display:block;box-shadow:0 6px 20px rgba(13,43,74,.1)}
+.case-note{margin-top:26px;font-size:1.02rem;color:var(--muted);line-height:1.66}
+.case-note strong{color:var(--navy)}
+
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.tcard{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.tcard:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(13,43,74,.09)}
+.stars{color:var(--orange);font-size:.92rem;letter-spacing:3px;margin-bottom:12px}
+.tcard .quote{font-size:1.04rem;color:var(--ink);flex-grow:1}
+.tmeta{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.tavatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff}
+.tavatar.c1{background:#2e6da4}.tavatar.c2{background:#5b3fa0}.tavatar.c3{background:#c0873a}.tavatar.c4{background:#3f8c6e}
+.tname{font-weight:700;color:var(--navy);font-size:.98rem}
+.trole{font-size:.84rem;color:var(--muted)}
+
+.offer{background:var(--navy);color:var(--cream)}
+.offer .label{color:var(--orange)}
+.offer h2{color:var(--cream)}
+.offer .sub{color:#c6d3e2;margin-left:auto;margin-right:auto;text-align:center}
+.offer-head{text-align:center}
+.kit-img{width:100%;max-width:520px;display:block;margin:34px auto 0;border-radius:14px;box-shadow:0 16px 44px rgba(0,0,0,.3)}
+.kitbox{background:var(--navy-2);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:40px;margin-top:40px}
+.kitbox h3{color:#fff;font-size:1.5rem;font-family:'Playfair Display';margin-bottom:6px}
+.kitlist{display:grid;grid-template-columns:1fr 1fr;gap:16px 30px}
+.kititem{display:flex;gap:13px;align-items:flex-start}
+.kititem .ck{width:24px;height:24px;border-radius:50%;background:var(--orange);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;flex-shrink:0;margin-top:2px}
+.kititem .txt{font-size:.99rem;color:#dbe4ef}
+.kititem .txt strong{color:#fff;display:block;font-weight:600}
+.bonus{background:linear-gradient(135deg,var(--orange-pastel),var(--orange-pastel-2));border-radius:14px;padding:26px 30px;margin-top:24px;display:flex;gap:20px;align-items:center}
+.bonus .badge{font-size:2rem;flex-shrink:0}
+.bonus h4{color:#8a5a2a;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:'Inter'}
+.bonus h3{color:var(--navy);font-size:1.15rem;font-family:'Playfair Display';margin-top:4px}
+.bonus p{color:#6b5636;margin-top:6px;font-size:.98rem}
+
+.whom{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.whom-card{border-radius:16px;padding:32px 30px}
+.whom-card.yes{background:var(--mint);border:1px solid #cfe3d7}
+.whom-card.no{background:var(--cream-2);border:1px solid var(--line)}
+.whom-h{font-family:'Inter';font-weight:700;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.whom-card.yes .whom-h{color:#2e8b57}
+.whom-card.no .whom-h{color:var(--muted)}
+.whom-card ul{list-style:none}
+.whom-card li{font-size:1rem;padding:10px 0 10px 28px;position:relative;color:var(--ink)}
+.whom-card li::before{position:absolute;left:0;top:9px;font-weight:700;font-size:1.05rem}
+.whom-card.yes li::before{content:"\2713";color:#2e8b57}
+.whom-card.no li::before{content:"\2013";color:var(--muted)}
+
+.faq-sec{background:var(--cream-2)}
+.faq{margin-top:36px;max-width:760px}
+.faq-item{background:var(--cream);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px;font-family:'Playfair Display';font-size:1.12rem;font-weight:600;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q:hover{color:var(--orange)}
+.faq-icon{flex-shrink:0;width:24px;height:24px;position:relative;transition:transform .3s}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--orange);border-radius:2px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-icon::before{width:14px;height:2px}
+.faq-icon::after{width:2px;height:14px;transition:opacity .3s}
+.faq-item.open .faq-icon::after{opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 24px}
+.faq-item.open .faq-a{max-height:500px}
+.faq-a p{padding-bottom:22px;color:var(--muted);font-size:1.02rem}
+
+.final{background:var(--navy);color:var(--cream);text-align:center}
+.final h2{color:var(--cream)}
+.final .sub{color:#c6d3e2;margin-left:auto;margin-right:auto}
+.pricebox{background:var(--cream);color:var(--ink);border-radius:18px;padding:44px 40px;margin:44px auto 0;max-width:540px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.coupon{display:inline-block;background:var(--orange-pastel);border:1.5px dashed var(--orange);color:var(--navy);font-weight:700;font-size:.9rem;padding:10px 18px;border-radius:8px;margin-bottom:22px}
+.coupon .code{color:#b06f00;letter-spacing:.05em}
+.price-row{display:flex;align-items:baseline;justify-content:center;gap:12px}
+.price-old{font-size:1.5rem;color:var(--muted);text-decoration:line-through;font-family:'Playfair Display'}
+.price-now{font-size:3.4rem;font-family:'Playfair Display';font-weight:800;color:var(--navy)}
+.price-cur{font-size:1.2rem;color:var(--muted);align-self:flex-start;margin-top:10px}
+.price-note{font-size:.9rem;color:var(--muted);margin-top:10px}
+.buy-btn{display:block;width:100%;background:var(--orange);color:var(--navy);text-decoration:none;font-weight:700;font-size:1.15rem;padding:18px;border-radius:10px;margin-top:26px;border:none;cursor:pointer;transition:transform .12s,box-shadow .12s;font-family:'Inter'}
+.buy-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,166,35,.45)}
+.pay-alt{font-size:.92rem;color:var(--muted);margin-top:18px}
+.pay-alt a{color:var(--navy);font-weight:600}
+.guarantee{font-size:.88rem;color:#c6d3e2;margin-top:26px}
+
+footer{background:#081d33;color:#9fb2c9;padding:44px 0;text-align:center;font-size:.9rem}
+footer a{color:var(--orange);text-decoration:none}
+footer .brand{font-family:'Playfair Display';color:var(--cream);font-size:1.15rem;margin-bottom:8px}
+footer .brand span{color:var(--orange)}
+footer .vp{max-width:520px;margin:0 auto 14px}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:760px){
+  section{padding:54px 0}
+  .compare,.dual,.cvcompare,.tgrid,.kitlist,.whom,.li-grid{grid-template-columns:1fr}
+  .case,.kitbox,.whom-card,.comp-card{padding:28px 22px}
+  .bonus{flex-direction:column;text-align:center}
+  .pricebox{padding:36px 26px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .faq-a{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-in">
+    <div class="sticky-brand">Maru Helps You <span>AI</span></div>
+    <a href="#comprar" class="sticky-cta">Quiero mi Kit</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="label">Para profesionales con experiencia</span>
+        <h1>"Tu perfil nos impresionó." Y aun así, la respuesta es <em>no</em>.</h1>
+        <p class="promise">Si tu perfil de verdad los impresionó... &iquest;por qué ni siquiera te llamaron?</p>
+        <p class="lead">Aplicas. Esperas. Y llega el típico correo: "agradecemos tu interés, pero avanzamos con otros candidatos". O peor: el silencio total. Ni una entrevista. Y empiezas a preguntarte si <strong>el problema eres tú.</strong></p>
+        <p class="lead">No lo eres. En esta página te muestro qué pasó en el medio y cómo arreglarlo en menos de 2 horas, optimizando la fórmula completa: tu CV y tu perfil de LinkedIn.</p>
+        <div class="hero-cta">
+          <a href="#comprar" class="btn-primary">Transformar mi CV y LinkedIn &rarr;</a>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="assets/kit-mockup.jpeg" alt="Kit Potencia tu perfil de LinkedIn y CV con IA: prompts, checklist, plantilla de CV y video, en laptop, tablet y celular" class="hero-img">
+        <div class="hero-badge">Incluye <span>sesión 1:1</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="problem">
+  <div class="wrap">
+    <span class="label">El problema</span>
+    <h2>No es tu experiencia.<br>Es el <em>formato</em>.</h2>
+    <p>Ese correo que "personalmente" te agradece y elogia tu perfil casi siempre es una plantilla automática. Se dispara después de que un algoritmo (un ATS) ya filtró tu CV, antes de que un reclutador lo viera. El elogio es genérico. El descarte, real.</p>
+    <p><strong>Un profesional con 15 años de trayectoria puede quedar fuera en 6 segundos.</strong> No por falta de capacidad, sino porque su CV fue hecho para personas, no para la máquina que filtra primero.</p>
+
+    <div class="compare reveal">
+      <div class="comp-card bad">
+        <div class="comp-h">Hoy &middot; lo que el filtro bloquea</div>
+        <ul>
+          <li>Foto, columnas y barras de diseño que el sistema lee como espacios en blanco</li>
+          <li>Palabras genéricas que no conectan con lo que busca el algoritmo</li>
+          <li>Un LinkedIn abandonado o con un titular plano, sin estrategia</li>
+        </ul>
+      </div>
+      <div class="comp-card good">
+        <div class="comp-h">Con el Kit &middot; listo para el ATS</div>
+        <ul>
+          <li>Estructura en Word editable que el sistema puede leer de arriba a abajo</li>
+          <li>Palabras clave de tu sector, identificadas con ayuda de IA</li>
+          <li>Un perfil que te respalda cuando te buscan y suena a ti</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-sec">
+  <div class="wrap">
+    <span class="label">Caso real, anonimizado</span>
+    <h2>Un mismo CV. <em>Leído</em> por fin.</h2>
+    <p class="sub">Un ingeniero industrial con más de 7 años de experiencia llevaba meses aplicando. Su CV tenía un diseño atractivo (foto, barras de nivel, dos columnas), pero el ATS lo leía como un documento incompleto.</p>
+
+    <div class="case reveal">
+      <div class="cvcompare">
+        <figure class="cvfig">
+          <figcaption class="cvcap before">Antes &middot; lo que el filtro no puede leer</figcaption>
+          <img src="assets/cv-antes.png" alt="CV en formato antiguo con foto, dos columnas y barras de habilidades, difícil de procesar para un ATS">
+        </figure>
+        <figure class="cvfig">
+          <figcaption class="cvcap after">Después &middot; listo para el ATS</figcaption>
+          <img src="assets/cv-despues.png" alt="CV reformateado a una columna, con perfil profesional, palabras clave y logros en viñetas, legible para un ATS">
+        </figure>
+      </div>
+      <p class="case-note">No cambiamos sus años de trayectoria: solo reorganizamos la información en un formato que el ATS entiende e identificamos las palabras clave de su área. <strong>Su incremento del 15% en la cartera de clientes, que antes estaba escondido tras una barra de diseño, quedó por fin a la vista de un reclutador.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="label">La estrategia dual</span>
+    <h2>Tu CV es la entrada.<br>Tu LinkedIn es la <em>conversión</em>.</h2>
+    <p class="sub">Muchos optimizan solo una parte. En el mercado actual las dos trabajan en equipo: cuando alguien se interesa en tu CV, tu LinkedIn decide si te llaman o pasan al siguiente.</p>
+
+    <div class="dual reveal">
+      <div class="dual-card cv">
+        <div class="dual-icon">&#128196;</div>
+        <div class="dual-h">Tu CV</div>
+        <p>Supera el primer filtro automático y muestra tu valor de un vistazo, en un formato editable que la máquina procesa sin errores.</p>
+      </div>
+      <div class="dual-card li">
+        <div class="dual-icon">&#128188;</div>
+        <div class="dual-h">Tu LinkedIn</div>
+        <p>Te respalda cuando te buscan: un titular estratégico con tus palabras clave y un banner profesional, en vez de un perfil plano que parece abandonado.</p>
+      </div>
+    </div>
+
+    <div class="li-compare reveal">
+      <p class="li-intro">Y no es solo teoría: este es <strong>mi propio perfil</strong>, antes y después de aplicar el método.</p>
+      <div class="li-grid">
+        <figure class="li-fig">
+          <figcaption class="cvcap before">Antes &middot; 2021</figcaption>
+          <img src="assets/linkedin-antes.png" alt="Perfil de LinkedIn antiguo con un titular de una sola línea, sin banner ni estrategia">
+        </figure>
+        <figure class="li-fig">
+          <figcaption class="cvcap after">Después &middot; hoy</figcaption>
+          <img src="assets/linkedin-despues.png" alt="Perfil de LinkedIn optimizado con banner profesional y titular con palabras clave del sector">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section>
+  <div class="wrap">
+    <span class="label">Lo que dicen</span>
+    <h2>Resultados reales, <em>en sus palabras</em>.</h2>
+
+    <div class="tgrid">
+      <div class="tcard reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">Quiero darte las gracias porque no tenía ni idea de todo lo que tenía que mejorar en mi CV y la importancia de tener mi perfil de LinkedIn actualizado. Logré conseguir 2 entrevistas luego de los cambios.</div>
+        <div class="tmeta"><div class="tavatar c1">R</div><div><div class="tname">Raul Moreno</div><div class="trole">Profesional en búsqueda activa</div></div></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">Los servicios de Maru Helps You AI son full recomendados: te ayudan a actualizar tu CV para que la IA lo pueda leer, con las palabras clave. Unos días después de aplicarlo, ya me respondieron una solicitud que envié al extranjero (Canadá).</div>
+        <div class="tmeta"><div class="tavatar c2">R</div><div><div class="tname">Rolando Santamaría</div><div class="trole">Reseña de Google &middot; 5 estrellas</div></div></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">No tenía altas expectativas, pero te confieso que el contenido me encantó. Y el template del CV está súper. Todo muy completo, y eso de los ATS es nuevo para mí. Ahora todo tiene sentido.</div>
+        <div class="tmeta"><div class="tavatar c3">M</div><div><div class="tname">Melissa Rujano</div><div class="trole">Profesional</div></div></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">Las recomendaciones para actualizar tu LinkedIn, los prompts de ayuda y cómo utilizarlos son excelentes. La guía para la forma correcta de realizar el CV, muy buenos. Muy recomendado.</div>
+        <div class="tmeta"><div class="tavatar c4">L</div><div><div class="tname">Liliana Arauz</div><div class="trole">Reseña de Google &middot; 5 estrellas</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap">
+    <div class="offer-head">
+      <span class="label">El contenido del Kit</span>
+      <h2>Potencia tu perfil de<br>LinkedIn y CV con IA</h2>
+      <p class="sub">Todo lo que necesitas para transformar tu perfil en una tarde. Si sabes usar WhatsApp y Word, puedes usar esto.</p>
+    </div>
+    <img src="assets/kit-mockup.jpeg" alt="Componentes del Kit mostrados en varios dispositivos" class="kit-img">
+
+    <div class="kitbox reveal">
+      <h3>Lo que te llevas hoy</h3>
+      <div class="kitlist">
+        <div class="kititem"><div class="ck">&#10003;</div><div class="txt"><strong>Guía paso a paso en PDF</strong>Con la Secuencia de Precisión Verbal para CV y LinkedIn</div></div>
+        <div class="kititem"><div class="ck">&#10003;</div><div class="txt"><strong>Plantilla de CV compatible con ATS</strong>En Word editable (.docx) que el filtro sí lee</div></div>
+        <div class="kititem"><div class="ck">&#10003;</div><div class="txt"><strong>Checklist de verificación</strong>Revisa tu CV y perfil en 10 minutos antes de postularte</div></div>
+        <div class="kititem"><div class="ck">&#10003;</div><div class="txt"><strong>Prompts listos para copiar y pegar</strong>Adapta tu experiencia con IA en minutos</div></div>
+        <div class="kititem"><div class="ck">&#10003;</div><div class="txt"><strong>Video paso a paso</strong>Aprendes el proceso y no dependes de nadie después</div></div>
+        <div class="kititem"><div class="ck">&#10003;</div><div class="txt"><strong>Banner profesional en Canva</strong>Una imagen limpia y coherente para tu LinkedIn</div></div>
+        <div class="kititem"><div class="ck">&#10003;</div><div class="txt"><strong>Sesión 1:1 de 15 minutos</strong>Una llamada conmigo al terminar, para validar tu nuevo CV y resolver dudas de TU caso</div></div>
+      </div>
+
+      <div class="bonus">
+        <div class="badge">&#127873;</div>
+        <div>
+          <h4>Bonus incluido gratis</h4>
+          <h3>Prompt de adaptación vacante-CV</h3>
+          <p>Pega la descripción de un puesto específico y ajusta tu currículum a esa vacante exacta en minutos, no en horas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="label">&iquest;Para quién es?</span>
+    <h2>Para darte claridad, no para <em>hacerte perder el tiempo</em>.</h2>
+
+    <div class="whom reveal">
+      <div class="whom-card yes">
+        <div class="whom-h">Sí es para ti si...</div>
+        <ul>
+          <li>Quieres que tu experiencia destaque tanto para los filtros automáticos como para reclutadores humanos</li>
+          <li>Buscas un sistema ordenado para resolver tu perfil en una tarde</li>
+          <li>Quieres usar IA para tu carrera sin complicarte</li>
+          <li>Te buscan por referidos o entregas tu CV en mano y quieres que se vea profesional</li>
+        </ul>
+      </div>
+      <div class="whom-card no">
+        <div class="whom-h">No es para ti si...</div>
+        <ul>
+          <li>Buscas un curso teórico de 10 horas con diapositivas que nunca vas a aplicar</li>
+          <li>Esperas que alguien busque y postule por ti, sin que tú toques nada</li>
+          <li>Ya recibes más entrevistas de las que puedes atender</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-sec">
+  <div class="wrap">
+    <span class="label">Preguntas frecuentes</span>
+    <h2>Lo que conviene <em>saber</em>.</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q">Yo no soy tecnológico, &iquest;seguro me pierdo?<span class="faq-icon"></span></button>
+        <div class="faq-a"><p>No necesitas saber nada técnico. Si sabes usar Word y WhatsApp, puedes hacer esto. La guía, el video y los prompts están pensados para copiar, pegar y editar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Hay mil videos gratis en YouTube, &iquest;por qué pagar?<span class="faq-icon"></span></button>
+        <div class="faq-a"><p>Lo gratis es genérico, disperso y a veces contradictorio. Esto no es teoría: es un sistema ordenado con plantilla compatible con ATS, checklist y una revisión 1:1 conmigo sobre tu caso. La diferencia es tiempo y claridad.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">&iquest;Sirve para mi sector o mi país?<span class="faq-icon"></span></button>
+        <div class="faq-a"><p>Sí. Los sistemas ATS más usados y los algoritmos de búsqueda de LinkedIn operan con lógicas similares, sin importar tu industria o país. El Kit trabaja sobre esos principios comunes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">&iquest;Y si lo aplico y de todas formas no me llaman?<span class="faq-icon"></span></button>
+        <div class="faq-a"><p>El Kit no controla el mercado, y sería deshonesto prometértelo. Lo que sí hace es eliminar la variable del formato: maximiza las probabilidades de que tu CV llegue intacto a ojos humanos, que es la parte que sí está en tus manos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="comprar">
+  <div class="wrap">
+    <span class="label">En una sola tarde</span>
+    <h2>Tu experiencia es valiosa.<br>Haz que por fin se pueda <em>leer</em>.</h2>
+    <p class="sub">Hay una diferencia enorme entre enviar postulaciones a ciegas y tener un perfil que trabaja para ti. Eso es lo que resuelves hoy.</p>
+
+    <div class="pricebox reveal">
+      <div class="coupon">Cupón de bienvenida: <span class="code">50%DESCUENTO</span></div>
+      <div class="price-row">
+        <span class="price-old">$57</span>
+        <span class="price-now">$28.50</span>
+        <span class="price-cur">USD</span>
+      </div>
+      <div class="price-note">Pago único &middot; Acceso inmediato &middot; Cupón de bienvenida por tiempo limitado</div>
+      <a href="https://go.hotmart.com/U102419664Y?dp=1" class="buy-btn" target="_blank" rel="noopener">Quiero el Kit ahora</a>
+      <div class="pay-alt">&iquest;Estás en Panamá y prefieres Yappy? <a href="https://wa.me/50766339109?text=Hola%20Mily%2C%20quiero%20el%20Kit%20de%20LinkedIn%20y%20CV%20y%20pagar%20por%20Yappy" target="_blank" rel="noopener">Escríbeme por WhatsApp</a></div>
+    </div>
+    <p class="guarantee">Acceso de por vida al material &middot; Incluye sesión 1:1 de 15 minutos</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Maru Helps You <span>AI</span></div>
+    <div class="vp">Ayudo a profesionales y pequeños negocios a convertir su experiencia en oportunidades mediante estrategia, comunicación e IA.</div>
+    <div>
+      <a href="https://www.maruhelpsyouai.com" target="_blank" rel="noopener">www.maruhelpsyouai.com</a> &middot;
+      <a href="https://www.instagram.com/maruhelpsyouai" target="_blank" rel="noopener">Instagram</a> &middot;
+      <a href="https://wa.me/50766339109" target="_blank" rel="noopener">WhatsApp</a> &middot;
+      maru@maruhelpsyouai.com
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(el){el.classList.add('visible')});
+  }else{
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){obs.observe(el)});
+  }
+})();
+(function(){
+  var s=document.getElementById('sticky');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>40)s.classList.add('scrolled');else s.classList.remove('scrolled');
+  });
+})();
+(function(){
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){btn.parentElement.classList.toggle('open');});
+  });
+})();
+</script>
+</body>
+</html>

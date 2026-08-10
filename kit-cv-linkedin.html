@@ -73,6 +73,7 @@ p.body{font-size:1.06rem;margin-top:16px}
 .problem .label{color:var(--orange)}
 .problem p{color:#c6d3e2;font-size:1.08rem;margin-top:16px;max-width:720px}
 .problem p strong{color:#fff}
+.problem p .hl{color:var(--orange);font-weight:700}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
 .comp-card{border-radius:14px;padding:28px 26px}
 .comp-card.bad{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
@@ -100,7 +101,7 @@ p.body{font-size:1.06rem;margin-top:16px}
 .li-compare{margin-top:40px}
 .li-intro{text-align:center;font-size:1.06rem;color:var(--muted);margin-bottom:26px}
 .li-intro strong{color:var(--navy)}
-.li-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:820px;margin:0 auto}
+.li-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:620px;margin:0 auto}
 .li-fig{margin:0;display:flex;flex-direction:column}
 .li-fig img{width:100%;border:1px solid var(--line);border-radius:9px;display:block;box-shadow:0 6px 20px rgba(13,43,74,.1);margin-top:0}
 
@@ -183,7 +184,8 @@ p.body{font-size:1.06rem;margin-top:16px}
 .price-now{font-size:3.4rem;font-family:'Playfair Display';font-weight:800;color:var(--navy)}
 .price-cur{font-size:1.2rem;color:var(--muted);align-self:flex-start;margin-top:10px}
 .price-note{font-size:.9rem;color:var(--muted);margin-top:10px}
-.buy-btn{display:block;width:100%;background:var(--orange);color:var(--navy);text-decoration:none;font-weight:700;font-size:1.15rem;padding:18px;border-radius:10px;margin-top:26px;border:none;cursor:pointer;transition:transform .12s,box-shadow .12s;font-family:'Inter'}
+.buy-btn,a.buy-btn.hotmart-fb{display:block;width:100%;background:var(--orange);color:var(--navy);text-decoration:none;font-weight:700;font-size:1.15rem;padding:18px;border-radius:10px;margin-top:26px;border:none;cursor:pointer;transition:transform .12s,box-shadow .12s;font-family:'Inter';text-align:center;line-height:1.2}
+.buy-btn img{display:none}
 .buy-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,166,35,.45)}
 .pay-alt{font-size:.92rem;color:var(--muted);margin-top:18px}
 .pay-alt a{color:var(--navy);font-weight:600}
@@ -212,6 +214,19 @@ footer .vp{max-width:520px;margin:0 auto 14px}
   .faq-a{transition:none}
 }
 </style>
+<script type="text/javascript">
+  function importHotmart(){
+    var imported = document.createElement('script');
+    imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+    document.head.appendChild(imported);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+    document.head.appendChild(link);
+  }
+  importHotmart();
+</script>
 </head>
 <body>
 
@@ -231,9 +246,6 @@ footer .vp{max-width:520px;margin:0 auto 14px}
         <p class="promise">Si tu perfil de verdad los impresionó... &iquest;por qué ni siquiera te llamaron?</p>
         <p class="lead">Aplicas. Esperas. Y llega el típico correo: "agradecemos tu interés, pero avanzamos con otros candidatos". O peor: el silencio total. Ni una entrevista. Y empiezas a preguntarte si <strong>el problema eres tú.</strong></p>
         <p class="lead">No lo eres. En esta página te muestro qué pasó en el medio y cómo arreglarlo en menos de 2 horas, optimizando la fórmula completa: tu CV y tu perfil de LinkedIn.</p>
-        <div class="hero-cta">
-          <a href="#comprar" class="btn-primary">Transformar mi CV y LinkedIn &rarr;</a>
-        </div>
       </div>
       <div class="hero-img-wrap">
         <img src="assets/kit-mockup.jpeg" alt="Kit Potencia tu perfil de LinkedIn y CV con IA: prompts, checklist, plantilla de CV y video, en laptop, tablet y celular" class="hero-img">
@@ -247,7 +259,7 @@ footer .vp{max-width:520px;margin:0 auto 14px}
   <div class="wrap">
     <span class="label">El problema</span>
     <h2>No es tu experiencia.<br>Es el <em>formato</em>.</h2>
-    <p>Ese correo que "personalmente" te agradece y elogia tu perfil casi siempre es una plantilla automática. Se dispara después de que un algoritmo (un ATS) ya filtró tu CV, antes de que un reclutador lo viera. El elogio es genérico. El descarte, real.</p>
+    <p>Ese correo que "personalmente" te agradece y elogia tu perfil casi siempre es una <span class="hl">plantilla automática</span>. Se dispara después de que un algoritmo (un ATS) ya filtró tu CV, antes de que un reclutador lo viera. El elogio es genérico. El descarte, real.</p>
     <p><strong>Un profesional con 15 años de trayectoria puede quedar fuera en 6 segundos.</strong> No por falta de capacidad, sino porque su CV fue hecho para personas, no para la máquina que filtra primero.</p>
 
     <div class="compare reveal">
@@ -308,7 +320,7 @@ footer .vp{max-width:520px;margin:0 auto 14px}
       <div class="dual-card li">
         <div class="dual-icon">&#128188;</div>
         <div class="dual-h">Tu LinkedIn</div>
-        <p>Te respalda cuando te buscan: un titular estratégico con tus palabras clave y un banner profesional, en vez de un perfil plano que parece abandonado.</p>
+        <p>Te respalda cuando te buscan: un titular estratégico con tus palabras clave, un banner profesional y un extracto que comunica tu propuesta de valor, en vez de un perfil plano que parece abandonado.</p>
       </div>
     </div>
 
@@ -327,9 +339,6 @@ footer .vp{max-width:520px;margin:0 auto 14px}
     </div>
   </div>
 </section>
-
-
-
 <section>
   <div class="wrap">
     <span class="label">Lo que dicen</span>
@@ -460,7 +469,7 @@ footer .vp{max-width:520px;margin:0 auto 14px}
         <span class="price-cur">USD</span>
       </div>
       <div class="price-note">Pago único &middot; Acceso inmediato &middot; Cupón de bienvenida por tiempo limitado</div>
-      <a href="https://go.hotmart.com/U102419664Y?dp=1" class="buy-btn" target="_blank" rel="noopener">Quiero el Kit ahora</a>
+      <a onclick="return false;" href="https://pay.hotmart.com/U102419664Y?checkoutMode=2&offDiscount=50%DESCUENTO" class="buy-btn hotmart-fb hotmart__button-checkout">Quiero el Kit ahora</a>
       <div class="pay-alt">&iquest;Estás en Panamá y prefieres Yappy? <a href="https://wa.me/50766339109?text=Hola%20Mily%2C%20quiero%20el%20Kit%20de%20LinkedIn%20y%20CV%20y%20pagar%20por%20Yappy" target="_blank" rel="noopener">Escríbeme por WhatsApp</a></div>
     </div>
     <p class="guarantee">Acceso de por vida al material &middot; Incluye sesión 1:1 de 15 minutos</p>

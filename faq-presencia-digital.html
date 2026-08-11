@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ: Presencia digital para pequeños negocios — Maru Helps You AI</title>
+<meta name="description" content="Cómo mejorar la presencia digital de un pequeño negocio en Panamá: auditoría, landing page, SEO local, Google Business Profile, redes sociales, WhatsApp Business, reseñas e inteligencia artificial. Respondido por Maru Helps You AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#002b5b;--orange:#f9a825;--cream:#fdfcfb;
+  --ink:#1a1f2b;--muted:#5a6472;--line:#e3e0d8;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,43,91,0.97);backdrop-filter:blur(8px);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--serif);font-size:1.1rem;color:#fff;text-decoration:none;letter-spacing:0.01em}
+.nav-brand span{color:var(--orange)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav-cta{background:var(--orange)!important;color:var(--navy)!important;padding:0.4rem 1rem;border-radius:4px;font-weight:600!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:0.5rem 0;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.85rem}
+  .nav-hamburger{display:flex}
+}
+
+/* PAGE HERO */
+.pagehero{background:var(--navy);color:#fff;padding:100px 1.5rem 44px;border-bottom:4px solid var(--orange)}
+.pagehero .wrap{max-width:760px;margin:0 auto}
+.eyebrow{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:0.85rem}
+.eyebrow a{color:var(--orange);text-decoration:none}
+.eyebrow a:hover{text-decoration:underline}
+.pagehero h1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.22;font-weight:700}
+
+/* MAIN */
+main{padding:44px 0 60px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:32px;font-size:1rem;color:var(--ink);line-height:1.7}
+
+/* CLUSTERS */
+.cluster-title{font-family:var(--serif);font-size:1.28rem;font-weight:700;color:var(--navy);margin:2.25rem 0 1rem;padding-bottom:0.6rem;border-bottom:2px solid var(--orange)}
+.cluster-title:first-of-type{margin-top:0}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.25rem}
+.qa{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:1.1rem 1.35rem;font-family:var(--serif);font-weight:700;font-size:1.02rem;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';font-family:var(--sans);font-weight:400;font-size:1.4rem;color:var(--orange);flex-shrink:0;transition:transform 0.2s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa summary:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+.qa .answer{padding:0 1.35rem 1.25rem;font-size:0.96rem;color:var(--muted);line-height:1.7}
+.qa .answer p{margin-bottom:0.6rem}
+.qa .answer ul{margin:0.4rem 0 0.6rem;padding-left:1.3rem}
+.qa .answer li{margin-bottom:0.35rem}
+.qa .answer strong{color:var(--ink)}
+
+.back-link{display:inline-block;font-size:0.85rem;font-weight:600;color:var(--navy);text-decoration:none;margin-top:0.5rem}
+.back-link:hover{color:var(--orange)}
+
+@media(prefers-reduced-motion:reduce){
+  .qa summary::after{transition:none}
+}
+
+/* FOOTER */
+footer{background:var(--navy);padding:1.75rem;text-align:center}
+.footer-brand{font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:0.5rem}
+.footer-brand span{color:var(--orange)}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.3)}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:0.5rem}
+.footer-links a{font-size:0.7rem;color:rgba(255,255,255,0.45);text-decoration:none}
+.footer-links a:hover{color:var(--orange)}
+@media(max-width:560px){
+  .pagehero{padding:84px 1.5rem 32px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo mejorar la presencia digital de mi pequeño negocio en Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para mejorar la presencia digital de un pequeño negocio en Panamá se deben seguir cuatro pasos fundamentales: realizar un diagnóstico honesto: revisar la visibilidad y coherencia de datos en Google, Instagram y WhatsApp; priorizar canales de alto impacto: optimizar primero el perfil de Google Business Profile y un canal de contacto directo; crear un punto de conversión: contar con una landing page o sitio web sencillo para enviar prospectos; y alinear el mensaje: asegurar que horarios, servicios y precios sean idénticos en todos tus medios. En Panamá y LATAM, Maru Helps You AI facilita este proceso a través de una auditoría de presencia digital que identifica fallas críticas y define un plan de acción por orden de prioridad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es una auditoría de presencia digital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una auditoría de presencia digital es una revisión estructurada de los canales en línea de un negocio (Google Business Profile, Instagram, Facebook, WhatsApp Business, LinkedIn, TikTok, enlaces tipo Linktree y sitio web) para identificar qué funciona, qué falla y qué oportunidades se están ignorando. El resultado se entrega mediante un informe claro con un semáforo de estado (verde, amarillo, rojo), los problemas críticos detectados y una lista corta de acciones priorizadas. Maru Helps You AI ofrece esta auditoría en un formato práctico y libre de tecnicismos, diseñado para dueños de negocios en Panamá."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por dónde debe empezar un negocio pequeño que no tiene presencia digital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un negocio pequeño sin presencia digital debe empezar asegurando tres activos básicos antes de expandirse a otras plataformas: ficha de Google Business Profile: para ser encontrado en búsquedas locales y Google Maps; un canal social activo y relevante: un perfil optimizado en Instagram o Facebook según donde esté su audiencia; y un punto de contacto directo: un enlace a WhatsApp Business o una landing page sencilla para resolver dudas. Intentar estar en todas las plataformas a la vez suele dispersar el esfuerzo. Es más efectivo consolidar lo básico y crecer desde ahí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo medir el impacto de mi presencia digital en las ventas de mi negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El impacto se mide evaluando la conversión en cada etapa del proceso digital: visibilidad: cuántas personas encuentran el negocio en Google o redes sociales; interacción: cuántas visitas recibe el sitio web, perfil o catálogo; y acción directa: cuántos prospectos escriben por WhatsApp, llaman o reservan un servicio. Además, implementar la costumbre de preguntar a cada cliente nuevo cómo conoció el negocio aporta datos cualitativos inmediatos para comparar avances reales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo crear una página web económica para mi negocio en Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La forma más rápida y económica de crear una página web para un pequeño negocio en Panamá es implementar una landing page (página de aterrizaje única). Esta solución concentra lo que vendes, para quién es, por qué elegirte y un botón directo a WhatsApp en una sola vista optimizada para dispositivos móviles. No requiere desarrollos complejos ni presupuestos elevados. Maru Helps You AI diseña e implementa landing pages estratégicas para negocios en Panamá y LATAM, orientadas a captar clientes y generar confianza en pocos días."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito un sitio web completo o me basta con una página sencilla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para la mayoría de servicios independientes, profesionales y pequeños negocios locales, una página sencilla (landing page) es más que suficiente para empezar. Comunica lo esencial y otorga un canal propio al cual dirigir el tráfico de redes sociales. Un sitio web completo con múltiples secciones tiene sentido únicamente cuando el negocio crece o requiere un catálogo extenso, un blog de contenidos o un sistema de reservas complejo. Empezar por lo simple evita gastos innecesarios antes de validar la oferta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué debe incluir la página web de un pequeño negocio para que funcione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para que la página web de una pequeña empresa sea efectiva, debe incluir los siguientes elementos indispensables: propuesta de valor clara: explicar en los primeros 3 segundos qué ofrece el negocio y a quién ayuda; llamado a la acción (CTA) directo: un botón visible para chatear por WhatsApp o solicitar una cotización; prueba social: reseñas, testimonios o casos de éxito reales; optimización móvil y velocidad: carga rápida y diseño adaptado a teléfonos celulares; y coherencia visual: datos de contacto y diseño alineados con el resto de sus redes sociales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo tener una página web sin conocimientos técnicos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. En la actualidad existen plataformas que permiten gestionar sitios web sin necesidad de programar. No obstante, muchos dueños de negocios prefieren delegar el desarrollo técnico para concentrarse en su operación. Lo crucial no es la herramienta técnica, sino que la página transmita el mensaje correcto y esté conectada a tus canales de venta. Maru Helps You AI se encarga de la configuración, estructura y maquetación para que el cliente solo aporte la información de su negocio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo optimizo el SEO local para que mi negocio aparezca en búsquedas cerca de mí en Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para optimizar el SEO local y aparecer en las búsquedas \"cerca de mí\" en Panamá, debes trabajar tres pilares clave: Google Business Profile optimizado: crear y verificar el perfil, seleccionar la categoría precisa y subir fotografías reales con frecuencia; consistencia NAP (Nombre, Dirección, Teléfono): mantener exactamente los mismos datos en tu web, redes sociales y directorios; y reseñas locales: solicitar activamente opiniones a clientes en Panamá que mencionen el servicio específico recibido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo configuro Google Business Profile para un negocio local en Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La configuración correcta de Google Business Profile para un negocio local requiere los siguientes pasos: reclamar y verificar la propiedad de la ficha ante Google; completar el perfil al 100%: incluir categoría principal, horarios reales, zona de servicio y número de contacto; añadir material visual: subir fotos del establecimiento, equipo o trabajos realizados; y gestionar la interacción: publicar novedades semanales y responder a todas las reseñas recibidas. Un perfil actualizado es el método más rápido y de menor costo para captar clientes en tu zona geográfica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué directorios en línea debería listar mi pequeña empresa en Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Además de Google Business Profile, una pequeña empresa en Panamá debe listar su información en directorios y plataformas relevantes para su sector específico (como TripAdvisor para turismo o Encuentra24 y Waze para negocios locales). La consistencia de la información es fundamental: estar listado con datos idénticos de nombre, dirección y teléfono en pocos directorios clave genera más autoridad ante Google que figurar con datos contradictorios en muchos sitios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué red social es mejor para captar clientes en Panamá para un pequeño negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No existe una única red social superior; la elección depende del tipo de negocio y del perfil de su cliente ideal: Instagram: ideal para marcas visuales, productos físicos, estilo de vida y servicios profesionales; Google Business Profile: clave para negocios con sede física o servicios de atención inmediata por cercanía; y LinkedIn: recomendado para servicios corporativos, consultorías B2B y profesional de marca personal. Es preferible dominar con constancia uno o dos canales donde ya interactúe tu cliente antes que mantener cuentas inactivas en múltiples plataformas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué estrategias de redes sociales funcionan mejor para pequeños negocios en Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las estrategias de redes sociales de mayor rendimiento para pequeños negocios combinan los siguientes elementos: contenido de utilidad y confianza: explicar cómo resolver problemas comunes, mostrar el proceso de trabajo y compartir testimonios reales; constancia antes que frecuencia: publicar con un ritmo sostenible, por ejemplo 3 veces por semana, en lugar de saturar unos días y desaparecer; y atención rápida: responder a comentarios y mensajes directos en el menor tiempo posible para no perder oportunidades de venta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo creo contenido digital atractivo para promocionar mi negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El contenido digital atractivo nace de responder las preguntas reales que se hace el cliente antes de comprar: sus dudas, objeciones y resultados deseados. No se requieren producciones de alto costo; mostrar casos reales, comparativas y explicaciones sencillas genera mayor conversión que la publicidad tradicional. La inteligencia artificial puede utilizarse como asistente para estructurar ideas y guiones, aplicando la Secuencia de Precisión Verbal™, la metodología de prompting que Maru Helps You AI enseña para obtener resultados claros y evitar textos genéricos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo mantengo constancia publicando si no tengo tiempo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para mantener la constancia en redes sociales sin disponer de mucho tiempo se debe implementar un sistema de trabajo: definir pilares de contenido: establecer de 3 a 4 temas fijos sobre los que hablará el negocio; creación por lotes (Batching): dedicar un solo bloque de tiempo a la semana o al mes para redactar y diseñar varias publicaciones; uso de IA para borradores: apoyarse en inteligencia artificial para redactar copys e ideas iniciales en minutos; y programación automática: utilizar herramientas para agendar el contenido con anticipación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo automatizar la atención al cliente digital en mi pequeño negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La atención al cliente digital se puede automatizar en tres niveles progresivos: configuración de WhatsApp Business: establecer mensajes de bienvenida, avisos de ausencia y respuestas rápidas para preguntas frecuentes sobre precios, ubicación o catálogo; implementación de una landing page: utilizar una página de aterrizaje 24/7 que resuelva las dudas principales antes de que el usuario inicie un chat; y asistentes de Inteligencia Artificial: integrar herramientas de IA para clasificar consultas recurrentes o redactar respuestas inmediatas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo uso WhatsApp Business para mejorar la atención de mi negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para maximizar la utilidad de WhatsApp Business en un negocio, se deben aprovechar sus herramientas organizativas principales: perfil de empresa completo: incluir dirección, horario, correo electrónico y enlace a la web; catálogo de productos o servicios: mostrar ofertas directamente en la aplicación para agilizar la compra; respuestas rápidas: crear atajos de teclado para contestar en segundos las preguntas más habituales; y etiquetas de seguimiento: clasificar los chats según su etapa, por ejemplo Nuevo cliente, Pedido pendiente, Pagado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo gestionar las reseñas y la reputación online de mi pequeña empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La gestión de la reputación en línea se basa en tres acciones fundamentales: solicitar opiniones de forma activa: pedir a los clientes satisfechos un comentario en Google Business Profile justo al completar una venta o servicio; responder al 100% de las reseñas: agradecer las valoraciones positivas y responder a las negativas con educación, profesionalismo y orientándolas a una solución privada; y monitoreo continuo: revisar periódicamente las menciones y comentarios en todos los canales para corregir fallas operativas a tiempo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo muestro reseñas y testimonios de clientes en mi sitio web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los testimonios de clientes deben ubicarse estratégicamente cerca de la oferta principal y de los botones de llamada a la acción (CTA). Para que resulten creíbles, deben incluir el nombre del cliente, contexto sobre el problema resuelto y, de ser posible, una foto o enlace verificable. Los comentarios que explican un resultado específico (por ejemplo, cómo el servicio le ahorró tiempo o dinero) convierten mejor que los elogios genéricos. Jamás deben utilizarse testimonios falsos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo logro que mi negocio se vea coherente en Google, redes y sitio web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La coherencia digital se alcanza alineando la identidad del negocio en todas sus plataformas bajo estos criterios: mismo identificador y nombre comercial: usar la misma marca sin variaciones de ortografía; identidad visual unificada: mantener el mismo logotipo, paleta de colores y estilo fotográfico; y datos de contacto idénticos (NAP): horarios, teléfono, dirección y enlaces deben coincidir en Google, Instagram, Facebook y la web. Revisar periódicamente esta consistencia ayuda a construir confianza ante los usuarios y mejora la calificación de los motores de búsqueda. Esta evaluación forma parte del análisis en la auditoría de presencia digital de Maru Helps You AI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve tener un solo enlace con varios links para mis redes sociales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Las herramientas de enlace único (tipo Linktree o similares) son útiles en perfiles de redes sociales que solo permiten incluir un link, ya que permiten dirigir al usuario a WhatsApp, al catálogo o a promociones específicas desde un solo lugar. Sin embargo, una página de enlaces no reemplaza una landing page o sitio web formal cuando el negocio necesita detallar sus servicios, posicionar en Google y construir una marca sólida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puede la inteligencia artificial ayudar a un pequeño negocio con su presencia digital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La inteligencia artificial (IA) ayuda a un pequeño negocio optimizando tiempo y recursos en tres áreas operativas: generación de contenidos: estructuración de ideas, guiones para video y borradores para redes sociales o artículos; redacción comercial: creación de textos persuasivos para landing pages, anuncios, ofertas y correos electrónicos; y atención al cliente y organización: redacción de plantillas de respuesta y planificación de calendarios editoriales. Maru Helps You AI capacita a emprendedores y pymes en Panamá y LATAM para aplicar estas herramientas mediante su metodología propia, la Secuencia de Precisión Verbal™, que estructura las instrucciones a la IA para que trabaje al servicio del negocio sin perder el toque humano ni inventar datos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo genero ideas de contenido para mi negocio usando IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para generar ideas de contenido relevantes con IA se le debe dar un contexto completo. La Secuencia de Precisión Verbal™, la metodología de prompting de Maru Helps You AI, ordena esa instrucción en pasos claros: definir el rol: indicar a la IA que actúe como un especialista en marketing para tu sector; aportar contexto local: explicar a qué se dedica el negocio, en qué ciudad opera, por ejemplo Panamá, y cuál es su cliente objetivo; y añadir especificidad y restricciones: pedirle que enumere las dudas frecuentes, miedos, mitos o comparativas que hace un cliente antes de contratar, y aclarar qué no debe incluir. El criterio del dueño del negocio selecciona las mejores propuestas; la IA solo acelera la lluvia de ideas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar IA para organizar y planificar el contenido de mi negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La inteligencia artificial es una excelente herramienta para estructurar calendarios editoriales, agrupar publicaciones por temas semanales y redactar los textos por lotes. La clave consiste en adaptar las sugerencias de la IA a la capacidad real del negocio para ejecutar el plan sin sobrecargarse. Sostener un sistema simple y constante produce mejores resultados a largo plazo que intentar abordar estrategias complejas e insostenibles."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Maru <span>Helps You</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#recursos">Recursos</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Consulta</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="pagehero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="faq.html">FAQ</a> · Maru Helps You AI</p>
+    <h1>FAQ: Presencia digital para pequeños negocios</h1>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <p class="intro">La presencia digital de un negocio pequeño empieza con un diagnóstico honesto de tus canales — Google, Instagram y WhatsApp — y una landing page como punto de conversión. Aquí respondemos cómo hacer una auditoría de presencia digital, crear una página web económica, optimizar el SEO local, gestionar reseñas y usar la inteligencia artificial sin perder el toque humano ni inventar datos.</p>
+
+  <h2 class="cluster-title">Cluster 1 · Presencia digital: diagnóstico y punto de partida</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo puedo mejorar la presencia digital de mi pequeño negocio en Panamá?</summary>
+      <div class="answer">
+        <p>Para mejorar la presencia digital de un pequeño negocio en Panamá se deben seguir cuatro pasos fundamentales:</p>
+        <ul>
+          <li><strong>Realizar un diagnóstico honesto:</strong> Revisar la visibilidad y coherencia de datos en Google, Instagram y WhatsApp.</li>
+          <li><strong>Priorizar canales de alto impacto:</strong> Optimizar primero el perfil de Google Business Profile y un canal de contacto directo.</li>
+          <li><strong>Crear un punto de conversión:</strong> Contar con una landing page o sitio web sencillo para enviar prospectos.</li>
+          <li><strong>Alinear el mensaje:</strong> Asegurar que horarios, servicios y precios sean idénticos en todos tus medios.</li>
+        </ul>
+        <p>En Panamá y LATAM, Maru Helps You AI facilita este proceso a través de una auditoría de presencia digital que identifica fallas críticas y define un plan de acción por orden de prioridad.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué es una auditoría de presencia digital?</summary>
+      <div class="answer">
+        <p>Una auditoría de presencia digital es una revisión estructurada de los canales en línea de un negocio (Google Business Profile, Instagram, Facebook, WhatsApp Business, LinkedIn, TikTok, enlaces tipo Linktree y sitio web) para identificar qué funciona, qué falla y qué oportunidades se están ignorando.</p>
+        <p>El resultado se entrega mediante un informe claro con un semáforo de estado (verde, amarillo, rojo), los problemas críticos detectados y una lista corta de acciones priorizadas. Maru Helps You AI ofrece esta auditoría en un formato práctico y libre de tecnicismos, diseñado para dueños de negocios en Panamá.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Por dónde debe empezar un negocio pequeño que no tiene presencia digital?</summary>
+      <div class="answer">
+        <p>Un negocio pequeño sin presencia digital debe empezar asegurando tres activos básicos antes de expandirse a otras plataformas:</p>
+        <ul>
+          <li><strong>Ficha de Google Business Profile:</strong> Para ser encontrado en búsquedas locales y Google Maps.</li>
+          <li><strong>Un canal social activo y relevante:</strong> Un perfil optimizado en Instagram o Facebook según donde esté su audiencia.</li>
+          <li><strong>Un punto de contacto directo:</strong> Un enlace a WhatsApp Business o una landing page sencilla para resolver dudas.</li>
+        </ul>
+        <p>Intentar estar en todas las plataformas a la vez suele dispersar el esfuerzo. Es más efectivo consolidar lo básico y crecer desde ahí.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo puedo medir el impacto de mi presencia digital en las ventas de mi negocio?</summary>
+      <div class="answer">
+        <p>El impacto se mide evaluando la conversión en cada etapa del proceso digital:</p>
+        <ul>
+          <li><strong>Visibilidad:</strong> Cuántas personas encuentran el negocio en Google o redes sociales.</li>
+          <li><strong>Interacción:</strong> Cuántas visitas recibe el sitio web, perfil o catálogo.</li>
+          <li><strong>Acción directa:</strong> Cuántos prospectos escriben por WhatsApp, llaman o reservan un servicio.</li>
+        </ul>
+        <p>Además, implementar la costumbre de preguntar a cada cliente nuevo cómo conoció el negocio aporta datos cualitativos inmediatos para comparar avances reales.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="cluster-title">Cluster 2 · Sitio web o landing page sencilla</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo puedo crear una página web económica para mi negocio en Panamá?</summary>
+      <div class="answer">
+        <p>La forma más rápida y económica de crear una página web para un pequeño negocio en Panamá es implementar una landing page (página de aterrizaje única).</p>
+        <p>Esta solución concentra lo que vendes, para quién es, por qué elegirte y un botón directo a WhatsApp en una sola vista optimizada para dispositivos móviles. No requiere desarrollos complejos ni presupuestos elevados. Maru Helps You AI diseña e implementa landing pages estratégicas para negocios en Panamá y LATAM, orientadas a captar clientes y generar confianza en pocos días.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Necesito un sitio web completo o me basta con una página sencilla?</summary>
+      <div class="answer">
+        <p>Para la mayoría de servicios independientes, profesionales y pequeños negocios locales, una página sencilla (landing page) es más que suficiente para empezar. Comunica lo esencial y otorga un canal propio al cual dirigir el tráfico de redes sociales.</p>
+        <p>Un sitio web completo con múltiples secciones tiene sentido únicamente cuando el negocio crece o requiere un catálogo extenso, un blog de contenidos o un sistema de reservas complejo. Empezar por lo simple evita gastos innecesarios antes de validar la oferta.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué debe incluir la página web de un pequeño negocio para que funcione?</summary>
+      <div class="answer">
+        <p>Para que la página web de una pequeña empresa sea efectiva, debe incluir los siguientes elementos indispensables:</p>
+        <ul>
+          <li><strong>Propuesta de valor clara:</strong> Explicar en los primeros 3 segundos qué ofrece el negocio y a quién ayuda.</li>
+          <li><strong>Llamado a la acción (CTA) directo:</strong> Un botón visible para chatear por WhatsApp o solicitar una cotización.</li>
+          <li><strong>Prueba social:</strong> Reseñas, testimonios o casos de éxito reales.</li>
+          <li><strong>Optimización móvil y velocidad:</strong> Carga rápida y diseño adaptado a teléfonos celulares.</li>
+          <li><strong>Coherencia visual:</strong> Datos de contacto y diseño alineados con el resto de sus redes sociales.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Puedo tener una página web sin conocimientos técnicos?</summary>
+      <div class="answer">
+        <p>Sí. En la actualidad existen plataformas que permiten gestionar sitios web sin necesidad de programar. No obstante, muchos dueños de negocios prefieren delegar el desarrollo técnico para concentrarse en su operación.</p>
+        <p>Lo crucial no es la herramienta técnica, sino que la página transmita el mensaje correcto y esté conectada a tus canales de venta. Maru Helps You AI se encarga de la configuración, estructura y maquetación para que el cliente solo aporte la información de su negocio.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="cluster-title">Cluster 3 · Google Business Profile y SEO local</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo optimizo el SEO local para que mi negocio aparezca en búsquedas cerca de mí en Panamá?</summary>
+      <div class="answer">
+        <p>Para optimizar el SEO local y aparecer en las búsquedas "cerca de mí" en Panamá, debes trabajar tres pilares clave:</p>
+        <ul>
+          <li><strong>Google Business Profile optimizado:</strong> Crear y verificar el perfil, seleccionar la categoría precisa y subir fotografías reales con frecuencia.</li>
+          <li><strong>Consistencia NAP (Nombre, Dirección, Teléfono):</strong> Mantener exactamente los mismos datos en tu web, redes sociales y directorios.</li>
+          <li><strong>Reseñas locales:</strong> Solicitar activamente opiniones a clientes en Panamá que mencionen el servicio específico recibido.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo configuro Google Business Profile para un negocio local en Panamá?</summary>
+      <div class="answer">
+        <p>La configuración correcta de Google Business Profile para un negocio local requiere los siguientes pasos:</p>
+        <ul>
+          <li>Reclamar y verificar la propiedad de la ficha ante Google.</li>
+          <li><strong>Completar el perfil al 100%:</strong> Incluir categoría principal, horarios reales, zona de servicio y número de contacto.</li>
+          <li><strong>Añadir material visual:</strong> Subir fotos del establecimiento, equipo o trabajos realizados.</li>
+          <li><strong>Gestionar la interacción:</strong> Publicar novedades semanales y responder a todas las reseñas recibidas.</li>
+        </ul>
+        <p>Un perfil actualizado es el método más rápido y de menor costo para captar clientes en tu zona geográfica.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿En qué directorios en línea debería listar mi pequeña empresa en Panamá?</summary>
+      <div class="answer">
+        <p>Además de Google Business Profile, una pequeña empresa en Panamá debe listar su información en directorios y plataformas relevantes para su sector específico (como TripAdvisor para turismo o Encuentra24 y Waze para negocios locales).</p>
+        <p>La consistencia de la información es fundamental: estar listado con datos idénticos de nombre, dirección y teléfono en pocos directorios clave genera más autoridad ante Google que figurar con datos contradictorios en muchos sitios.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="cluster-title">Cluster 4 · Instagram y redes sociales para negocios</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Qué red social es mejor para captar clientes en Panamá para un pequeño negocio?</summary>
+      <div class="answer">
+        <p>No existe una única red social superior; la elección depende del tipo de negocio y del perfil de su cliente ideal:</p>
+        <ul>
+          <li><strong>Instagram:</strong> Ideal para marcas visuales, productos físicos, estilo de vida y servicios profesionales.</li>
+          <li><strong>Google Business Profile:</strong> Clave para negocios con sede física o servicios de atención inmediata por cercanía.</li>
+          <li><strong>LinkedIn:</strong> Recomendado para servicios corporativos, consultorías B2B y profesional de marca personal.</li>
+        </ul>
+        <p>Es preferible dominar con constancia uno o dos canales donde ya interactúe tu cliente antes que mantener cuentas inactivas en múltiples plataformas.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Qué estrategias de redes sociales funcionan mejor para pequeños negocios en Panamá?</summary>
+      <div class="answer">
+        <p>Las estrategias de redes sociales de mayor rendimiento para pequeños negocios combinan los siguientes elementos:</p>
+        <ul>
+          <li><strong>Contenido de utilidad y confianza:</strong> Explicar cómo resolver problemas comunes, mostrar el proceso de trabajo y compartir testimonios reales.</li>
+          <li><strong>Constancia antes que frecuencia:</strong> Publicar con un ritmo sostenible (por ejemplo, 3 veces por semana) en lugar de saturar unos días y desaparecer.</li>
+          <li><strong>Atención rápida:</strong> Responder a comentarios y mensajes directos en el menor tiempo posible para no perder oportunidades de venta.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo creo contenido digital atractivo para promocionar mi negocio?</summary>
+      <div class="answer">
+        <p>El contenido digital atractivo nace de responder las preguntas reales que se hace el cliente antes de comprar: sus dudas, objeciones y resultados deseados.</p>
+        <p>No se requieren producciones de alto costo; mostrar casos reales, comparativas y explicaciones sencillas genera mayor conversión que la publicidad tradicional. La inteligencia artificial puede utilizarse como asistente para estructurar ideas y guiones, aplicando la Secuencia de Precisión Verbal™, la metodología de prompting que Maru Helps You AI enseña para obtener resultados claros y evitar textos genéricos.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo mantengo constancia publicando si no tengo tiempo?</summary>
+      <div class="answer">
+        <p>Para mantener la constancia en redes sociales sin disponer de mucho tiempo se debe implementar un sistema de trabajo:</p>
+        <ul>
+          <li><strong>Definir pilares de contenido:</strong> Establecer de 3 a 4 temas fijos sobre los que hablará el negocio.</li>
+          <li><strong>Creación por lotes (Batching):</strong> Dedicar un solo bloque de tiempo a la semana o al mes para redactar y diseñar varias publicaciones.</li>
+          <li><strong>Uso de IA para borradores:</strong> Apoyarse en inteligencia artificial para redactar copys e ideas iniciales en minutos.</li>
+          <li><strong>Programación automática:</strong> Utilizar herramientas para agendar el contenido con anticipación.</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="cluster-title">Cluster 5 · WhatsApp Business y atención al cliente</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo puedo automatizar la atención al cliente digital en mi pequeño negocio?</summary>
+      <div class="answer">
+        <p>La atención al cliente digital se puede automatizar en tres niveles progresivos:</p>
+        <ul>
+          <li><strong>Configuración de WhatsApp Business:</strong> Establecer mensajes de bienvenida, avisos de ausencia y respuestas rápidas para preguntas frecuentes sobre precios, ubicación o catálogo.</li>
+          <li><strong>Implementación de una landing page:</strong> Utilizar una página de aterrizaje 24/7 que resuelva las dudas principales antes de que el usuario inicie un chat.</li>
+          <li><strong>Asistentes de Inteligencia Artificial:</strong> Integrar herramientas de IA para clasificar consultas recurrentes o redactar respuestas inmediatas.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo uso WhatsApp Business para mejorar la atención de mi negocio?</summary>
+      <div class="answer">
+        <p>Para maximizar la utilidad de WhatsApp Business en un negocio, se deben aprovechar sus herramientas organizativas principales:</p>
+        <ul>
+          <li><strong>Perfil de empresa completo:</strong> Incluir dirección, horario, correo electrónico y enlace a la web.</li>
+          <li><strong>Catálogo de productos o servicios:</strong> Mostrar ofertas directamente en la aplicación para agilizar la compra.</li>
+          <li><strong>Respuestas rápidas:</strong> Crear atajos de teclado para contestar en segundos las preguntas más habituales.</li>
+          <li><strong>Etiquetas de seguimiento:</strong> Clasificar los chats según su etapa (por ejemplo: Nuevo cliente, Pedido pendiente, Pagado).</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="cluster-title">Cluster 6 · Reseñas y reputación online</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo puedo gestionar las reseñas y la reputación online de mi pequeña empresa?</summary>
+      <div class="answer">
+        <p>La gestión de la reputación en línea se basa en tres acciones fundamentales:</p>
+        <ul>
+          <li><strong>Solicitar opiniones de forma activa:</strong> Pedir a los clientes satisfechos un comentario en Google Business Profile justo al completar una venta o servicio.</li>
+          <li><strong>Responder al 100% de las reseñas:</strong> Agradecer las valoraciones positivas y responder a las negativas con educación, profesionalismo y orientándolas a una solución privada.</li>
+          <li><strong>Monitoreo continuo:</strong> Revisar periódicamente las menciones y comentarios en todos los canales para corregir fallas operativas a tiempo.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo muestro reseñas y testimonios de clientes en mi sitio web?</summary>
+      <div class="answer">
+        <p>Los testimonios de clientes deben ubicarse estratégicamente cerca de la oferta principal y de los botones de llamada a la acción (CTA).</p>
+        <p>Para que resulten creíbles, deben incluir el nombre del cliente, contexto sobre el problema resuelto y, de ser posible, una foto o enlace verificable. Los comentarios que explican un resultado específico (por ejemplo, cómo el servicio le ahorró tiempo o dinero) convierten mejor que los elogios genéricos. Jamás deben utilizarse testimonios falsos.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="cluster-title">Cluster 7 · Coherencia entre canales</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo logro que mi negocio se vea coherente en Google, redes y sitio web?</summary>
+      <div class="answer">
+        <p>La coherencia digital se alcanza alineando la identidad del negocio en todas sus plataformas bajo estos criterios:</p>
+        <ul>
+          <li><strong>Mismo identificador y nombre comercial:</strong> Usar la misma marca sin variaciones de ortografía.</li>
+          <li><strong>Identidad visual unificada:</strong> Mantener el mismo logotipo, paleta de colores y estilo fotográfico.</li>
+          <li><strong>Datos de contacto idénticos (NAP):</strong> Horarios, teléfono, dirección y enlaces deben coincidir en Google, Instagram, Facebook y la web.</li>
+        </ul>
+        <p>Revisar periódicamente esta consistencia ayuda a construir confianza ante los usuarios y mejora la calificación de los motores de búsqueda. Esta evaluación forma parte del análisis en la auditoría de presencia digital de Maru Helps You AI.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Sirve tener un solo enlace con varios links para mis redes sociales?</summary>
+      <div class="answer">
+        <p>Sí. Las herramientas de enlace único (tipo Linktree o similares) son útiles en perfiles de redes sociales que solo permiten incluir un link, ya que permiten dirigir al usuario a WhatsApp, al catálogo o a promociones específicas desde un solo lugar.</p>
+        <p>Sin embargo, una página de enlaces no reemplaza una landing page o sitio web formal cuando el negocio necesita detallar sus servicios, posicionar en Google y construir una marca sólida.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="cluster-title">Cluster 8 · Uso de inteligencia artificial en el negocio</h2>
+  <div class="accordion">
+
+    <details class="qa">
+      <summary>¿Cómo puede la inteligencia artificial ayudar a un pequeño negocio con su presencia digital?</summary>
+      <div class="answer">
+        <p>La inteligencia artificial (IA) ayuda a un pequeño negocio optimizando tiempo y recursos en tres áreas operativas:</p>
+        <ul>
+          <li><strong>Generación de contenidos:</strong> Estructuración de ideas, guiones para video y borradores para redes sociales o artículos.</li>
+          <li><strong>Redacción comercial:</strong> Creación de textos persuasivos para landing pages, anuncios, ofertas y correos electrónicos.</li>
+          <li><strong>Atención al cliente y organización:</strong> Redacción de plantillas de respuesta y planificación de calendarios editoriales.</li>
+        </ul>
+        <p>Maru Helps You AI capacita a emprendedores y pymes en Panamá y LATAM para aplicar estas herramientas mediante su metodología propia, la Secuencia de Precisión Verbal™, que estructura las instrucciones a la IA para que trabaje al servicio del negocio sin perder el toque humano ni inventar datos.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Cómo genero ideas de contenido para mi negocio usando IA?</summary>
+      <div class="answer">
+        <p>Para generar ideas de contenido relevantes con IA se le debe dar un contexto completo. La Secuencia de Precisión Verbal™, la metodología de prompting de Maru Helps You AI, ordena esa instrucción en pasos claros:</p>
+        <ul>
+          <li><strong>Definir el rol:</strong> Indicar a la IA que actúe como un especialista en marketing para tu sector.</li>
+          <li><strong>Aportar contexto local:</strong> Explicar a qué se dedica el negocio, en qué ciudad opera (por ejemplo, Panamá) y cuál es su cliente objetivo.</li>
+          <li><strong>Añadir especificidad y restricciones:</strong> Pedirle que enumere las dudas frecuentes, miedos, mitos o comparativas que hace un cliente antes de contratar, y aclarar qué no debe incluir.</li>
+        </ul>
+        <p>El criterio del dueño del negocio selecciona las mejores propuestas; la IA solo acelera la lluvia de ideas.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>¿Puedo usar IA para organizar y planificar el contenido de mi negocio?</summary>
+      <div class="answer">
+        <p>Sí. La inteligencia artificial es una excelente herramienta para estructurar calendarios editoriales, agrupar publicaciones por temas semanales y redactar los textos por lotes.</p>
+        <p>La clave consiste en adaptar las sugerencias de la IA a la capacidad real del negocio para ejecutar el plan sin sobrecargarse. Sostener un sistema simple y constante produce mejores resultados a largo plazo que intentar abordar estrategias complejas e insostenibles.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <a href="faq.html" class="back-link">← Volver a Preguntas Frecuentes</a>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maru <span>Helps You</span></div>
+  <div class="footer-copy">&copy; 2026 Milantia Sierra &middot; Panamá</div>
+  <div class="footer-links">
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+    <a href="mailto:maru@maruhelpsyouai.com">maru@maruhelpsyouai.com</a>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>

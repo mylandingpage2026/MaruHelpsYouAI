@@ -202,6 +202,16 @@ footer .vp{max-width:520px;margin:0 auto 14px}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
 
+/* Botón flotante WhatsApp dudas */
+.wa-float{position:fixed;bottom:20px;right:20px;z-index:60;display:flex;align-items:center;gap:9px;background:#25d366;color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;padding:12px 18px;border-radius:50px;box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .15s,box-shadow .15s;font-family:'Inter'}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.55)}
+.wa-float svg{width:22px;height:22px;flex-shrink:0}
+.wa-float .wa-txt{white-space:nowrap}
+@media(max-width:560px){
+  .wa-float{padding:13px;bottom:16px;right:16px}
+  .wa-float .wa-txt{display:none}
+}
+
 @media(max-width:760px){
   section{padding:54px 0}
   .compare,.dual,.cvcompare,.tgrid,.kitlist,.whom,.li-grid{grid-template-columns:1fr}
@@ -494,6 +504,11 @@ footer .vp{max-width:520px;margin:0 auto 14px}
     </div>
   </div>
 </footer>
+
+<a href="https://wa.me/50766339109?text=%C2%A1Hola%2C%20Maru!%20Tengo%20una%20duda%20sobre%20el%20Kit%20antes%20de%20comprar." class="wa-float" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp si tienes dudas">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 5 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2m0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
+  <span class="wa-txt">¿Dudas? Escríbeme</span>
+</a>
 
 <script>
 (function(){

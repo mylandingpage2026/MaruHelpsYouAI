@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preguntas Frecuentes | Maru Helps You AI</title>
-<meta name="description" content="Preguntas frecuentes sobre CV, inteligencia artificial, sistemas ATS, LinkedIn y auditoría profesional — respondidas por Maru Helps You AI para profesionales en Panamá y LATAM.">
+<title>Blog | Maru Helps You AI</title>
+<meta name="description" content="Ideas prácticas sobre IA, empleabilidad y presencia digital para profesionales y negocios en Panamá y LATAM.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -45,21 +45,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,43,91,0.97
 /* MAIN */
 main{padding:44px 0 60px}
 .wrap{max-width:760px;margin:0 auto;padding:0 24px}
-h2{font-family:var(--serif);font-size:1.5rem;color:var(--navy);margin:40px 0 10px;border-left:3px solid var(--orange);padding-left:12px}
-h2:first-of-type{margin-top:0}
-.section-desc{color:var(--muted);margin-bottom:18px}
-.section-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 26px;margin-bottom:8px}
-.featured-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);margin:18px 0 8px}
-ul.plain{padding-left:1.2rem;margin-bottom:18px}
-ul.plain li{margin-bottom:8px;color:var(--ink)}
-.section-links{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
-.section-links li{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--cream)}
-.section-links a{font-weight:600;color:var(--navy);text-decoration:none}
-.section-links a:hover{color:var(--orange)}
-.cta-final{background:var(--navy);color:#fff;border-radius:10px;padding:28px 26px;margin-top:40px;text-align:center}
-.cta-final p{font-size:1.02rem;margin-bottom:14px}
-.cta-final a.btn{display:inline-block;background:var(--orange);color:var(--navy);font-weight:700;padding:0.75rem 1.6rem;border-radius:6px;text-decoration:none}
-.cta-final a.btn:hover{background:#ffc457}
+
+/* BLOG CARD GRID */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:8px}
+.blog-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;text-decoration:none;transition:border-color 0.2s,transform 0.15s}
+.blog-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.blog-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:rgba(0,43,91,0.08);padding:0.2rem 0.6rem;border-radius:3px;display:inline-block;width:fit-content;margin-bottom:0.85rem}
+.blog-title{font-family:var(--serif);font-size:1.2rem;color:var(--navy);line-height:1.35;margin-bottom:0.6rem}
+.blog-excerpt{font-size:0.88rem;color:var(--muted);line-height:1.65;flex:1;margin-bottom:1rem}
+.blog-cta{font-size:0.82rem;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:0.3rem}
+.blog-card:hover .blog-cta{color:var(--orange)}
 
 /* FOOTER */
 footer{background:var(--navy);padding:1.75rem;text-align:center}
@@ -83,8 +78,8 @@ footer{background:var(--navy);padding:1.75rem;text-align:center}
     <li><a href="index.html#servicios">Servicios</a></li>
     <li><a href="index.html#sobre-mi">Sobre mí</a></li>
     <li><a href="index.html#recursos">Recursos</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="index.html#contacto" class="nav-cta">Consulta</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
@@ -96,59 +91,21 @@ footer{background:var(--navy);padding:1.75rem;text-align:center}
 <header class="pagehero">
   <div class="wrap">
     <p class="eyebrow">Maru Helps You AI</p>
-    <h1>Preguntas Frecuentes</h1>
-    <p>En Maru Helps You AI ayudamos a profesionales y pequeños negocios en Panamá y LATAM a convertir su experiencia en oportunidades, combinando estrategia, comunicación e inteligencia artificial. Estas preguntas frecuentes están organizadas en dos áreas: profesionales en búsqueda de empleo y emprendedores que quieren mejorar su presencia digital.</p>
+    <h1>Blog</h1>
+    <p>Ideas prácticas sobre IA, empleabilidad y presencia digital para profesionales y negocios en Panamá y LATAM.</p>
   </div>
 </header>
 
 <main>
 <div class="wrap">
-
-  <div class="section-card">
-    <h2>Profesionales y búsqueda de empleo</h2>
-    <p class="section-desc">Optimización de CV, LinkedIn y perfil profesional con inteligencia artificial y compatibilidad con sistemas ATS.</p>
-
-    <p class="featured-label">Preguntas destacadas</p>
-    <ul class="plain">
-      <li>¿Cómo puede la inteligencia artificial mejorar mi currículum?</li>
-      <li>¿Qué es un currículum compatible con ATS?</li>
-      <li>¿Cómo optimizar mi perfil de LinkedIn para atraer reclutadores?</li>
-      <li>¿Qué es una auditoría de perfil profesional?</li>
-      <li>¿Dónde contratar un servicio profesional para mejorar mi CV con IA?</li>
-    </ul>
-
-    <p class="featured-label">Explora las secciones completas</p>
-    <ul class="section-links">
-      <li><strong>CV, inteligencia artificial y sistemas ATS</strong> → <a href="faq-cv-ia-ats.html">Ver preguntas</a></li>
-      <li><strong>LinkedIn y atracción de reclutadores</strong> → <a href="faq-linkedin.html">Ver preguntas</a></li>
-      <li><strong>Auditoría profesional, habilidades transferibles y cambio de carrera</strong> → <a href="faq-auditoria-carrera.html">Ver preguntas</a></li>
-    </ul>
+  <div class="blog-grid">
+    <a href="blog-cv-ats.html" class="blog-card">
+      <span class="blog-tag">CV y LinkedIn</span>
+      <h2 class="blog-title">CV compatible con ATS: por qué tu currículum no llega a un reclutador</h2>
+      <p class="blog-excerpt">Un software descarta tu CV antes de que un humano lo lea. Aprende cómo funciona un ATS y haz el test de 2 minutos para saber si el tuyo pasa el filtro.</p>
+      <span class="blog-cta">Leer artículo &rarr;</span>
+    </a>
   </div>
-
-  <div class="section-card">
-    <h2>Emprendedores y pequeños negocios</h2>
-    <p class="section-desc">Presencia digital, visibilidad en Google, Instagram y sitio web para negocios que quieren dejar de depender solo del boca a boca.</p>
-
-    <p class="featured-label">Preguntas destacadas</p>
-    <ul class="plain">
-      <li>¿Cómo puedo mejorar la presencia digital de mi pequeño negocio en Panamá?</li>
-      <li>¿Qué es una auditoría de presencia digital?</li>
-      <li>¿Cómo puedo crear una página web económica para mi negocio en Panamá?</li>
-      <li>¿Cómo optimizo el SEO local para que mi negocio aparezca en búsquedas cerca de mí?</li>
-      <li>¿Cómo puede la inteligencia artificial ayudar a un pequeño negocio con su presencia digital?</li>
-    </ul>
-
-    <p class="featured-label">Explora la sección completa</p>
-    <ul class="section-links">
-      <li><strong>Presencia digital para pequeños negocios</strong> → <a href="faq-presencia-digital.html">Ver preguntas</a></li>
-    </ul>
-  </div>
-
-  <div class="cta-final">
-    <p>¿No sabes por dónde empezar? Haz tu evaluación gratuita de CV y recibe un diagnóstico en minutos.</p>
-    <a href="cv-evaluacion.html" class="btn">Evaluar mi CV ahora</a>
-  </div>
-
 </div>
 </main>
 
